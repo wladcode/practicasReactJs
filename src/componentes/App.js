@@ -5,6 +5,7 @@ import BadgeNew from "../pages/BadgeNew";
 import Layout from "./layout/Layout";
 import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
+import RickAndMortyAPI from "../pages/RickAndMortyApi";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/badges' component={Badges} />
           <Route exact path='/badges/new' component={BadgeNew} />
+          <Route exact path='/api' component={RickAndMortyAPI} />
+
           <Route component={NotFound} />
         </Switch>
       </Layout>
