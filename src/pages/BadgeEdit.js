@@ -4,14 +4,14 @@ import Badge from "../componentes/badge/Badge";
 import BadgeForm from "../componentes/badgeform/BadgeForm";
 
 import header from "../images/platziconf-logo.svg";
-import "./styles/BadgeNew.css";
+import "./styles/BadgeEdit.css";
 
 import api from "../api/api";
 import PageLoading from "../componentes/pageloading/PageLoading";
 
-class BagdeNew extends React.Component {
+class BagdeEdit extends React.Component {
   state = {
-    loading: false,
+    loading: true,
     error: null,
     form: {
       firstName: "",
@@ -20,6 +20,35 @@ class BagdeNew extends React.Component {
       jobTitle: "",
       twitter: ""
     }
+  };
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData = async e => {
+    this.setState({
+      loading: true,
+      error: null
+    });
+
+    try {
+      const data = await api.badges.read(this.props.match.params.badgeId);
+
+      this.setState({
+        loading: false,
+        form: data
+      });
+
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error: error
+      });
+    }
+
+
+
   };
 
   handleChange = e => {
@@ -44,7 +73,7 @@ class BagdeNew extends React.Component {
 
     try {
       console.log("state: ", this.state);
-      await api.badges.create(this.state.form);
+      await api.badges.update(this.props.match.params.badgeId, this.state.form);
 
       this.setState({
         loading: false
@@ -67,9 +96,9 @@ class BagdeNew extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className='BadgeNew_hero'>
+        <div className='BadgeEdit_hero'>
           <img
-            className='BadgeNew_hero-image img-fluid'
+            className='BadgeEdit_hero-image img-fluid'
             src={header}
             alt='Logo'
           />
@@ -93,7 +122,7 @@ class BagdeNew extends React.Component {
                 onSubmit={this.handleSubmit}
                 formValues={this.state.form}
                 error={this.state.error}
-                title='New Attendant'
+                title='Edit Attendant'
               />
             </div>
           </div>
@@ -103,4 +132,4 @@ class BagdeNew extends React.Component {
   }
 }
 
-export default BagdeNew;
+export default BagdeEdit;

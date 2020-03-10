@@ -5,18 +5,41 @@ import "./styles/Badges.css";
 import confLogo from "../images/badge-header.svg";
 import { Link } from "react-router-dom";
 
+import api from "../api/api";
+import PageLoading from "../componentes/pageloading/PageLoading";
+import PageError from "../componentes/pageerror/PageError";
+
 class Badges extends React.Component {
+  state = {
+    loading: true,
+    error: null,
+    data: undefined
+  };
+
   constructor(props) {
     super(props);
     console.log("1. CONSTRUCTOR: ", props);
 
+    /*
     this.state = {
       data: []
     };
+    */
   }
 
   render() {
     console.log("2/4. RENDER");
+
+    if (this.state.loading === true) {
+      return <PageLoading />;
+      // return "page loadin"
+    }
+
+    if (this.state.error) {
+      return <PageError error={this.state.error} />;
+      //return `Error: ${this.state.error.message}`;
+    }
+
     return (
       <React.Fragment>
         <div className='Badges'>
@@ -47,6 +70,26 @@ class Badges extends React.Component {
   componentDidMount() {
     console.log("3. componentDidMount");
 
+    this.fetchData();
+  }
+
+  fetchData = async () => {
+    this.setState({
+      loading: true,
+      error: null
+    });
+
+    try {
+      const data = await api.badges.list();
+      this.setState({
+        loading: false,
+        data: data
+      });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
+
+    /*
     this.timeOutId = setTimeout(() => {
       this.setState({
         data: [
@@ -84,7 +127,8 @@ class Badges extends React.Component {
       });
     }, 3000);
 
-  }
+    */
+  };
 
   componentDidUpdate(prevProps, prevState) {
     console.log("5. componentDidUpdate");
