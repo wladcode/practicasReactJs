@@ -14,12 +14,15 @@ class BadgesList extends React.Component {
       );
     }
     return (
-      <div>
-        <ul className='list-unstyled BadgesList'>
+      <div className='BadgesList'>
+        <ul className='list-unstyled'>
           {this.props.badges.map(badge => {
             return (
               <li key={badge.id} className='BadgesListItem'>
-                <Link to={`/badges/${badge.id}/edit`} className="text-reset text-decoraton-none">
+                <Link
+                  to={`/badges/${badge.id}`}
+                  className='text-reset text-decoraton-none'
+                >
                   <Gravatar
                     className='BadgesListItem_avatar'
                     email={badge.email}

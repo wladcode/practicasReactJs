@@ -7,6 +7,8 @@ import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
 import RickAndMortyAPI from "../pages/RickAndMortyApi";
 import BagdeEdit from "../pages/BadgeEdit";
+import BagdeDetailsContainer from "./badge/badgedetails/BagdeDetailsContainer";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/badges' component={Badges} />
           <Route exact path='/badges/new' component={BadgeNew} />
+          <Route exact path='/badges/:badgeId' component={BagdeDetailsContainer} />
           <Route exact path='/badges/:badgeId/edit' component={BagdeEdit} />
           <Route exact path='/api' component={RickAndMortyAPI} />
 
