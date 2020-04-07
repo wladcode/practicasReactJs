@@ -7,9 +7,20 @@ import "./BagdeDetails.css";
 import { Link } from "react-router-dom";
 import DeleteBadgeModal from "../../modal/DeleteBadgeModal";
 
-function BadgeDetails(props) {
-  console.log(props);
+function useIncreaseCount(maxCount) {
+  const [count, setCount] = React.useState(0); // Se recupera los valores enviados, siempre inicializando a cero
+  if (count > maxCount) {
+    setCount(0);
+  }
 
+  return [count, setCount]; // Siempre se debe retornar el nuevo par de valores
+}
+
+function BadgeDetails(props) {
+  //const [count, setCount] = React.useState(10); // Regresa un arreglo con dos valores
+  const [count, setCount] = useIncreaseCount(5); //Use de Hook personalizado
+
+  //const count = 3
   const badge = props.badge;
 
   return (
@@ -43,6 +54,16 @@ function BadgeDetails(props) {
             <h2>Actions</h2>
             <div>
               <div>
+                <button
+                  onClick={() => {
+                    setCount(count + 1);
+                  }}
+                  className='btn btn-primary mr-4'
+                >
+                  {" "}
+                  Increse Count {count}
+                </button>
+
                 <Link
                   className='btn btn-primary mb-4'
                   to={`/badges/${badge.id}/edit`}
