@@ -25,6 +25,10 @@ export default class Home extends Component {
               <Link className="btn btn-secondary" to="/api">
                 Api
               </Link>
+
+              <Link className="btn btn-secondary" to="/monsters">
+                Api
+              </Link>
             </div>
 
             <div className="Home__col d-none d-md-block col-md-8">
