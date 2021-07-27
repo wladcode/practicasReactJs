@@ -36,7 +36,6 @@ class RickAndMortyAPI extends React.Component {
     this.setState({
       loading: true,
       error: null,
-
     });
 
     //cargar datos
@@ -81,10 +80,8 @@ class RickAndMortyAPI extends React.Component {
   };
 
   render() {
-
     return (
       <Container>
-
         <Pagination
           color="primary"
           size="large"
@@ -98,33 +95,35 @@ class RickAndMortyAPI extends React.Component {
         {this.state.loading && <PageLoading />}
         {this.state.error && <PageError error={this.state.error} />}
 
-        <Grid container spacing={2}>
-          {this.state.data.results.map((item) => {
-            return (
-              <Grid key={item.id} item xs={12} sm={4} md={3} lg={3}>
-                <Card className="card-container">
-                  <CardContent>
-                    <Typography
-                      noWrap
-                      gutterBottom
-                      variant="h5"
-                      color="primary"
-                    >
-                      {item.name}
-                    </Typography>
-                    <CardMedia title="character">
-                      <img
-                        className="imagen-container"
-                        alt="character"
-                        src={item.image}
-                      />
-                    </CardMedia>
-                  </CardContent>
-                </Card>
-              </Grid>
-            );
-          })}
-        </Grid>
+        {!this.state.loading  &&
+          <Grid container spacing={2}>
+            {this.state.data.results.map((item) => {
+              return (
+                <Grid key={item.id} item xs={12} sm={4} md={3} lg={3}>
+                  <Card className="card-container">
+                    <CardContent>
+                      <Typography
+                        noWrap
+                        gutterBottom
+                        variant="h5"
+                        color="primary"
+                      >
+                        {item.name}
+                      </Typography>
+                      <CardMedia title="character">
+                        <img
+                          className="imagen-container"
+                          alt="character"
+                          src={item.image}
+                        />
+                      </CardMedia>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              );
+            })}
+          </Grid>
+        }
       </Container>
     );
   }
