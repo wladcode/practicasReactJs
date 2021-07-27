@@ -1,3 +1,4 @@
+import { CircularProgress } from "@material-ui/core";
 import React, { Component } from "react";
 
 import "./Loader.css";
@@ -5,17 +6,23 @@ import "./Loader.css";
 export default class Loader extends Component {
   render() {
     return (
-      <div className='lds-grid'>
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-      </div>
+      <>
+        <CircularProgress />
+        Cargando ...
+        {/*
+          <div className="lds-grid">
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+        */}
+      </>
     );
   }
 }
