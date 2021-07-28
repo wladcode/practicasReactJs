@@ -19,7 +19,7 @@ export default class Home extends Component {
                 Start
               </Link>
               <Link className="btn btn-secondary" to="/api">
-                Api
+                Ricky And Morty Api
               </Link>
 
               <Link className="btn btn-secondary" to="/monsters">

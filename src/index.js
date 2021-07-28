@@ -9,7 +9,7 @@ import ReactDOM from "react-dom";
 //import Badge from "./componentes/badge/Badge";
 //import BadgeNew from "./pages/BadgeNew";
 //import Badges from "./pages/Badges";
-import App from "./componentes/App";
+import App from "./App";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./global.css";

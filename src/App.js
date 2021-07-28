@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Badges from "../pages/Badges";
-import BadgeNew from "../pages/BadgeNew";
-import Layout from "./layout/Layout";
-import NotFound from "../pages/NotFound";
-import Home from "../pages/Home";
-import RickAndMortyAPI from "../pages/RickAndMortyApi";
-import BagdeEdit from "../pages/BadgeEdit";
-import BagdeDetailsContainer from "./badge/badgedetails/BagdeDetailsContainer";
-import Monsters2 from "./monsters/Monsters2";
-import HomePageStore from "./store/home-page.component";
+import Badges from "./pages/Badges";
+import BadgeNew from "./pages/BadgeNew";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import RickAndMortyAPI from "./pages/RickAndMortyApi";
+import HomePageStore from "./componentes/store/pages/homepage/home-page.component";
+import BagdeDetailsContainer from './componentes/badge/badgedetails/BagdeDetailsContainer';
+import Layout from './componentes/layout/Layout';
+import Monsters2 from './componentes/monsters/Monsters2';
+import BagdeEdit from './pages/BadgeEdit';
 
 function App() {
   return (
