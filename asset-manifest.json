@@ -1,29 +1,30 @@
 {
   "files": {
     "main.css": "/practicasReactJs/static/css/main.1ad9d84f.chunk.css",
-    "main.js": "/practicasReactJs/static/js/main.67b0aa47.chunk.js",
-    "main.js.map": "/practicasReactJs/static/js/main.67b0aa47.chunk.js.map",
+    "main.js": "/practicasReactJs/static/js/main.fc891190.chunk.js",
+    "main.js.map": "/practicasReactJs/static/js/main.fc891190.chunk.js.map",
     "runtime-main.js": "/practicasReactJs/static/js/runtime-main.f4f6518e.js",
     "runtime-main.js.map": "/practicasReactJs/static/js/runtime-main.f4f6518e.js.map",
     "static/css/2.013db2dd.chunk.css": "/practicasReactJs/static/css/2.013db2dd.chunk.css",
-    "static/js/2.5e6d5936.chunk.js": "/practicasReactJs/static/js/2.5e6d5936.chunk.js",
-    "static/js/2.5e6d5936.chunk.js.map": "/practicasReactJs/static/js/2.5e6d5936.chunk.js.map",
+    "static/js/2.ea03fb30.chunk.js": "/practicasReactJs/static/js/2.ea03fb30.chunk.js",
+    "static/js/2.ea03fb30.chunk.js.map": "/practicasReactJs/static/js/2.ea03fb30.chunk.js.map",
     "index.html": "/practicasReactJs/index.html",
     "static/css/2.013db2dd.chunk.css.map": "/practicasReactJs/static/css/2.013db2dd.chunk.css.map",
     "static/css/main.1ad9d84f.chunk.css.map": "/practicasReactJs/static/css/main.1ad9d84f.chunk.css.map",
-    "static/js/2.5e6d5936.chunk.js.LICENSE.txt": "/practicasReactJs/static/js/2.5e6d5936.chunk.js.LICENSE.txt",
+    "static/js/2.ea03fb30.chunk.js.LICENSE.txt": "/practicasReactJs/static/js/2.ea03fb30.chunk.js.LICENSE.txt",
     "static/media/BadgesList.css": "/practicasReactJs/static/media/Twitter_Social_Icon_Circle_Color.9d1aa5c5.svg",
     "static/media/astronauts.fc4d80a5.svg": "/practicasReactJs/static/media/astronauts.fc4d80a5.svg",
     "static/media/badge-header.3e56976b.svg": "/practicasReactJs/static/media/badge-header.3e56976b.svg",
     "static/media/logo.ed14bd33.svg": "/practicasReactJs/static/media/logo.ed14bd33.svg",
+    "static/media/notFound.84f2ce20.jpg": "/practicasReactJs/static/media/notFound.84f2ce20.jpg",
     "static/media/platziconf-logo.8fbacde1.svg": "/practicasReactJs/static/media/platziconf-logo.8fbacde1.svg",
     "static/media/BadgeEdit.css": "/practicasReactJs/static/media/stars.7544bae9.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f4f6518e.js",
     "static/css/2.013db2dd.chunk.css",
-    "static/js/2.5e6d5936.chunk.js",
+    "static/js/2.ea03fb30.chunk.js",
     "static/css/main.1ad9d84f.chunk.css",
-    "static/js/main.67b0aa47.chunk.js"
+    "static/js/main.fc891190.chunk.js"
   ]
 }
