@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import notFoundImg from "../images/notFound.jpg";
 
 function NotFound() {
-  return <h1>404: Not Found</h1>;
+  return (
+    <div>
+      <img src={notFoundImg} style={{ height: 500, width:500 }} />
+    </div>
+  );
 }
 
 export default NotFound;
