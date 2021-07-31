@@ -1,3 +1,4 @@
+import { Container, Paper } from "@material-ui/core";
 import React from "react";
 import Navbar from "../navbar/Navbar";
 import './layout.css'

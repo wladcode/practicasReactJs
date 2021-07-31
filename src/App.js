@@ -11,6 +11,7 @@ import Layout from "./componentes/layout/Layout";
 import Monsters2 from "./componentes/monsters/Monsters2";
 import BagdeEdit from "./pages/BadgeEdit";
 import ShopPage from "./componentes/store/pages/shop/shop-page.component";
+import StorePage from "./componentes/store/pages/storePage";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
           <Route exact path="/badges/:badgeId/edit" component={BagdeEdit} />
           <Route exact path="/api" component={RickAndMortyAPI} />
           <Route exact path="/monsters" component={Monsters2} />
-          <Route exact path="/store" component={HomePageStore} />
-          <Route exact path="/shop" component={ShopPage} />
+
+          <StorePage exact path="/:path?" />
 
           <Route component={NotFound} />
         </Switch>

@@ -3,11 +3,7 @@ import DirectoryComponent from "../../components/directory/directory.component";
 import "./home-page.scss";
 
 const HomePageStore = () => {
-  return (
-    <div className="homepage">
-      <DirectoryComponent />
-    </div>
-  );
+  return <DirectoryComponent />;
 };
 
 export default HomePageStore;
