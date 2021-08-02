@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./sign-in.scss";
 import DSFormInputComponent from "./../../../commons/form-input/form-input.component";
 import DSButtonComponent from "../../../commons/button/button.component";
+import { signInWithGoogle } from "./../../../../ds-auth/firebase.utils";
 
 class SignInComponent extends Component {
   constructor(props) {
@@ -47,8 +48,12 @@ class SignInComponent extends Component {
             label="Password"
           />
 
-          <DSButtonComponent type="submit" >Ingresar</DSButtonComponent>
-
+          <div className="buttons">
+            <DSButtonComponent type="submit">Ingresar</DSButtonComponent>
+            <DSButtonComponent onClick={signInWithGoogle} isGoogleSignIn>
+              Ingresar con Google
+            </DSButtonComponent>
+          </div>
         </form>
       </div>
     );

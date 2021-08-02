@@ -35,10 +35,22 @@ class Monsters2 extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((users) => this.setState({ monsters: users }));
+    this.loadData();
   }
+
+  loadData = async () => {
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users"
+      );
+      console.log("RESPOSNE: ", response);
+      const monsters = await response.json();
+      console.log("MONSTERS: ", monsters);
+      this.setState({ monsters: monsters });
+    } catch (error) {
+      console.log("ERROR: ", error)
+    }
+  };
 
   handleChange = (e) => {
     this.setState({ searchField: e.target.value });
@@ -56,7 +68,6 @@ class Monsters2 extends Component {
 
     return (
       <Container>
-
         <h1 className="text-title">MONSTER API</h1>
 
         <SearchBox
