@@ -1,8 +1,8 @@
 import React from "react";
 import "./button.scss";
 
-const DSButtonComponent = ({ children, isGoogleSignIn, ...otherProps }) => {
-  return <button className={`${isGoogleSignIn ? "google-sign-in" : ""} custom-button`} {...otherProps}>
+const DSButtonComponent = ({ children, socialSignIn, ...otherProps }) => {
+  return <button className={`${socialSignIn ? "social-sign-in" : ""} custom-button`} {...otherProps}>
       {children}
   </button>;
 };

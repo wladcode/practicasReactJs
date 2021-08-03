@@ -1,20 +1,23 @@
 import React from "react";
 import "./form-input.scss";
+import { Grid, TextField } from "@material-ui/core";
 
-const DSFormInputComponent = ({ handleChange, label, ...otherProps }) => {
+const DSFormInputComponent = ({ handleChange, ...otherProps }) => {
   return (
-    <div className="group">
-      <input className="form-input" onChange={handleChange} {...otherProps} />
-      {label ? (
-        <label
-          className={`${
-            otherProps.value.length ? "shrink" : ""
-          } form-input-label`}
-        >
-          {label}
-        </label>
-      ) : null}
-    </div>
+    <Grid item xs={12} sm={12}>
+      <TextField
+        variant="outlined"
+        required
+        fullWidth
+        autoFocus
+        required
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={handleChange}
+        {...otherProps}
+      />
+    </Grid>
   );
 };
 

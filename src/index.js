@@ -11,7 +11,7 @@ import ReactDOM from "react-dom";
 //import Badges from "./pages/Badges";
 import App from "./App";
 
-import "bootstrap/dist/css/bootstrap.css";
+//import "bootstrap/dist/css/bootstrap.css";
 import "./global.css";
 
 
