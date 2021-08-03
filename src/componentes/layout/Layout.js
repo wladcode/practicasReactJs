@@ -1,7 +1,6 @@
-import { Container, Paper } from "@material-ui/core";
 import React from "react";
 import Navbar from "../navbar/Navbar";
-import './layout.css'
+import './layout.css';
 
 function Layout(props) {
   //const children = props.children;

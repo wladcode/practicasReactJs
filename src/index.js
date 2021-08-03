@@ -21,11 +21,11 @@ import "./global.css";
 //const element = React.createElement('h1', {}, 'Hola, soy los childen');
 //const element = React.createElement('a', {href:'https://platzi.com'}, 'Si me das clic, voy a platzi');
 
-const name = "Wladdy López";
-const element = React.createElement("h1", {}, `Hola, soy ${name}`);
+//const name = "Wladdy López";
+//const element = React.createElement("h1", {}, `Hola, soy ${name}`);
 
 //ELEMENTO CON JSX
-const sumFuntion = () => 3 + 3;
+//const sumFuntion = () => 3 + 3;
 /*
 const jsx = 
 <div>

@@ -6,11 +6,7 @@ import Gravatar from "../gravatar/Gravatar";
 
 class Badge extends React.Component {
   render() {
-
     
-    const firstName = "Wladimir";
-    const lastName = "López";
-
     return (
       <div className='Badge'>
         <div className='Badge_header'>

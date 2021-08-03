@@ -1,13 +1,13 @@
+import { Grid } from "@material-ui/core";
 import React, { Component } from "react";
-import "./sign-in.scss";
-import DSFormInputComponent from "./../../../commons/form-input/form-input.component";
 import DSButtonComponent from "../../../commons/button/button.component";
 import { signInWithGoogle } from "./../../../../ds-auth/firebase.utils";
-import { Divider, Grid } from "@material-ui/core";
-
-import googleIcon from "./../../../../images/icons/google_icon.svg";
 import facebookIcon from "./../../../../images/icons/facebook_icon.svg";
+import googleIcon from "./../../../../images/icons/google_icon.svg";
 import twitterIcon from "./../../../../images/icons/twitter_icon.svg";
+import DSFormInputComponent from "./../../../commons/form-input/form-input.component";
+import "./sign-in.scss";
+
 
 class SignInComponent extends Component {
   constructor(props) {
@@ -66,15 +66,15 @@ class SignInComponent extends Component {
 
           <div className="buttons-sn">
             <DSButtonComponent onClick={signInWithGoogle} socialSignIn>
-              <img src={googleIcon} style={{ width: 32 }} />
+              <img src={googleIcon} style={{ width: 32 }} alt="Login con Google"/>
             </DSButtonComponent>
 
             <DSButtonComponent onClick={signInWithGoogle} socialSignIn>
-              <img src={facebookIcon} style={{ width: 32 }} />
+              <img src={facebookIcon} style={{ width: 32 }} alt="Login con Facebook"/>
             </DSButtonComponent>
 
             <DSButtonComponent onClick={signInWithGoogle} socialSignIn>
-              <img src={twitterIcon} style={{ width: 32 }} />
+              <img src={twitterIcon} style={{ width: 32 }} alt="Login con Twitter"/>
             </DSButtonComponent>
           </div>
         </form>

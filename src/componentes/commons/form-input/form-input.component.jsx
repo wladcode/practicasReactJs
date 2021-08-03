@@ -10,7 +10,6 @@ const DSFormInputComponent = ({ handleChange, ...otherProps }) => {
         required
         fullWidth
         autoFocus
-        required
         InputLabelProps={{
           shrink: true,
         }}

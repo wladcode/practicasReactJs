@@ -73,7 +73,12 @@ class RickAndMortyAPI extends React.Component {
 
   changePagination = (event, value) => {
     console.log("CLIC: ", value);
-    this.state.pagination.current = value;
+    this.setState({
+      pagination :{
+        current :value
+      }
+    })
+    //this.state.pagination.current = value;
 
     console.log("this.state", this.state);
     this.fetchCharacters();

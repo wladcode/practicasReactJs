@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import SHOP_DATA from "./shop.data";
 import PreviewCollectionComponent from "./../../components/preview/preview.component";
-import { Container } from "@material-ui/core";
 
 class ShopPage extends Component {
   constructor(props) {

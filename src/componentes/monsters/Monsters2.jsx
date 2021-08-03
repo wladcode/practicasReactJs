@@ -1,28 +1,18 @@
 import {
-  Avatar,
   CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
+  CardContent, CardMedia,
   Container,
   Grid,
-  IconButton,
-  InputAdornment,
-  Paper,
-  TextField,
-  Typography,
+  IconButton, Typography
 } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
-import React, { Component } from "react";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import React, { Component } from "react";
+import SearchBox from "../commons/search-box/search-box.component";
 import "./card/card.css";
 
-import { AccountCircle } from "@material-ui/icons";
-import SearchIcon from "@material-ui/icons/Search";
-import SearchBox from "../commons/search-box/search-box.component";
 
 class Monsters2 extends Component {
   constructor() {
