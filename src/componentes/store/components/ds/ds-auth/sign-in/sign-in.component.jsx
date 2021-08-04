@@ -1,13 +1,12 @@
 import { Grid } from "@material-ui/core";
 import React, { Component } from "react";
-import DSButtonComponent from "../../../commons/button/button.component";
-import { signInWithGoogle } from "./../../../../ds-auth/firebase.utils";
-import facebookIcon from "./../../../../images/icons/facebook_icon.svg";
-import googleIcon from "./../../../../images/icons/google_icon.svg";
-import twitterIcon from "./../../../../images/icons/twitter_icon.svg";
-import DSFormInputComponent from "./../../../commons/form-input/form-input.component";
+import { auth, signInWithGoogle } from "./../firebase.utils";
+import facebookIcon from "./../../../../../../images/icons/facebook_icon.svg";
+import googleIcon from "./../../../../../../images/icons/google_icon.svg";
+import twitterIcon from "./../../../../../../images/icons/twitter_icon.svg";
 import "./sign-in.scss";
-
+import DSFormInputComponent from "./../../ds-input/ds-input.component";
+import DSButtonComponent from "./../../ds-button/ds-button.component";
 
 class SignInComponent extends Component {
   constructor(props) {
@@ -18,12 +17,20 @@ class SignInComponent extends Component {
     };
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    this.setState({
-      email: "",
-      password: "",
-    });
+    const { email, password } = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+
+      this.setState({
+        email: "",
+        password: "",
+      });
+    } catch (error) {
+      console.log("ERROR: ", error);
+    }
   };
 
   handleChange = (event) => {
@@ -62,19 +69,31 @@ class SignInComponent extends Component {
             <DSButtonComponent type="submit">Ingresar</DSButtonComponent>
           </div>
 
-          <div class="text-divider">o</div>
+          <div className="text-divider">o</div>
 
           <div className="buttons-sn">
-            <DSButtonComponent onClick={signInWithGoogle} socialSignIn>
-              <img src={googleIcon} style={{ width: 32 }} alt="Login con Google"/>
+            <DSButtonComponent type="button" onClick={signInWithGoogle} socialSignIn>
+              <img
+                src={googleIcon}
+                style={{ width: 32 }}
+                alt="Login con Google"
+              />
             </DSButtonComponent>
 
-            <DSButtonComponent onClick={signInWithGoogle} socialSignIn>
-              <img src={facebookIcon} style={{ width: 32 }} alt="Login con Facebook"/>
+            <DSButtonComponent type="button" onClick={signInWithGoogle} socialSignIn>
+              <img
+                src={facebookIcon}
+                style={{ width: 32 }}
+                alt="Login con Facebook"
+              />
             </DSButtonComponent>
 
-            <DSButtonComponent onClick={signInWithGoogle} socialSignIn>
-              <img src={twitterIcon} style={{ width: 32 }} alt="Login con Twitter"/>
+            <DSButtonComponent type="button" onClick={signInWithGoogle} socialSignIn>
+              <img
+                src={twitterIcon}
+                style={{ width: 32 }}
+                alt="Login con Twitter"
+              />
             </DSButtonComponent>
           </div>
         </form>

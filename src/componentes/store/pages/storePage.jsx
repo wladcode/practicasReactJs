@@ -2,13 +2,13 @@ import { Container } from "@material-ui/core";
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import HeaderComponent from "../components/header/header.component";
+import {
+  auth,
+  getUserProfileDocument,
+} from "./../components/ds/ds-auth/firebase.utils";
 import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 import SingUnSingUpPage from "./singin-singup-page/singin-singup-page";
-import {
-  auth,
-  createUserProfileDocument,
-} from "../../../ds-auth/firebase.utils";
 
 class StorePage extends Component {
   constructor(props) {
@@ -24,8 +24,7 @@ class StorePage extends Component {
   componentDidMount() {
     this.unsuscribeFormAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-
+        const userRef = await getUserProfileDocument(userAuth);
         userRef.onSnapshot((snapShot) => {
           this.setState(
             {
@@ -35,17 +34,20 @@ class StorePage extends Component {
               },
             },
             () => {
-              console.log("USERNEW: ", this.state);
+              console.log("USER IN PAGE STORE: ", this.state);
             }
           );
         });
       } else {
-        this.setState({
-          currentUser: userAuth,
-        });
+        this.setState(
+          {
+            currentUser: userAuth,
+          },
+          () => {
+            console.log("USER IN PAGE STORE: ", this.state);
+          }
+        );
       }
-
-      // console.log("onAuthStateChanged: ", user)
     });
   }
   componentWillUnmount() {

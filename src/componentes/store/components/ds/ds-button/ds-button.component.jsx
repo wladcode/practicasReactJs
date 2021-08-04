@@ -1,5 +1,5 @@
 import React from "react";
-import "./button.scss";
+import "./ds-button.scss";
 
 const DSButtonComponent = ({ children, socialSignIn, ...otherProps }) => {
   return <button className={`${socialSignIn ? "social-sign-in" : ""} custom-button`} {...otherProps}>

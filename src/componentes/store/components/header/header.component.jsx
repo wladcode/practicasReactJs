@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./header.scss";
 
 import { ReactComponent as Logo } from "../../../../assets/crown.svg";
-import { auth } from "../../../../ds-auth/firebase.utils";
+import { auth } from "./../ds/ds-auth/firebase.utils";
 
 const HeaderComponent = ({ currentUser }) => {
   return (

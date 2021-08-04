@@ -1,5 +1,5 @@
 import React from "react";
-import "./form-input.scss";
+import "./ds-input.scss";
 import { Grid, TextField } from "@material-ui/core";
 
 const DSFormInputComponent = ({ handleChange, ...otherProps }) => {
