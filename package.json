@@ -15,7 +15,7 @@
     "predeploy": "yarn build"
   },
   "dependencies": {
-    "@date-io/date-fns": "^1.3.13",
+    "@date-io/date-fns": "^2.11.0",
     "@fontsource/roboto": "^4.5.0",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
@@ -23,18 +23,18 @@
     "@material-ui/pickers": "^3.3.10",
     "@material-ui/styles": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.0",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
     "axios": "^0.21.1",
-    "bootstrap": "5.0.2",
+    "bootstrap": "5.1.0",
     "date-fns": "^2.21.3",
     "firebase": "^8.8.1",
     "formik": "^2.2.6",
     "gh-pages": "^3.2.3",
     "md5": "^2.2.1",
     "momment": "0.0.1",
-    "node-sass": "4.14.1",
-    "primeflex": "^2.0.0",
+    "node-sass": "6.0.1",
+    "primeflex": "^3.0.1",
     "primeicons": "^4.1.0",
     "primereact": "^6.0.0",
     "react": "^17.0.1",
@@ -42,13 +42,15 @@
     "react-dom": "^17.0.1",
     "react-jwt": "^1.1.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "react-transition-group": "^2.5.1",
-    "web-vitals": "^0.2.4"
+    "react-scripts": "4.0.3",
+    "react-swipeable-views": "^0.14.0",
+    "react-swipeable-views-native": "^0.13.2",
+    "react-transition-group": "^4.4.2",
+    "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "faker": "^4.1.0",
-    "json-server": "^0.14.2",
+    "faker": "^5.5.3",
+    "json-server": "^0.16.3",
     "npm-run-all": "^4.1.5"
   },
   "eslintConfig": {

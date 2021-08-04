@@ -26,9 +26,10 @@
   }
 
   &.social-sign-in {
-    min-width: 135px;
+    min-width: 70px;
     background-color: white;
     border: 1px solid silver;
+    padding: 0;
     &:hover {
       background-color:silver;
       border: none;

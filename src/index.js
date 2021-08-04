@@ -11,11 +11,11 @@ import ReactDOM from "react-dom";
 //import Badges from "./pages/Badges";
 import App from "./App";
 
-//import "bootstrap/dist/css/bootstrap.css";
+
 import "./global.css";
 
 import "./custome.scss"
-
+//import "bootstrap/dist/css/bootstrap.css";
 
 //ELEMENTOS
 //const element = <h1>Hello, Platzi desde REACT</h1>,
