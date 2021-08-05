@@ -2,7 +2,7 @@ import React from "react";
 import BadgesList from "../componentes/badgeslist/BadgesList";
 
 import "./styles/Badges.css";
-import confLogo from "../images/badge-header.svg";
+import confLogo from "../assets/badge-header.svg";
 import { Link } from "react-router-dom";
 
 import api from "../api/api";

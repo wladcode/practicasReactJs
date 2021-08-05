@@ -11,10 +11,9 @@ import ReactDOM from "react-dom";
 //import Badges from "./pages/Badges";
 import App from "./App";
 
-
 import "./global.css";
 
-import "./custome.scss"
+import "./custome.scss";
 //import "bootstrap/dist/css/bootstrap.css";
 
 //ELEMENTOS
@@ -36,9 +35,6 @@ const jsx =
 </div>
 */
 
-//CONTENEDOR
-const container = document.getElementById("app");
-
 //ReactDOM.render('que', 'donde');
 //ReactDOM.render(element, container);
 //ReactDOM.render(jsx, container);
@@ -56,4 +52,21 @@ avatarUrl = 'https://s.gravatar.com/avatar/1f895306b4331da3cc6913120f2ed123?s=80
 
 //ReactDOM.render(<BadgeNew />, container) ;
 //ReactDOM.render(<Badges />, container) ;
-ReactDOM.render(<App />, container) ;
+
+//Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
+//CONTENEDOR
+const container = document.getElementById("app");
+{
+  /*
+  ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  container
+);
+*/
+}
+
+ReactDOM.render(<App />, container);

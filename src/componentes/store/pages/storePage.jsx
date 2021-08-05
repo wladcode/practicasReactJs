@@ -1,6 +1,7 @@
 import { Container } from "@material-ui/core";
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
+import SingUnSingUpPage from "../components/ds/ds-auth/singin-singup-page/singin-singup-page";
 import HeaderComponent from "../components/header/header.component";
 import {
   auth,
@@ -8,7 +9,7 @@ import {
 } from "./../components/ds/ds-auth/firebase.utils";
 import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
-import SingUnSingUpPage from "./singin-singup-page/singin-singup-page";
+import { withRouter } from "react-router-dom";
 
 class StorePage extends Component {
   constructor(props) {
@@ -37,6 +38,8 @@ class StorePage extends Component {
               console.log("USER IN PAGE STORE: ", this.state);
             }
           );
+
+          this.props.history.push("/shopping");
         });
       } else {
         this.setState(
@@ -44,9 +47,11 @@ class StorePage extends Component {
             currentUser: userAuth,
           },
           () => {
-            console.log("USER IN PAGE STORE: ", this.state);
+            console.log("USER IN PAGE STORE null: ", this.state);
           }
         );
+
+        this.props.history.push("/signin");
       }
     });
   }
@@ -56,19 +61,33 @@ class StorePage extends Component {
   }
 
   render() {
+    const { currentUser } = this.state;
     return (
       <Container>
         <Route {...this.props}>
           <HeaderComponent currentUser={this.state.currentUser} />
-          <Switch>
-            <Route exact path="/store" component={HomePageStore} />
-            <Route exact path="/shop" component={ShopPage} />
-            <Route exact path="/signin" component={SingUnSingUpPage} />
-          </Switch>
+          <Route exact path="/signin" component={SingUnSingUpPage} />
+
+          <Route
+            exact
+            path="/shopping"
+            component={() => (
+              <HomePageStore currentUser={this.state.currentUser} />
+            )}
+          />
+          {currentUser ? (
+            <>
+              <Route exact path="/shop" component={ShopPage} />
+            </>
+          ) : (
+            <>
+              <Redirect to="signin" />
+            </>
+          )}
         </Route>
       </Container>
     );
   }
 }
 
-export default StorePage;
+export default withRouter(StorePage);

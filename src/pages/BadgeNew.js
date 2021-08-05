@@ -3,7 +3,7 @@ import React from "react";
 import Badge from "../componentes/badge/Badge";
 import BadgeForm from "../componentes/badgeform/BadgeForm";
 
-import header from "../images/platziconf-logo.svg";
+import header from "../assets/platziconf-logo.svg";
 import "./styles/BadgeNew.css";
 
 import api from "../api/api";

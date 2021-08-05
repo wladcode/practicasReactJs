@@ -8,18 +8,22 @@ import { auth } from "./../ds/ds-auth/firebase.utils";
 const HeaderComponent = ({ currentUser }) => {
   return (
     <div className="header">
-      <Link className="logo-container" to="/store">
+      <Link className="logo-container" to="/shopping">
         <Logo className="logo" />
       </Link>
       <div className="options">
-        <Link className="option" to="/shop">
-          SHOP
-        </Link>
-        <Link className="option" to="/shop">
-          CONTACT
-        </Link>
         {currentUser ? (
-          <div className="option" onClick={()=> auth.signOut()}>SALIR</div>
+          <>
+            <Link className="option" to="/shop">
+              SHOP
+            </Link>
+            <Link className="option" to="/shop">
+              CONTACT
+            </Link>
+            <div className="option" onClick={() => auth.signOut()}>
+              SALIR
+            </div>
+          </>
         ) : (
           <Link className="option" to="/signin">
             SING IN

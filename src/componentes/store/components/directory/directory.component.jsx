@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import "./directory.scss";
 import MenuItemComponent from "./../menu-item/menu-item.component";
 
-import SECTIONS_DATA from "./sections.data"
+import SECTIONS_DATA from "./sections.data";
+
+
 
 class DirectoryComponent extends Component {
   constructor(props) {
@@ -12,6 +14,8 @@ class DirectoryComponent extends Component {
       sections: SECTIONS_DATA,
     };
   }
+
+  
 
   render() {
     return (

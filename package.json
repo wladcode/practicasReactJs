@@ -41,10 +41,13 @@
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.1",
     "react-jwt": "^1.1.2",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-swipeable-views": "^0.14.0",
     "react-swipeable-views-native": "^0.13.2",
+    "redux": "^4.1.1",
+    "redux-logger": "^3.0.6",
     "react-transition-group": "^4.4.2",
     "web-vitals": "^2.1.0"
   },

@@ -1,9 +1,9 @@
 import { Grid } from "@material-ui/core";
 import React, { Component } from "react";
 import { auth, signInWithGoogle } from "./../firebase.utils";
-import facebookIcon from "./../../../../../../images/icons/facebook_icon.svg";
-import googleIcon from "./../../../../../../images/icons/google_icon.svg";
-import twitterIcon from "./../../../../../../images/icons/twitter_icon.svg";
+import facebookIcon from "./../../../../../../assets/icons/facebook_icon.svg";
+import googleIcon from "./../../../../../../assets/icons/google_icon.svg";
+import twitterIcon from "./../../../../../../assets/icons/twitter_icon.svg";
 import "./sign-in.scss";
 import DSFormInputComponent from "./../../ds-input/ds-input.component";
 import DSButtonComponent from "./../../ds-button/ds-button.component";
@@ -38,6 +38,8 @@ class SignInComponent extends Component {
 
     this.setState({ [name]: value });
   };
+
+  
   render() {
     return (
       <div className="sign-in">

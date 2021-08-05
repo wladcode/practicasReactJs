@@ -1,14 +1,9 @@
-import React, { Component } from "react";
-import "./singin-singup.scss";
-import SignUpComponent from "./../../components/ds/ds-auth/sign-up/sign.up.component";
-import SignInComponent from "../../components/ds/ds-auth/sign-in/sign-in.component";
 import { Tab, Tabs } from "@material-ui/core";
-import PhoneIcon from "@material-ui/icons/Phone";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import PersonPinIcon from "@material-ui/icons/PersonPin";
-import SwipeableViews from "react-swipeable-views";
-import { TabPanel } from "@material-ui/lab";
-import logoImage from './diamondSoft.png'
+import React, { Component } from "react";
+import SignInComponent from "../sign-in/sign-in.component";
+import logoImage from './diamondSoft.png';
+import "./singin-singup.scss";
+import SignUpComponent from './../sign-up/sign.up.component';
 
 
 class SingUnSingUpPage extends Component {

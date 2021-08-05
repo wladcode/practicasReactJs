@@ -2,7 +2,7 @@ import React from "react";
 
 import Badge from "../Badge";
 
-import confLogo from "../../../images/platziconf-logo.svg";
+import confLogo from "../../../assets/platziconf-logo.svg";
 import "./BagdeDetails.css";
 import { Link } from "react-router-dom";
 import DeleteBadgeModal from "../../modal/DeleteBadgeModal";
