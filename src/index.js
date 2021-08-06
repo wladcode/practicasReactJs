@@ -58,15 +58,9 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 //CONTENEDOR
 const container = document.getElementById("app");
-{
-  /*
-  ReactDOM.render(
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
   container
 );
-*/
-}
-
-ReactDOM.render(<App />, container);
