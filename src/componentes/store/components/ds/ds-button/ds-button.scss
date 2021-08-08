@@ -1,3 +1,9 @@
+@mixin normal-buttons {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+}
+
 @mixin hover-buttons {
   background-color: white;
   color: black;
@@ -9,17 +15,16 @@
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
-  //line-height: 50px;
+  //line-height: 5px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: #4285f4;
-  color: white;
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
   font-weight: bolder;
-  border: none;
   cursor: pointer;
   border-radius: 4px;
+  justify-content: center;
+  @include normal-buttons();
 
   &:hover {
     @include hover-buttons();
@@ -31,8 +36,16 @@
     border: 1px solid silver;
     padding: 0;
     &:hover {
-      background-color:silver;
+      background-color: silver;
       border: none;
+    }
+  }
+
+  &.inverted {
+    @include hover-buttons();
+
+    &:hover {
+      @include normal-buttons();
     }
   }
 }

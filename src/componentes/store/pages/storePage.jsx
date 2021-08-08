@@ -23,19 +23,15 @@ class StorePage extends Component {
         const userRef = await getUserProfileDocument(userAuth);
         userRef.onSnapshot((snapShot) => {
           setCurrentUser({
-            currentUser: {
-              id: snapShot.id,
-              ...snapShot.data(),
-            },
+            id: snapShot.id,
+            ...snapShot.data(),
           });
           console.log("USER IN PAGE STORE: ", this.state);
 
           this.props.history.push("/shopping");
         });
       } else {
-        setCurrentUser({
-          currentUser: userAuth,
-        });
+        setCurrentUser(userAuth);
 
         console.log("USER IN PAGE STORE null: ", this.state);
 
@@ -55,15 +51,8 @@ class StorePage extends Component {
           <HeaderComponent />
           <Route exact path="/signin" component={SingUnSingUpPage} />
 
-          <Route
-            exact
-            path="/shopping"
-            component={() => (
-              <HomePageStore />
-            )}
-          />
-          {/*
-          currentUser ? (
+          <Route exact path="/shopping" component={() => <HomePageStore />} />
+          {this.props.currentUser ? (
             <>
               <Route exact path="/shop" component={ShopPage} />
             </>
@@ -71,15 +60,25 @@ class StorePage extends Component {
             <>
               <Redirect to="signin" />
             </>
-          )*/}
+          )}
         </Route>
       </Container>
     );
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-});
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.user.currentUser,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  };
+};
 
-export default connect(null, mapDispatchToProps)(withRouter(StorePage));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(StorePage));
