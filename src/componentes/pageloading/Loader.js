@@ -7,7 +7,7 @@ export default class Loader extends Component {
   render() {
     return (
       <>
-        <CircularProgress />
+        <CircularProgress color="inherit" />
         Cargando ...
         {/*
           <div className="lds-grid">

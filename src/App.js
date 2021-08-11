@@ -13,27 +13,25 @@ import RickAndMortyAPI from "./pages/RickAndMortyApi";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/badges" component={Badges} />
-          <Route exact path="/badges/new" component={BadgeNew} />
-          <Route
-            exact
-            path="/badges/:badgeId"
-            component={BagdeDetailsContainer}
-          />
-          <Route exact path="/badges/:badgeId/edit" component={BagdeEdit} />
-          <Route exact path="/api" component={RickAndMortyAPI} />
-          <Route exact path="/monsters" component={Monsters2} />
+    <Layout>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/badges" component={Badges} />
+        <Route exact path="/badges/new" component={BadgeNew} />
+        <Route
+          exact
+          path="/badges/:badgeId"
+          component={BagdeDetailsContainer}
+        />
+        <Route exact path="/badges/:badgeId/edit" component={BagdeEdit} />
+        <Route exact path="/api" component={RickAndMortyAPI} />
+        <Route exact path="/monsters" component={Monsters2} />
 
-          <StorePage exact path="/:path?" />
+        <StorePage exact path="/:path?" />
 
-          <Route component={NotFound} />
-        </Switch>
-      </Layout>
-    </BrowserRouter>
+        <Route component={NotFound} />
+      </Switch>
+    </Layout>
   );
 }
 

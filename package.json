@@ -2,7 +2,6 @@
   "name": "platzi-badges",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chamow.github.io/practicasReactJs",
   "scripts": {
     "start": "npm-run-all -p client",
     "client": "react-scripts start",
@@ -49,6 +48,7 @@
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.1",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "reselect": "^4.0.0",
     "web-vitals": "^2.1.0"
   },
