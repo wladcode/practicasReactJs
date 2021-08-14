@@ -19,7 +19,7 @@ const CartDropDownComponent = ({ cartItems, history, dispatch }) => (
     </div>
     <DSButtonComponent
       onClick={() => {
-        history.push("/checkout");
+        history.push("/shop/checkout");
         dispatch(toogleCartPanel());
       }}
     >

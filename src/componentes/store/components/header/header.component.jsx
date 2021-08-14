@@ -14,15 +14,15 @@ import { selectHiddenPanel } from "../../../../redux/char/cart-selectors";
 const HeaderComponent = ({ currentUser, cartHidden }) => {
   return (
     <div className="header">
-      <Link className="logo-container" to="/shopping">
+      <Link className="logo-container" to="/shop">
         <Logo className="logo" />
       </Link>
       <div className="options">
         {currentUser ? (
           <>
             User: {currentUser.name}
-            <Link className="option" to="/shop">
-              SHOP
+            <Link className="option" to="/shop/store">
+              STORE
             </Link>
             <Link className="option" to="/shop">
               CONTACT
@@ -33,7 +33,7 @@ const HeaderComponent = ({ currentUser, cartHidden }) => {
             <CartIconComponent />
           </>
         ) : (
-          <Link className="option" to="/signin">
+          <Link className="option" to="/shop/signin">
             SING IN
           </Link>
         )}

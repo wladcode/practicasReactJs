@@ -24,7 +24,7 @@ export default class Home extends Component {
                 Monsters
               </Link>
 
-              <Link className="btn btn-secondary" to="/shopping">
+              <Link className="btn btn-secondary" to="/shop">
                 STORE
               </Link>
             </div>

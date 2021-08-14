@@ -14,12 +14,14 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "../../../redux/user/user.actions";
 import { selectCurrentUser } from "../../../redux/user/user-selectors";
 import { createStructuredSelector } from "reselect";
-import CheckoutPage from './check-out-page/check-out-page.component';
+import CheckoutPage from "./check-out-page/check-out-page.component";
 
 class StorePage extends Component {
   unsuscribeFormAuth = null;
 
   componentDidMount() {
+    console.log("THIS:PRPS ", this.props);
+
     const { setCurrentUser } = this.props;
     this.unsuscribeFormAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -31,14 +33,14 @@ class StorePage extends Component {
           });
           console.log("USER IN PAGE STORE: ", this.state);
 
-          this.props.history.push("/shopping");
+          this.props.history.push("/shop");
         });
       } else {
         setCurrentUser(userAuth);
 
         console.log("USER IN PAGE STORE null: ", this.state);
 
-        this.props.history.push("/signin");
+        this.props.history.push("/shop/signin");
       }
     });
   }
@@ -48,24 +50,36 @@ class StorePage extends Component {
   }
 
   render() {
+    console.log("THIS:PRPS in render ", this.props.match.path);
     return (
       <Container>
-        <Route {...this.props}>
-          <HeaderComponent />
-          <Route exact path="/signin" component={SingUnSingUpPage} />
-
-          <Route exact path="/shopping" component={() => <HomePageStore />} />
           {this.props.currentUser ? (
             <>
-              <Route exact path="/shop" component={ShopPage} />
-              <Route exact path="/checkout" component={CheckoutPage} />
+              <HeaderComponent />
+
+              <Route
+                exact
+                path={`${this.props.match.path}`}
+                component={() => <HomePageStore />}
+              />
+
+              <Route path={`${this.props.match.path}/store`} component={ShopPage} />
+
+              <Route
+                path={`${this.props.match.path}/checkout`}
+                component={CheckoutPage}
+              />
             </>
           ) : (
             <>
-              <Redirect to="signin" />
+              <Redirect to={`${this.props.match.path}/signin`} />
             </>
           )}
-        </Route>
+
+          <Route
+            path={`${this.props.match.path}/signin`}
+            component={SingUnSingUpPage}
+          />
       </Container>
     );
   }

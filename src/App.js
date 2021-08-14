@@ -16,20 +16,16 @@ function App() {
     <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/badges" component={Badges} />
-        <Route exact path="/badges/new" component={BadgeNew} />
-        <Route
-          exact
-          path="/badges/:badgeId"
-          component={BagdeDetailsContainer}
-        />
-        <Route exact path="/badges/:badgeId/edit" component={BagdeEdit} />
-        <Route exact path="/api" component={RickAndMortyAPI} />
-        <Route exact path="/monsters" component={Monsters2} />
+        <Route path="/badges" component={Badges} />
+        <Route path="/badges/new" component={BadgeNew} />
+        <Route path="/badges/:badgeId" component={BagdeDetailsContainer} />
+        <Route path="/badges/:badgeId/edit" component={BagdeEdit} />
+        <Route path="/api" component={RickAndMortyAPI} />
+        <Route path="/monsters" component={Monsters2} />
 
-        <StorePage exact path="/:path?" />
+        <Route path ="/shop" component= {StorePage} />
 
-        <Route component={NotFound} />
+        {/*<Route component={NotFound} />*/}
       </Switch>
     </Layout>
   );
