@@ -8,6 +8,10 @@ import "./sign-in.scss";
 import DSFormInputComponent from "./../../ds-input/ds-input.component";
 import DSButtonComponent from "./../../ds-button/ds-button.component";
 
+
+import { SingInContainer } from './sign-in.styled';
+
+
 class SignInComponent extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +46,7 @@ class SignInComponent extends Component {
   
   render() {
     return (
-      <div className="sign-in">
+      <SingInContainer>
         <div className="title">
           <h2>Tengo una cuenta</h2>
           <span>Ingresa con tu email y clave</span>
@@ -99,7 +103,7 @@ class SignInComponent extends Component {
             </DSButtonComponent>
           </div>
         </form>
-      </div>
+      </SingInContainer>
     );
   }
 }

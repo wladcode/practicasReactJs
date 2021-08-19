@@ -1,10 +1,11 @@
 import React from "react";
 import "./ds-button.scss";
+import { CustomeButtomContainer } from './ds-buttom.styled';
 
-const DSButtonComponent = ({ children, socialSignIn,inverted, ...otherProps }) => {
-  return <button className={`${inverted ? "inverted" : ""} ${socialSignIn ? "social-sign-in" : ""} custom-button`} {...otherProps}>
+const DSButtonComponent = ({ children, ...otherProps }) => {
+  return <CustomeButtomContainer  {...otherProps}>
       {children}
-  </button>;
+  </CustomeButtomContainer>;
 };
 
 export default DSButtonComponent;

@@ -20,7 +20,7 @@ const CollectionItemComponent = ({ item, addItemToCart }) => {
         <span className="price">{price}</span>
       </div>
 
-      <DSButtonComponent inverted onClick={() => addItemToCart(item)}>
+      <DSButtonComponent className="custom-button" inverted onClick={() => addItemToCart(item)}>
         Agregar al carrito
       </DSButtonComponent>
     </div>

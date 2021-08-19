@@ -1,5 +1,6 @@
-.sign-in {
-  //width: 440px;
+import styled from "styled-components";
+
+export const SingInContainer = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -18,11 +19,9 @@
     justify-content: space-around;
   }
 
- 
-
   .buttons-sn {
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
   }
-}
+`;
