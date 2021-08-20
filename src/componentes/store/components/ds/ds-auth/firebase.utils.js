@@ -11,12 +11,41 @@ const config = {
   appId: "1:33600603767:web:a0a5ed7cb1be2c9ced2872",
 };
 
+// Initialize Firebase
+firebase.initializeApp(config);
+
+const firestore = firebase.firestore();
+
+export const auth = firebase.auth();
+auth.languageCode = "es";
+
+
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: "select_account" });
+
 export const getUserProfileDocument = async (userAuth) => {
-  if (!userAuth) return;
+  if (!userAuth) return null;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const userShot = await userRef.get();
 
-  return userRef;
+  console.log("USERHOT: ", userShot.id)
+  console.log("USERHOT: ", userShot.data())
+/*
+  const collectionRef = firestore.collection("users");
+  const collectionShot = await collectionRef.get();
+  console.log({colection: collectionShot.docs.map(doc => doc.data())})
+*/
+
+
+  if (userShot.exists) {
+    return {
+      id: userShot.id,
+      ...userShot.data(),
+    };
+  }
+
+  return null;
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -51,22 +80,14 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     } catch (error) {
       console.log("error creating users: ", error.message);
     }
-  }else{
-    console.log("USUARIO YA EXISTE EN BDD")
+  } else {
+    console.log("USUARIO YA EXISTE EN BDD");
   }
 
   return userRef;
 };
 
-// Initialize Firebase
-firebase.initializeApp(config);
 
-export const auth = firebase.auth();
-auth.languageCode = "es";
-export const firestore = firebase.firestore();
-
-const googleProvider = new firebase.auth.GoogleAuthProvider();
-googleProvider.setCustomParameters({ prompt: "select_account" });
 
 export const signInWithGoogle = async () => {
   try {
