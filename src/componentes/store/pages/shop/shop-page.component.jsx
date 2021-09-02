@@ -1,23 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
-import { createStructuredSelector } from "reselect";
-import { fetchCollectionsStartAsync } from "../../../../redux/shop/shop-actions";
-import { selectIsCollectionFetching } from "./../../../../redux/shop/shop-selector";
-import CollectionOverViewComponent from "./../../components/collections-preview/collections-preview.component";
-import DSSnipper from "./../../components/ds/ds-spinner/ds-spinner.component";
-import CollectionPage from "./../collection/collection-page.componente";
+import { fetchCollectionsStartAsync, fetchCollectionsStart  } from "../../../../redux/shop/shop-actions";
+import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";
+import CollectionContainer from "./../collection/collection-page.container";
 
+/*
+Se reemplaza por el contenedor CollectionOverViewContainer
 const CollectionOverViewComponentWithSpinner = DSSnipper(
   CollectionOverViewComponent
 );
+*/
+/*
+Se reemplza por el contenedor CollectionContainer
 const CollectionPageWithSpinner = DSSnipper(CollectionPage);
+*/
 
 class ShopPage extends Component {
   componentDidMount() {
+    /* CON THUNKS
     const { fetchCollectionsStartAsync } = this.props;
-
     fetchCollectionsStartAsync();
+
+     */
+
+    /* CON SAGA
+     */
+
+    const { fetchCollectionsStart } = this.props;
+    fetchCollectionsStart();
 
     /*
     Uso de APIS REST
@@ -57,37 +68,39 @@ class ShopPage extends Component {
   }
 
   render() {
-    const { match, isCollectionFetching } = this.props;
+    const { match } = this.props;
 
     return (
       <div className="shop-page">
         <Route
           exact
           path={`${match.path}`}
-          render={(props) => (
-            <CollectionOverViewComponentWithSpinner
-              isLoading={isCollectionFetching}
-              {...props}
-            />
-          )}
+          component={CollectionOverViewContainer}
         />
+
         <Route
           path={`${match.path}/:collectionId`}
-          render={(props) => (
-            <CollectionPageWithSpinner isLoading={isCollectionFetching} {...props} />
-          )}
+          component={CollectionContainer}
         />
       </div>
     );
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  isCollectionFetching: selectIsCollectionFetching,
-});
 
+/*
+CON THUNKS
 const mapDispatchToProps = (dispatch) => ({
   fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
 });
+*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
+/*
+CON SAGA
+*/
+const mapDispatchToProps = (dispatch) => ({
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
+});
+
+
+export default connect(null, mapDispatchToProps)(ShopPage);

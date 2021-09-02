@@ -7,7 +7,7 @@ export const SHOP_DATA_START = "SHOP_DATA_START";
 export const SHOP_DATA_SUCCESS = "SHOP_DATA_SUCCESS";
 export const SHOP_DATA_ERROR = "SHOP_DATA_ERROR";
 
-export const fetchCollectionStart = () => ({
+export const fetchCollectionsStart = () => ({
   type: SHOP_DATA_START,
 });
 
@@ -24,7 +24,7 @@ export const fetchCollectionError = (errorMessage) => ({
 export const fetchCollectionsStartAsync = () => {
   return (dispath) => {
     const collectionRef = firestoreStoreApp.collection("shopData");
-    dispath(fetchCollectionStart());
+    dispath(fetchCollectionsStart());
 
     collectionRef
       .get()
