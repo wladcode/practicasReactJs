@@ -14,7 +14,7 @@ const config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-const firestore = firebase.firestore();
+export const firestore = firebase.firestore();
 
 export const auth = firebase.auth();
 auth.languageCode = "es";

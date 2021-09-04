@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
-import { fetchCollectionsStartAsync, fetchCollectionsStart  } from "../../../../redux/shop/shop-actions";
+import {
+  fetchCollectionsStartAsync,
+  fetchCollectionsStart,
+} from "../../../../redux/shop/shop-actions";
 import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";
 import CollectionContainer from "./../collection/collection-page.container";
 
@@ -16,21 +19,24 @@ Se reemplza por el contenedor CollectionContainer
 const CollectionPageWithSpinner = DSSnipper(CollectionPage);
 */
 
-class ShopPage extends Component {
-  componentDidMount() {
-    /* CON THUNKS
+function ShopPage({ fetchCollectionsStart, match }) {
+  useEffect(() => {
+    fetchCollectionsStart();
+  }, [fetchCollectionsStart]);
+
+  // componentDidMount() {
+  /* CON THUNKS
     const { fetchCollectionsStartAsync } = this.props;
     fetchCollectionsStartAsync();
 
      */
 
-    /* CON SAGA
-     */
+  /* CON SAGA
+   */
 
-    const { fetchCollectionsStart } = this.props;
-    fetchCollectionsStart();
+  // fetchCollectionsStart();
 
-    /*
+  /*
     Uso de APIS REST
      
     axios.get(
@@ -39,7 +45,7 @@ class ShopPage extends Component {
       .then((response) => console.log("REST COLLECTIONS: ",response))
       .catch((error) => console.log("error", error));
 */
-    /*
+  /*
     Uso de PROMESAS
 
       const collectionRef = firestoreStoreApp.collection("shopData");
@@ -53,7 +59,7 @@ class ShopPage extends Component {
       });
     });
 */
-    /*
+  /*
     Uso de OBSERVABLE
     collectionRef.onSnapshot(async (snapshot) => {
       const collectionsToMap = convertCollectionSnapshotToMap(snapshot);
@@ -65,28 +71,23 @@ class ShopPage extends Component {
       })
     });
     */
-  }
+  //}
 
-  render() {
-    const { match } = this.props;
+  return (
+    <div className="shop-page">
+      <Route
+        exact
+        path={`${match.path}`}
+        component={CollectionOverViewContainer}
+      />
 
-    return (
-      <div className="shop-page">
-        <Route
-          exact
-          path={`${match.path}`}
-          component={CollectionOverViewContainer}
-        />
-
-        <Route
-          path={`${match.path}/:collectionId`}
-          component={CollectionContainer}
-        />
-      </div>
-    );
-  }
+      <Route
+        path={`${match.path}/:collectionId`}
+        component={CollectionContainer}
+      />
+    </div>
+  );
 }
-
 
 /*
 CON THUNKS
@@ -101,6 +102,5 @@ CON SAGA
 const mapDispatchToProps = (dispatch) => ({
   fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
 });
-
 
 export default connect(null, mapDispatchToProps)(ShopPage);
