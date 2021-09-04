@@ -1,4 +1,4 @@
-import {SET_CURRENT_USER} from './user.actions'
+import { SET_CURRENT_USER, USER_LOGOUT_SUCCESS } from "./user.actions";
 
 const INITIAL_STATE = {
   currentUser: null,
@@ -12,10 +12,15 @@ const userReducer = (state = INITIAL_STATE, action) => {
         currentUser: action.payload,
       };
 
+    case USER_LOGOUT_SUCCESS:
+      return {
+        ...state,
+        currentUser: null,
+      };
+
     default:
       return state;
   }
 };
-
 
 export default userReducer;

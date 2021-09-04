@@ -1,10 +1,11 @@
+import { Grid } from "@material-ui/core";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { userSignUpStart } from "../../../../../../redux/user/user.actions";
+import DSButtonComponent from "../../ds-button/ds-button.component";
+import DSFormInputComponent from "../../ds-input/ds-input.component";
 import "./sign-up.scss";
 
-import { auth, createUserProfileDocument } from "../firebase.utils";
-import { Grid } from "@material-ui/core";
-import DSFormInputComponent from "../../ds-input/ds-input.component";
-import DSButtonComponent from "../../ds-button/ds-button.component";
 class SignUpComponent extends Component {
   constructor(props) {
     super(props);
@@ -19,28 +20,22 @@ class SignUpComponent extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+
+    const { signUp } = this.props;
     const { fullname, email, password, confirmPassword } = this.state;
     if (password !== confirmPassword) {
       alert("El password no coincide");
       return;
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-      await createUserProfileDocument(user, { fullname });
+    signUp({ fullname, email, password });
 
-      this.setState({
-        fullname: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-    } catch (error) {
-      console.log("ERROR EN LA CREAICON: ", error);
-    }
+    this.setState({
+      fullname: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
   };
 
   handleChange = (event) => {
@@ -101,4 +96,10 @@ class SignUpComponent extends Component {
   }
 }
 
-export default SignUpComponent;
+const mapDispathToProps = (dispath) => {
+  return {
+    signUp: (credentials) => dispath(userSignUpStart(credentials)),
+  };
+};
+
+export default connect(null, mapDispathToProps)(SignUpComponent);

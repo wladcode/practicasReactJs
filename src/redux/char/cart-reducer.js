@@ -1,5 +1,6 @@
 import {
   ADD_ITEM_CART,
+  CLEAR_CHART,
   REMOVE_ITEM_CART,
   REMOVE_ITEM_QUANTITY,
   TOGGLE_CART_PANEL,
@@ -40,6 +41,12 @@ const cartReducer = (state = INITIAL_STATE, action) => {
           //cartItems:  [...state.cartItems, action.payload],
           cartItems: removeItemQuantityUtil([...state.cartItems], action.payload),
         };
+
+        case CLEAR_CHART:
+          return {
+            ...state,
+            cartItems: []
+          }
 
     default:
       return state;

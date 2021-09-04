@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Redirect, Route, withRouter } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "../../../redux/user/user-selectors";
-import { setCurrentUser } from "../../../redux/user/user.actions";
+import { checkUserSession, setCurrentUser } from "../../../redux/user/user.actions";
 import SingUnSingUpPage from "../components/ds/ds-auth/singin-singup-page/singin-singup-page";
 import HeaderComponent from "../components/header/header.component";
 import {
@@ -23,7 +23,10 @@ class StorePage extends Component {
   componentDidMount() {
     console.log("THIS:PRPS ", this.props);
 
-    const { setCurrentUser, collectionsArray } = this.props;
+    const { setCurrentUser, collectionsArray , checkUserSession} = this.props;
+
+    //checkUserSession();
+    
     this.unsuscribeFormAuth = auth.onAuthStateChanged(async (userAuth) => {
       try {
         const userData = await getUserProfileDocument(userAuth);
@@ -45,6 +48,7 @@ class StorePage extends Component {
         this.props.history.push("/shop/signin");
       }
     });
+    
   }
   componentWillUnmount() {
     console.log("COMPONENT WILL UNMOUNT");
@@ -96,6 +100,8 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => {
   return {
     setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+    checkUserSession: () => dispatch(checkUserSession())
+
   };
 };
 

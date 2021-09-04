@@ -19,7 +19,6 @@ const firestore = firebase.firestore();
 export const auth = firebase.auth();
 auth.languageCode = "es";
 
-
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
 
@@ -29,14 +28,13 @@ export const getUserProfileDocument = async (userAuth) => {
   const userRef = firestore.doc(`users/${userAuth.uid}`);
   const userShot = await userRef.get();
 
-  console.log("USERHOT: ", userShot.id)
-  console.log("USERHOT: ", userShot.data())
-/*
+  console.log("USERHOT: ", userShot.id);
+  console.log("USERHOT: ", userShot.data());
+  /*
   const collectionRef = firestore.collection("users");
   const collectionShot = await collectionRef.get();
   console.log({colection: collectionShot.docs.map(doc => doc.data())})
 */
-
 
   if (userShot.exists) {
     return {
@@ -56,12 +54,12 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   const userShot = await userRef.get();
 
   if (!userShot.exists) {
-    console.log("CREANDO USUARIO");
+    console.log("CREANDO USUARIO: ", userAuth);
     const createdAt = new Date();
-    const { displayName, email, phoneNumber, photoURL } = userAuth;
+    const { name, email, phoneNumber, photoURL } = userAuth;
 
-    let dataToSafe = {
-      name: displayName,
+    const dataToSafe = {
+      name,
       email,
       phoneNumber,
       photoURL,
@@ -69,8 +67,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     };
 
     if (additionalData) {
-      //console.log("ADITIONAL DATA:", additionalData);
-      //console.log("ADITIONAL DATA:", additionalData.fullname);
+      console.log("ADITIONAL DATA:", additionalData);
+      console.log("ADITIONAL DATA:", additionalData.fullname);
       dataToSafe.name = additionalData.fullname;
     }
 
@@ -87,8 +85,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-
-
 export const signInWithGoogle = async () => {
   try {
     const result = await auth.signInWithPopup(googleProvider);
@@ -104,6 +100,16 @@ export const signInWithGoogle = async () => {
     console.log("ERROR en loguin con google: ", error);
     return;
   }
+};
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
+
+      resolve(userAuth);
+    }, reject);
+  });
 };
 
 export default firebase;
