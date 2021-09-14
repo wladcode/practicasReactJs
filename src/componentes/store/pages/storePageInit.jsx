@@ -18,7 +18,7 @@ import CheckoutPage from "./check-out-page/check-out-page.component";
 import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 
-function StorePage({ collectionsArray, history, match }) {
+function StorePageInit({ collectionsArray, history, match }) {
   const currentUser = useSelector(selectCurrentUser);
 
   const dispatch = useDispatch();
@@ -83,4 +83,4 @@ function StorePage({ collectionsArray, history, match }) {
   );
 }
 
-export default withRouter(StorePage);
+export default withRouter(StorePageInit);

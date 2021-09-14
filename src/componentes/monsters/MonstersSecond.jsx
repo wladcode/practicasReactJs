@@ -14,9 +14,9 @@ import SearchBox from "../commons/search-box/search-box.component";
 import "./card/card.css";
 
 
-class Monsters2 extends Component {
-  constructor() {
-    super();
+class MonstersSecond extends Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       monsters: [],
@@ -117,4 +117,4 @@ class Monsters2 extends Component {
     );
   }
 }
-export default Monsters2;
+export default MonstersSecond;

@@ -11,8 +11,6 @@ import ReactDOM from "react-dom";
 //import Badges from "./pages/Badges";
 import App from "./App";
 
-import "./global.css";
-
 import "./custome.scss";
 //import "bootstrap/dist/css/bootstrap.css";
 
@@ -57,19 +55,22 @@ avatarUrl = 'https://s.gravatar.com/avatar/1f895306b4331da3cc6913120f2ed123?s=80
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
+import apolloClientConfig from "./componentes/apollo-client/apollo-client-config";
+import { ApolloProvider } from "@apollo/react-common";
 
 
 //CONTENEDOR
 const container = document.getElementById("app");
 ReactDOM.render(
-  
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
+  <ApolloProvider client={apolloClientConfig}>
+    <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <PersistGate loading={null} persistor={persistor}>
+          <App />
+        </PersistGate>
       </BrowserRouter>
-    </PersistGate>
-  </Provider>,
+    </Provider>
+  </ApolloProvider>,
   container
 );

@@ -8,7 +8,6 @@ import { createStructuredSelector } from 'reselect';
 
 const CollectionOverViewComponent = ({collections}) => {
 
-  console.log("COLLETIONS: ", collections)
   return (
     <div className="collections-overview">
       {collections.map(({ id, ...otherCollectionProps }) => (

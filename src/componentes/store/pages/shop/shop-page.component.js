@@ -5,8 +5,12 @@ import {
   fetchCollectionsStartAsync,
   fetchCollectionsStart,
 } from "../../../../redux/shop/shop-actions";
-import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";
-import CollectionContainer from "./../collection/collection-page.container";
+
+//import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";
+import { default as CollectionOverViewContainer } from "./../../components/collections-overview/collection-overview-graphql.container";
+
+//import CollectionContainer from "./../collection/collection-page.container";
+import { default as CollectionContainer } from "./../collection/collection-page-graphql.container";
 
 /*
 Se reemplaza por el contenedor CollectionOverViewContainer

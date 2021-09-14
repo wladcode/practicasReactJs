@@ -1,23 +1,21 @@
-import { Container } from "@material-ui/core";
-import React, { Component } from "react";
+/*
+import { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect, Route, withRouter } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "../../../redux/user/user-selectors";
 import { checkUserSession, setCurrentUser } from "../../../redux/user/user.actions";
 import SingUnSingUpPage from "../components/ds/ds-auth/singin-singup-page/singin-singup-page";
-import HeaderComponent from "../components/header/header.component";
 import {
   auth,
   getUserProfileDocument
 } from "./../components/ds/ds-auth/firebase.utils";
 import CheckoutPage from "./check-out-page/check-out-page.component";
-import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 
 
 
-class StorePage extends Component {
+class StorePage2 extends Component {
   unsuscribeFormAuth = null;
 
   componentDidMount() {
@@ -108,4 +106,5 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(StorePage));
+)(withRouter(StorePage2));
+*/

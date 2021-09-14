@@ -1,33 +1,54 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import BagdeDetailsContainer from "./componentes/badge/badgedetails/BagdeDetailsContainer";
+import React, { lazy, Suspense } from "react";
+import { Route, Switch } from "react-router-dom";
 import Layout from "./componentes/layout/Layout";
-import Monsters2 from "./componentes/monsters/Monsters2";
-import StorePage from "./componentes/store/pages/storePage";
-import BagdeEdit from "./pages/BadgeEdit";
-import BadgeNew from "./pages/BadgeNew";
-import Badges from "./pages/Badges";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import RickAndMortyAPI from "./pages/RickAndMortyApi";
+import GlobalStyle from "./global.styles";
+import ErrorBoundary from "./componentes/store/components/error-boundary/error-boundary.component";
+
+const HomePage = lazy(() => import("./pages/Home"));
+
+const Badges = lazy(() => import("./pages/Badges"));
+const BadgeNew = lazy(() => import("./pages/BadgeNew"));
+const BagdeDetailsContainer = lazy(() =>
+  import("./componentes/badge/badgedetails/BagdeDetailsContainer")
+);
+const BagdeEdit = lazy(() => import("./pages/BadgeEdit"));
+const RickAndMortyAPI = lazy(() => import("./pages/RickAndMortyApi"));
+const MonstersSecond = lazy(() =>
+  import("./componentes/monsters/MonstersSecond")
+);
+const storePageInit = lazy(() =>
+  import("./componentes/store/pages/storePageInit")
+);
+
 
 function App() {
   return (
-    <Layout>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/badges" component={Badges} />
-        <Route path="/badges/new" component={BadgeNew} />
-        <Route path="/badges/:badgeId" component={BagdeDetailsContainer} />
-        <Route path="/badges/:badgeId/edit" component={BagdeEdit} />
-        <Route path="/api" component={RickAndMortyAPI} />
-        <Route path="/monsters" component={Monsters2} />
+    <div>
+      <GlobalStyle />
+      <Layout>
+        <Switch>
+          <ErrorBoundary>
+            <Suspense fallback={<div>..Loading</div>}>
+              <Route exact path="/" component={HomePage} />
 
-        <Route path ="/shop" component= {StorePage} />
+              <Route path="/badges" component={Badges} />
+              <Route path="/badges/new" component={BadgeNew} />
+              <Route
+                path="/badges/:badgeId"
+                component={BagdeDetailsContainer}
+              />
+              <Route path="/badges/:badgeId/edit" component={BagdeEdit} />
+              <Route path="/api" component={RickAndMortyAPI} />
+              <Route path="/monsters" component={MonstersSecond} />
 
-        {/*<Route component={NotFound} />*/}
-      </Switch>
-    </Layout>
+              <Route path="/shop" component={storePageInit} />
+            </Suspense>
+          </ErrorBoundary>
+
+          {/*<Route component={NotFound} />*/}
+        </Switch>
+      </Layout>
+    </div>
   );
 }
 
