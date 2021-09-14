@@ -9,7 +9,7 @@ import {
   setCurrentUser,
 } from "../../../redux/user/user.actions";
 import SingUnSingUpPage from "../components/ds/ds-auth/singin-singup-page/singin-singup-page";
-import HeaderComponent from "../components/header/header.component";
+import {default as HeaderComponent} from "../components/header/header.container";
 import {
   auth,
   getUserProfileDocument,

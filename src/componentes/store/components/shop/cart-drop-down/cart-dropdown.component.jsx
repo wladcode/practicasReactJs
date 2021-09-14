@@ -8,7 +8,7 @@ import DSButtonComponent from "./../../ds/ds-button/ds-button.component";
 import CartItem from "./../item/cart-item.component";
 import "./cart-dropdown.scss";
 
-function CartDropDownComponent({ cartItems, dispatch }) {
+function CartDropDownComponent({ cartItems, toogleCartPanel }) {
 
   const history = useHistory();
 
@@ -25,7 +25,7 @@ function CartDropDownComponent({ cartItems, dispatch }) {
       <DSButtonComponent
         onClick={() => {
           history.push("/shop/checkout");
-          dispatch(toogleCartPanel());
+          toogleCartPanel();
         }}
       >
         PAGAR
@@ -34,6 +34,8 @@ function CartDropDownComponent({ cartItems, dispatch }) {
   );
 }
 
+/*
+Con REDUX
 const mapStateToProps = (state) => {
   return {
     cartItems: selectCartItems(state),
@@ -41,3 +43,8 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(CartDropDownComponent);
+*/
+
+
+// Con graphql
+export default CartDropDownComponent;

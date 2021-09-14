@@ -20,10 +20,12 @@ const mapStateToProps = (state) => {
   };
 };
 
+/*
 const mapDispatchToProps = (dispacth) => {
   return {
     toogleCartPanel: (cart) => dispacth(toogleCartPanel()),
   };
 };
+*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartIconComponent);
+export default connect(mapStateToProps, null)(CartIconComponent);

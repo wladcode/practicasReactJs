@@ -56,8 +56,8 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { BrowserRouter } from "react-router-dom";
-import apolloClientConfig from "./componentes/apollo-client/apollo-client-config";
 import { ApolloProvider } from "@apollo/react-common";
+import apolloClientConfig from './graphql/apollo-client/apollo-client-config';
 
 
 //CONTENEDOR

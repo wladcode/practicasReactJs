@@ -1,10 +1,8 @@
 import React from "react";
-import "./collection-item.scss";
 import DSButtonComponent from "./../ds/ds-button/ds-button.component";
-import { addItemToCart } from "../../../../redux/char/cart-action";
-import { connect } from "react-redux";
+import "./collection-item.scss";
 
-const CollectionItemComponent = ({ item, addItemToCart }) => {
+const CollectionItemComponent = ({ item, addItem }) => {
   const { imageUrl, name, price } = item;
 
   return (
@@ -20,13 +18,19 @@ const CollectionItemComponent = ({ item, addItemToCart }) => {
         <span className="price">{price}</span>
       </div>
 
-      <DSButtonComponent className="custom-button" inverted onClick={() => addItemToCart(item)}>
+      <DSButtonComponent
+        className="custom-button"
+        inverted
+        onClick={() => addItem(item)}
+      >
         Agregar al carrito
       </DSButtonComponent>
     </div>
   );
 };
 
+/*
+CON REDUX
 const mapDispatchToProps = (dispatch) => {
   return {
     addItemToCart: (itemToAdd) => dispatch(addItemToCart(itemToAdd)),
@@ -34,3 +38,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(CollectionItemComponent);
+*/
+
+//Con graphql
+export default CollectionItemComponent;

@@ -5,8 +5,8 @@ import "./header.scss";
 import { ReactComponent as Logo } from "../../../../assets/crown.svg";
 import { auth } from "./../ds/ds-auth/firebase.utils";
 import { connect } from "react-redux";
-import CartDropDownComponent from "../shop/cart-drop-down/cart-dropdown.component";
-import CartIconComponent from "./../shop/shop-icon/shop-icon.component";
+import {default as CartDropDownComponent} from "../shop/cart-drop-down/cart-drop-down.container";
+import { default as CartIconComponent } from "./../shop/shop-icon/shop-icon.container";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "../../../../redux/user/user-selectors";
 import { selectHiddenPanel } from "../../../../redux/char/cart-selectors";
@@ -29,21 +29,15 @@ const HeaderComponent = ({ currentUser, cartHidden, userLogOutStart }) => {
         {currentUser ? (
           <>
             User: {currentUser.name}
-            <OptionLink to="/shop/store">
-              STORE
-            </OptionLink>
-            <OptionLink to="/shop">
-              CONTACT
-            </OptionLink>
+            <OptionLink to="/shop/store">STORE</OptionLink>
+            <OptionLink to="/shop">CONTACT</OptionLink>
             <OptionLink as="div" onClick={userLogOutStart}>
               SALIR
             </OptionLink>
             <CartIconComponent />
           </>
         ) : (
-          <OptionLink to="/shop/signin">
-            SING IN
-          </OptionLink>
+          <OptionLink to="/shop/signin">SING IN</OptionLink>
         )}
       </OptionsContainer>
 
@@ -54,13 +48,12 @@ const HeaderComponent = ({ currentUser, cartHidden, userLogOutStart }) => {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  cartHidden: selectHiddenPanel,
 });
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    userLogOutStart: () => dispatch(userLogOutStart())
-  }
-}
+    userLogOutStart: () => dispatch(userLogOutStart()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderComponent);
