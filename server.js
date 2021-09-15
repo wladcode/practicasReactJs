@@ -29,7 +29,7 @@ app.listen(port, (error) => {
 
 app.post('/payment', (req, res) => {
   const body = {
-    source: req.body.token.id,
+    source: req.body.token.id, 
     amount: req.body.amount,
     currency: 'usd'
   };
@@ -45,4 +45,4 @@ app.post('/payment', (req, res) => {
       });
     }
   });
-});
+}); 
