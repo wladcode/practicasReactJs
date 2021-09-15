@@ -3,19 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
-  "scripts": {
-    "start": "npm-run-all -p client",
-    "client": "react-scripts start",
-    "server": "json-server --port 3001 --watch server/db.json",
-    "seed": "node server/seed.js",
-    "build": " GENERATE_SOURCEMAP=false react-scripts build",
-    "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
-    "predeploy": "yarn build",
-    "webpakBuild": "webpack --mode production"
-  },
   "dependencies": {
     "@date-io/date-fns": "^2.11.0",
     "@fontsource/roboto": "^4.5.0",
@@ -67,6 +54,20 @@
     "faker": "^5.5.3",
     "json-server": "^0.16.3",
     "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start_old": "npm-run-all -p client",
+    "client": "react-scripts start",
+    "server": "json-server --port 3001 --watch server/db.json",
+    "seed": "node server/seed.js",
+    "build": " GENERATE_SOURCEMAP=false react-scripts build",
+    "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn build",
+    "webpakBuild": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
