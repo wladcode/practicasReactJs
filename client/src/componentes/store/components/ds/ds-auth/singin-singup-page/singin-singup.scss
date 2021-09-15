@@ -1,0 +1,66 @@
+$panel-primary-background-color: white;
+$panel-secondary-background-color: #ededf2;
+$border-style: 1px solid silver;
+$border-primary-radius: 32px;
+$border-secondary-radius: 16px;
+
+.sign-in-and-sign-up {
+  width: auto;
+  display: block;
+  border: $border-style;
+  border-radius: $border-primary-radius;
+  //padding: 20px 40px;
+  background-color: $panel-primary-background-color;
+  margin: 30px auto;
+
+  .login-logup {
+    width: auto;
+    border: none;
+    //border-right:solid 1px red;
+    border-radius: $border-primary-radius;
+    border-top-right-radius: $border-secondary-radius;
+    background-color: $panel-secondary-background-color;
+
+    .content {
+      padding: 20px 40px;
+    }
+  }
+  .login-banner {
+    width: auto;
+
+    & img {
+      width: 80%;
+      margin: auto;
+      display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+
+  .sign-in-and-sign-up {
+    width: 800px;
+    //text-align: center;
+    display: flex;
+    //flex-direction: row;
+    //justify-content: space-between;
+
+    .login-logup {
+      width: 400px;
+
+      .content {
+        padding: 20px 40px;
+      }
+    }
+    .login-banner {
+      width: 400px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

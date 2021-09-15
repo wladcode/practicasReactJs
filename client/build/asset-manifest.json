@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.62971502.chunk.css",
+    "main.js": "/static/js/main.b7a9ae4a.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.386b6ae9.js",
+    "static/js/2.a7c96827.chunk.js": "/static/js/2.a7c96827.chunk.js",
+    "index.html": "/index.html",
+    "static/js/2.a7c96827.chunk.js.LICENSE.txt": "/static/js/2.a7c96827.chunk.js.LICENSE.txt",
+    "static/media/BadgesList.css": "/static/media/Twitter_Social_Icon_Circle_Color.9d1aa5c5.svg",
+    "static/media/ds-alert.scss": "/static/media/alert-warning.1cca21d0.svg",
+    "static/media/badge-header.3e56976b.svg": "/static/media/badge-header.3e56976b.svg",
+    "static/media/crown.3a4e2b15.svg": "/static/media/crown.3a4e2b15.svg",
+    "static/media/facebook_icon.30cf95ed.svg": "/static/media/facebook_icon.30cf95ed.svg",
+    "static/media/google_icon.76392462.svg": "/static/media/google_icon.76392462.svg",
+    "static/media/notFound.84f2ce20.jpg": "/static/media/notFound.84f2ce20.jpg",
+    "static/media/platziconf-logo.8fbacde1.svg": "/static/media/platziconf-logo.8fbacde1.svg",
+    "static/media/shopping-cart.f23535dd.svg": "/static/media/shopping-cart.f23535dd.svg",
+    "static/media/Home.css": "/static/media/stars.7544bae9.svg",
+    "static/media/twitter_icon.02b92361.svg": "/static/media/twitter_icon.02b92361.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.386b6ae9.js",
+    "static/js/2.a7c96827.chunk.js",
+    "static/css/main.62971502.chunk.css",
+    "static/js/main.b7a9ae4a.chunk.js"
+  ]
+}

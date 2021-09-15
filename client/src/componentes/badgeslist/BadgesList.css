@@ -1,0 +1,40 @@
+.BadgesList ul > li {
+  margin-bottom: 1rem;
+}
+
+.BadgesListItem {
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  display: flex;
+  padding: 1rem;
+}
+
+.BadgesListItem_avatar {
+  border-radius: 50%;
+  background: #a3a3a3;
+  margin-right: 0.5rem;
+  width: 80px;
+  height: 80px;
+}
+.BadgesListNames {
+  font-weight: bold;
+}
+
+.BadgesListJob{
+  font-size: smaller;
+  font-weight: bold;
+}
+.Twitter_name {
+  color: #1da1f2;
+  
+}
+.Twitter_logo {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: url("../../assets/Twitter_Social_Icon_Circle_Color.svg"), #ffffff;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+
+}
