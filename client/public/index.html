@@ -6,6 +6,35 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/pwa/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/pwa/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/pwa/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/images/pwa/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta
+      name="msapplication-TileImage"
+      content="/images/pwa/mstile-144x144.png"
+    />
+    <meta name="theme-color" content="#cdbfbf" />
 
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <link
@@ -22,6 +51,19 @@
   </head>
 
   <body>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .catch(function (ex) {
+            console.warn(ex);
+            console.warn(
+              "(This warning can be safely ignored outside of the production build.)"
+            );
+          });
+      }
+    </script>
+
     <div id="app"></div>
 
     <div id="modal"></div>

@@ -59,6 +59,9 @@ import { BrowserRouter } from "react-router-dom";
 import apolloClientConfig from "./componentes/apollo-client/apollo-client-config";
 import { ApolloProvider } from "@apollo/react-common";
 
+//PWA
+import * as serviceWorker from './serviceWorkerRegistration';
+
 
 //CONTENEDOR
 const container = document.getElementById("app");
@@ -74,3 +77,6 @@ ReactDOM.render(
   </ApolloProvider>,
   container
 );
+
+
+serviceWorker.register();
