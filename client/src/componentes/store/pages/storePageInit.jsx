@@ -18,6 +18,8 @@ import CheckoutPage from "./check-out-page/check-out-page.component";
 import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 
+import currentUserContext from "../../../contexts/current-user.context";
+
 function StorePageInit({ collectionsArray, history, match }) {
   const currentUser = useSelector(selectCurrentUser);
 
@@ -60,7 +62,9 @@ function StorePageInit({ collectionsArray, history, match }) {
     <Container>
       {currentUser ? (
         <>
-          <HeaderComponent />
+          <currentUserContext.Provider>
+            <HeaderComponent />
+          </currentUserContext.Provider>
 
           <Route
             exact
