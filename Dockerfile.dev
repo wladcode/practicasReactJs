@@ -1,0 +1,27 @@
+# Base image
+FROM node:16-alpine
+
+# Work directory
+WORKDIR /usr/app
+
+# Copy package.json to work directory
+COPY package.json .
+
+# Run comands to install dependencies
+RUN yarn config set ignore-engines true
+RUN yarn  && pwd && mkdir client 
+COPY client/package.json ./client
+
+RUN cd client && pwd && yarn  && ls
+
+# Copy all the rest files
+RUN pwd
+
+COPY . .
+
+# Default commando for the image
+CMD [ "yarn", "dev" ]
+
+
+
+

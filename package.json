@@ -6,9 +6,10 @@
     "npm": "7.19.0"
   },
   "scripts": {
+    "test": "cd client && yarn test_react",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
-    "build": "cd client && npm run build",
+    "build": "cd client && yarn build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"

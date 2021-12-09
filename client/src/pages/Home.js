@@ -13,7 +13,7 @@ export default class Home extends Component {
             <div className="Home__col col-12 col-md-4">
               
 
-              <h1>Practicas React</h1>
+              <h1>Practicas React Wladimir López (chamow)</h1>
               <Link className="btn btn-primary" to="/badges">
                 Start
               </Link>
