@@ -4,6 +4,12 @@ import Layout from "./componentes/layout/Layout";
 import GlobalStyle from "./global.styles";
 import ErrorBoundary from "./componentes/store/components/error-boundary/error-boundary.component";
 
+import FirstComponent from './componentes/FirstComponent';
+import SecondComponent from './componentes/SecondComponent';
+import ThirdComponent from './componentes/ThirdComponent';
+import FourthComponent from './componentes/FourthComponent';
+
+
 const HomePage = lazy(() => import("./pages/Home"));
 
 const Badges = lazy(() => import("./pages/Badges"));
@@ -19,6 +25,7 @@ const MonstersSecond = lazy(() =>
 const storePageInit = lazy(() =>
   import("./componentes/store/pages/storePageInit")
 );
+
 
 
 function App() {
@@ -52,4 +59,15 @@ function App() {
   );
 }
 
+
+function LearningComponente() {
+  return (
+    <div>
+      <FirstComponent />
+      <SecondComponent />
+      <ThirdComponent />
+      <FourthComponent />
+    </div>
+  );
+}
 export default App;

@@ -15,17 +15,22 @@ import PageError from "../componentes/pageerror/PageError";
 import PageLoading from "../componentes/pageloading/PageLoading";
 
 class RickAndMortyAPI extends Component {
-  state = {
-    loading: true,
-    error: null,
-    data: {
-      results: [],
-    },
-    pagination: {
-      current: 1,
-      last: 100,
-    },
-  };
+  constructor(props) {
+    super(props)
+  
+    this.state =  {
+      loading: true,
+      error: null,
+      data: {
+        results: [],
+      },
+      pagination: {
+        current: 1,
+        last: 100,
+      },
+    };
+  }
+  
 
   componentDidMount() {
     this.fetchCharacters();
@@ -83,6 +88,8 @@ class RickAndMortyAPI extends Component {
     });
     */
     this.state.pagination.current = value;
+
+    this.setState((state) => ({ ...state, pagination: { current: value } }));
 
     console.log("this.state", this.state);
     this.fetchCharacters();
