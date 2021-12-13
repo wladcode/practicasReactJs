@@ -35,7 +35,7 @@ app.get("/service-worker.js", (req, res) => {
 
 app.post("/payment", (req, res) => {
   const body = {
-    source: req.body.token.id,
+    source: req.body.token.id, 
     amount: req.body.amount,
     currency: "usd",
   };
@@ -47,8 +47,8 @@ app.post("/payment", (req, res) => {
       });
     } else {
       res.status(200).send({
-        success: stripeRes,
+        success: stripeRes, 
       });
     }
   });
-});
+}); 

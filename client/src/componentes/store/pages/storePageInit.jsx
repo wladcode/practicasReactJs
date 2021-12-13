@@ -1,24 +1,23 @@
 import { Container } from "@material-ui/core";
-import React, { Component, useEffect } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Route, withRouter } from "react-router-dom";
-import { createStructuredSelector } from "reselect";
+import currentUserContext from "../../../contexts/current-user.context";
 import { selectCurrentUser } from "../../../redux/user/user-selectors";
 import {
   checkUserSession,
-  setCurrentUser,
+  setCurrentUser
 } from "../../../redux/user/user.actions";
 import SingUnSingUpPage from "../components/ds/ds-auth/singin-singup-page/singin-singup-page";
 import HeaderComponent from "../components/header/header.component";
 import {
   auth,
-  getUserProfileDocument,
+  getUserProfileDocument
 } from "./../components/ds/ds-auth/firebase.utils";
 import CheckoutPage from "./check-out-page/check-out-page.component";
 import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 
-import currentUserContext from "../../../contexts/current-user.context";
 
 function StorePageInit({ collectionsArray, history, match }) {
   const currentUser = useSelector(selectCurrentUser);
