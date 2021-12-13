@@ -4,8 +4,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t chamow01/practicasReact -f Dockerfile.dev .
+  - docker build -t chamow01/practicas-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true chamow01/practicasReact npm run test
+  - docker run -e CI=true chamow01/practicas-react npm run test
   
