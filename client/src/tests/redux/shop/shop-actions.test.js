@@ -27,7 +27,7 @@ describe("TESTING SHOP ACTIONS", () => {
 
     const action = store.getActions();
 
-    console.log("ACTION: ", action);
+    //console.log("ACTION: ", action);
     const expectedAction = {
       type: SHOP_DATA_START,
     };

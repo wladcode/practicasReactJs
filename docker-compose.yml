@@ -13,7 +13,7 @@ services:
       - /usr/app/node_modules
       - /usr/app/client/node_modules
       - .:/usr/app
-      #- ./client:/usr/app/client
+      - ./client:/usr/app/client
   
   practicas_react-tests:
     container_name: practicas_react-test
@@ -23,9 +23,9 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      #- /usr/app/node_modules
+      - /usr/app/node_modules
       - /usr/app/client/node_modules
       - .:/usr/app
-      #- ./client:/usr/app/client
-    command: ["yarn", "test"]
+      - ./client:/usr/app/client
+    command: ["npm", "run","test"]
     

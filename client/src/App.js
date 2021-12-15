@@ -23,7 +23,7 @@ const MonstersSecond = lazy(() =>
   import("./componentes/monsters/MonstersSecond")
 );
 const storePageInit = lazy(() =>
-  import("./componentes/store/pages/storePageInit")
+  import("./componentes/store/pages/storePageInit") 
 );
 
 

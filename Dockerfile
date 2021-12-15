@@ -4,9 +4,9 @@
 FROM node:16-alpine as builder
 WORKDIR /usr/app
 COPY client/package.json .
-RUN yarn
+RUN npm install
 COPY client .
-RUN yarn build
+RUN npm start build
 
 # Default commando for the image, no es necesario
 #CMD [ ]

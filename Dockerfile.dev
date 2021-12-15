@@ -8,11 +8,11 @@ WORKDIR /usr/app
 COPY package.json .
 
 # Run comands to install dependencies
-RUN yarn config set ignore-engines true
-RUN yarn  && pwd && mkdir client 
+#RUN yarn config set ignore-engines true
+RUN npm install && pwd && mkdir client 
 COPY client/package.json ./client
 
-RUN cd client && pwd && yarn  && ls
+RUN cd client && pwd && npm install  && ls
 
 # Copy all the rest files
 RUN pwd
@@ -20,7 +20,7 @@ RUN pwd
 COPY . .
 
 # Default commando for the image
-CMD [ "yarn", "dev" ]
+CMD [ "npm", "run", "dev" ]
 
 
 

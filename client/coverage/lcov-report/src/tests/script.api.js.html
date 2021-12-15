@@ -110,7 +110,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fetch = require("node-fetch");
 &nbsp;
 const getPeoplePromise = (fetch) =&gt; {
-  return fetch("https://swapi.dev/api/people")
+  return fetch("https://breakingbadapi.com/api/characters")
     .then((response) =&gt; response.json())
     .then((data) =&gt; {
       //console.log(data);
@@ -119,7 +119,7 @@ const getPeoplePromise = (fetch) =&gt; {
 };
 &nbsp;
 const getPeople = async (fetch) =&gt; {
-  const response = await fetch("https://swapi.dev/api/people");
+  const response = await fetch("https://breakingbadapi.com/api/characters");
   const data = await response.json();
 &nbsp;
   //console.log(data);
