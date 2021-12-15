@@ -1,31 +1,8 @@
 version: '3'
 services:
-  practicas_react:
-    container_name: practicas_react
-    environment:
-      - CHOKIDAR_USEPOLLING=true
+  web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - /usr/app/node_modules
-      - /usr/app/client/node_modules
-      - .:/usr/app
-      - ./client:/usr/app/client
-  
-  practicas_react-tests:
-    container_name: practicas_react-test
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /usr/app/node_modules
-      - /usr/app/client/node_modules
-      - .:/usr/app
-      - ./client:/usr/app/client
-    command: ["npm", "run","test"]
-    
+      - '80:80'

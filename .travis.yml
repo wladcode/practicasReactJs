@@ -8,4 +8,16 @@ before_install:
 
 script:
   - docker run -e CI=true chamow01/practicas-react npm run test
-  
+
+deploy:
+  provider: elasticbeanstalk
+  region: "sa-east-1"
+  app: "react docker"
+  env: "Reactdocker-env"
+  bucket_name: "elasticbeanstalk-sa-east-1-164051697849"
+  bucket_path: "react docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
