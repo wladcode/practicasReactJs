@@ -1,5 +1,5 @@
 import { Container } from "@material-ui/core";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Route, withRouter } from "react-router-dom";
 import currentUserContext from "../../../contexts/current-user.context";
@@ -19,8 +19,21 @@ import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 
 
+import Footer from "../components/footer/footer.styled";
+import ThemeContext, { themes } from "../utils/context/context"
+
+
 function StorePageInit({ collectionsArray, history, match }) {
   const currentUser = useSelector(selectCurrentUser);
+
+  const [theme, setTheme] = useState(themes.light);
+
+  const handleChangeTheme = () => {
+    console.log(theme);
+    setTheme(() => {
+      return theme === themes.dark ? themes.light : themes.dark;
+    });
+  };
 
   const dispatch = useDispatch();
 
@@ -82,7 +95,10 @@ function StorePageInit({ collectionsArray, history, match }) {
       )}
 
       <Route path={`${match.path}/signin`} component={SingUnSingUpPage} />
+
     </Container>
+
+    
   );
 }
 
