@@ -1,28 +1,26 @@
-import { all, call, put, takeLatest } from "redux-saga/effects";
+import { put, takeLatest } from "redux-saga/effects";
 import {
-    auth,
-    createUserProfileDocument,
-    getCurrentUser
+  auth,
+  createUserProfileDocument,
+  getCurrentUser,
 } from "./../../componentes/store/components/ds/ds-auth/firebase.utils";
 import {
-    CHECK_USER_SESSION, userLogOutSuccess,
-    userSignUpSuccess, USER_LOGOUT_START,
-    USER_SIGNUP_START,
-    USER_SIGNUP_SUCCESS
+  CHECK_USER_SESSION,
+  userLogOutSuccess,
+  userSignUpSuccess,
+  USER_LOGOUT_START,
+  USER_SIGNUP_START,
+  USER_SIGNUP_SUCCESS,
 } from "./user.actions";
 
-export function* isUserAuthenticated() {
+function* isUserAuthenticated() {
   try {
     const userAuth = yield getCurrentUser();
     if (!userAuth) return;
   } catch (error) {}
 }
 
-export function* onCheckUserSession() {
-  yield takeLatest(CHECK_USER_SESSION, isUserAuthenticated);
-}
-
-export function* signOut() {
+function* signOut() {
   try {
     yield auth.signOut();
     yield put(userLogOutSuccess());
@@ -31,11 +29,7 @@ export function* signOut() {
   }
 }
 
-export function* onSignOutStart() {
-  yield takeLatest(USER_LOGOUT_START, signOut);
-}
-
-export function* sagaSignUpStart(userCredenciales) {
+function* sagaSignUpStart(userCredenciales) {
   console.log("USER CREDENCIALS: ", userCredenciales);
 
   try {
@@ -49,31 +43,22 @@ export function* sagaSignUpStart(userCredenciales) {
   }
 }
 
-export function* onSignUpStart() {
-  yield takeLatest(USER_SIGNUP_START, sagaSignUpStart);
-}
-
-export function* sagaSignInAfterSingUp(data) {
-
-    console.log("USER data: ", data);
+function* sagaSignInAfterSingUp(data) {
+  console.log("USER data: ", data);
   try {
     const { user, additionalData } = data.payload;
 
     yield createUserProfileDocument(user, { additionalData });
-
   } catch (error) {
     yield console.log("ERROR EN SIGNUP: ", error.message);
   }
 }
-export function* onSignUpSuccess() {
-  yield takeLatest(USER_SIGNUP_SUCCESS, sagaSignInAfterSingUp);
-}
 
-export function* userSagas() {
-  yield all([
-    call(onCheckUserSession),
-    call(onSignOutStart),
-    call(onSignUpStart),
-    call(onSignUpSuccess),
-  ]);
-}
+const userSagas = [
+  takeLatest(CHECK_USER_SESSION, isUserAuthenticated),
+  takeLatest(USER_LOGOUT_START, signOut),
+  takeLatest(USER_SIGNUP_START, sagaSignUpStart),
+  takeLatest(USER_SIGNUP_SUCCESS, sagaSignInAfterSingUp),
+];
+
+export default userSagas;
