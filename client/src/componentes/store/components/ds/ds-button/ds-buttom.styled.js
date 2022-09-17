@@ -1,4 +1,6 @@
+import { Button } from "@material-ui/core";
 import styled, { css } from "styled-components";
+
 
 const HoverButtonsStyles = css`
   background-color: white;
@@ -6,19 +8,15 @@ const HoverButtonsStyles = css`
   border: 1px solid silver;
 `;
 
-
 const NormalButtonsStyles = css`
   background-color: #4285f4;
   color: white;
   border: none;
 
-   
   &:hover {
     ${HoverButtonsStyles}
   }
-
 `;
-
 
 const SocialSignInStyles = css`
   min-width: 70px;
@@ -31,8 +29,6 @@ const SocialSignInStyles = css`
   }
 `;
 
-
-
 const InvertedStyles = css`
   ${HoverButtonsStyles}
 
@@ -43,17 +39,19 @@ const InvertedStyles = css`
   }
 `;
 
+const disableButtonStyles = css`
+  cursor: not-allowed;
+`;
 
+const getButtonStyles = (props) => {
+  if (props.socialSignIn) {
+    return SocialSignInStyles;
+  }
 
-const getButtonStyles = props => {
-    if(props.socialSignIn){
-        return SocialSignInStyles;
-    }
+  return props.inverted ? InvertedStyles : NormalButtonsStyles;
+};
 
-    return props.inverted ? InvertedStyles : NormalButtonsStyles;
-}
-
-export const CustomeButtomContainer = styled.button`
+export const CustomeButtomContainer = styled(Button)`
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -67,8 +65,6 @@ export const CustomeButtomContainer = styled.button`
   cursor: pointer;
   border-radius: 4px;
   justify-content: center;
-
-
   ${getButtonStyles}
-
+  ${(props) => props.disabled && disableButtonStyles}
 `;

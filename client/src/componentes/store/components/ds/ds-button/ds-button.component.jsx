@@ -2,8 +2,8 @@ import React from "react";
 import "./ds-button.scss";
 import { CustomeButtomContainer } from './ds-buttom.styled';
 
-const DSButtonComponent = ({ children, ...otherProps }) => {
-  return <CustomeButtomContainer  {...otherProps}>
+const DSButtonComponent = ({ children,  ...otherProps }) => {
+  return <CustomeButtomContainer {...otherProps}>
       {children}
   </CustomeButtomContainer>;
 };
