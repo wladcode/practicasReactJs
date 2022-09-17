@@ -1,0 +1,8 @@
+{
+    "main.menu.rm": "API de Ricky y Morti",
+    "main.menu.monsters" : "API de monstruos",
+    "main.menu.shop" : "Ejemplo de shop",
+    "main.menu.react" : "Validaciiones con React",
+    "main.menu.formik" : "Validaciones con Formik",
+    "main.menu.formikYup":"Validaciones con Formik y YUP"
+}

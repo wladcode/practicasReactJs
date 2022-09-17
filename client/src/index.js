@@ -58,7 +58,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { BrowserRouter } from "react-router-dom";
 import apolloClientConfig from "./componentes/apollo-client/apollo-client-config";
 import { ApolloProvider } from "@apollo/react-common";
-
+import './i18n/i18nConfig'
 //PWA
 import * as serviceWorker from './serviceWorkerRegistration';
 

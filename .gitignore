@@ -29,3 +29,4 @@ yarn-debug.log*
 yarn-error.log*
 yarn.log
 package-lock.json
+client/yarn.lock

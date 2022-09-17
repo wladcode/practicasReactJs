@@ -1,0 +1,8 @@
+{
+    "main.menu.rm": "Ricky & Morti API",
+    "main.menu.monsters" : "Monster API",
+    "main.menu.shop" : "SHOP APP",
+    "main.menu.react" : "Validations with React",
+    "main.menu.formik" : "Validations with Formik",
+    "main.menu.formikYup":"Validations with Formik and YUP"
+}

@@ -2,13 +2,16 @@ import React, { lazy, Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./componentes/layout/Layout";
 import GlobalStyle from "./global.styles";
-import ErrorBoundary from "./componentes/store/components/error-boundary/error-boundary.component";
 
-import FirstComponent from './componentes/FirstComponent';
-import SecondComponent from './componentes/SecondComponent';
-import ThirdComponent from './componentes/ThirdComponent';
-import FourthComponent from './componentes/FourthComponent';
-
+import FirstComponent from "./componentes/FirstComponent";
+import FourthComponent from "./componentes/FourthComponent";
+import SecondComponent from "./componentes/SecondComponent";
+import ThirdComponent from "./componentes/ThirdComponent";
+import FormWithFormik from './pages/formik/FormWithFormik';
+import FormWithReact from "./pages/formik/FormWithReact";
+import NotFound from "./pages/NotFound";
+import FormWithFormikAndYup from "./pages/formik/FormWithFormikAndYup";
+import FormWithFormikAndYupHOC from "./pages/formik/FormWithFormikAndYupHOC";
 
 const HomePage = lazy(() => import("./pages/Home"));
 
@@ -23,42 +26,35 @@ const MonstersSecond = lazy(() =>
   import("./componentes/monsters/MonstersSecond")
 );
 const storePageInit = lazy(() =>
-  import("./componentes/store/pages/storePageInit") 
+  import("./componentes/store/pages/storePageInit")
 );
-
-
 
 function App() {
   return (
     <div>
       <GlobalStyle />
       <Layout>
-        <Switch>
-          <ErrorBoundary>
-            <Suspense fallback={<div>..Loading</div>}>
-              <Route exact path="/" component={HomePage} />
-
-              <Route path="/badges" component={Badges} />
-              <Route path="/badges/new" component={BadgeNew} />
-              <Route
-                path="/badges/:badgeId"
-                component={BagdeDetailsContainer}
-              />
-              <Route path="/badges/:badgeId/edit" component={BagdeEdit} />
-              <Route path="/api" component={RickAndMortyAPI} />
-              <Route path="/monsters" component={MonstersSecond} />
-
-              <Route path="/shop" component={storePageInit} />
-            </Suspense>
-          </ErrorBoundary>
-
-          {/*<Route component={NotFound} />*/}
-        </Switch>
+        <Suspense fallback={<div>..Loading</div>}>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/badges" component={Badges} />
+            <Route path="/badges/new" component={BadgeNew} />
+            <Route path="/badges/:badgeId" component={BagdeDetailsContainer} />
+            <Route path="/badges/:badgeId/edit" component={BagdeEdit} />
+            <Route path="/api" component={RickAndMortyAPI} />
+            <Route path="/monsters" component={MonstersSecond} />
+            <Route path="/shop" component={storePageInit} />
+            <Route path="/formReact" component={FormWithReact} />
+            <Route path="/formFormik" component={FormWithFormik} />
+            <Route path="/formFormikYUP" component={FormWithFormikAndYup} />
+            <Route path="/formFormikYUPHCO" component={FormWithFormikAndYupHOC} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Suspense>
       </Layout>
     </div>
   );
 }
-
 
 function LearningComponente() {
   return (

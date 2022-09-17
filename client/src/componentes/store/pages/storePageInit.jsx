@@ -6,22 +6,21 @@ import currentUserContext from "../../../contexts/current-user.context";
 import { selectCurrentUser } from "../../../redux/user/user-selectors";
 import {
   checkUserSession,
-  setCurrentUser
+  setCurrentUser,
 } from "../../../redux/user/user.actions";
 import SingUnSingUpPage from "../components/ds/ds-auth/singin-singup-page/singin-singup-page";
 import HeaderComponent from "../components/header/header.component";
 import {
   auth,
-  getUserProfileDocument
+  getUserProfileDocument,
 } from "./../components/ds/ds-auth/firebase.utils";
 import CheckoutPage from "./check-out-page/check-out-page.component";
 import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 
-
 import Footer from "../components/footer/footer.styled";
-import ThemeContext, { themes } from "../utils/context/context"
-
+import ThemeContext, { themes } from "../utils/context/context";
+import ErrorBoundary from "../components/error-boundary/error-boundary.component";
 
 function StorePageInit({ collectionsArray, history, match }) {
   const currentUser = useSelector(selectCurrentUser);
@@ -72,33 +71,32 @@ function StorePageInit({ collectionsArray, history, match }) {
 
   return (
     <Container>
-      {currentUser ? (
-        <>
-          <currentUserContext.Provider>
-            <HeaderComponent />
-          </currentUserContext.Provider>
+      <ErrorBoundary>
+        {currentUser ? (
+          <>
+            <currentUserContext.Provider>
+              <HeaderComponent />
+            </currentUserContext.Provider>
 
-          <Route
-            exact
-            path={`${match.path}`}
-            component={() => <HomePageStore />}
-          />
+            <Route
+              exact
+              path={`${match.path}`}
+              component={() => <HomePageStore />}
+            />
 
-          <Route path={`${match.path}/store`} component={ShopPage} />
+            <Route path={`${match.path}/store`} component={ShopPage} />
 
-          <Route path={`${match.path}/checkout`} component={CheckoutPage} />
-        </>
-      ) : (
-        <>
-          <Redirect to={`${match.path}/signin`} />
-        </>
-      )}
+            <Route path={`${match.path}/checkout`} component={CheckoutPage} />
+          </>
+        ) : (
+          <>
+            <Redirect to={`${match.path}/signin`} />
+          </>
+        )}
 
-      <Route path={`${match.path}/signin`} component={SingUnSingUpPage} />
-
+        <Route path={`${match.path}/signin`} component={SingUnSingUpPage} />
+      </ErrorBoundary>
     </Container>
-
-    
   );
 }
 
