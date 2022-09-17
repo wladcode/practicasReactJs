@@ -2,7 +2,7 @@
   "name": "practivas-react-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://chamow.github.io/practicasReactJs/",
   "dependencies": {
     "@date-io/date-fns": "^2.11.0",
     "@fontsource/roboto": "^4.5.0",
