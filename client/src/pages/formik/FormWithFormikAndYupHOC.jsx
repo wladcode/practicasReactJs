@@ -13,9 +13,7 @@ import { SingInContainer } from "./scss/sign-in.styled";
 
 class FormWithFormikAndYupHOC extends Component {
   render() {
-    const { handleChange, isValid, dirty } =
-      this.props;
-
+    const { isSubmitting, handleChange, isValid, dirty } = this.props;
 
     return (
       <SingInContainer>
@@ -27,7 +25,7 @@ class FormWithFormikAndYupHOC extends Component {
             </p>
           </div>
         </div>
-        <Form className="sign-in">
+        <Form className="sign-in" noValidate>
           <Grid container spacing={2}>
             <Field
               id="email"
@@ -49,11 +47,7 @@ class FormWithFormikAndYupHOC extends Component {
           </Grid>
 
           <div className="buttons">
-            <DSButtonComponent
-              type="submit"
-              className={!(dirty && isValid) ? "disabled-btn" : ""}
-              disabled={!(dirty && isValid)}
-            >
+            <DSButtonComponent type="submit" isSubmitting>
               Ingresar
             </DSButtonComponent>
           </div>
@@ -108,7 +102,8 @@ class FormWithFormikAndYupHOC extends Component {
 
 export default withFormik({
   enableReinitialize: true,
-  validateOnChange: true,
+  validateOnChange: false,
+  validateOnBlur: false,
   mapPropsToValues: (props) => ({
     email: "",
     password: "",
