@@ -12,7 +12,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 import "./custome.scss";
-//import "bootstrap/dist/css/bootstrap.css";
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 //ELEMENTOS
 //const element = <h1>Hello, Platzi desde REACT</h1>,
@@ -65,8 +65,10 @@ import * as serviceWorker from './serviceWorkerRegistration';
 
 //CONTENEDOR
 const container = document.getElementById("app");
+{/*<ApolloProvider client={apolloClientConfig}>*/}
+  {/*</ApolloProvider>*/}
 ReactDOM.render(
-  <ApolloProvider client={apolloClientConfig}>
+  
     <Provider store={store}>
       <BrowserRouter>
         <PersistGate loading={null} persistor={persistor}>
@@ -74,7 +76,7 @@ ReactDOM.render(
         </PersistGate>
       </BrowserRouter>
     </Provider>
-  </ApolloProvider>,
+  ,
   container
 );
 

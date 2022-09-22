@@ -21,8 +21,10 @@ export const fetchCollectionError = (errorMessage) => ({
   payload: errorMessage,
 });
 
+/*
 export const fetchCollectionsStartAsync = () => {
   return (dispath) => {
+    console.log("DISPATCHING ..")
     const collectionRef = firestoreStoreApp.collection("shopData");
     dispath(fetchCollectionsStart());
 
@@ -33,7 +35,9 @@ export const fetchCollectionsStartAsync = () => {
         dispath(fetchCollectionSuccess(collectionsToMap));
       })
       .catch((error) => {
+        console.log("ERROR ", error);
         dispath(fetchCollectionError(error.message));
       });
   };
 };
+*/

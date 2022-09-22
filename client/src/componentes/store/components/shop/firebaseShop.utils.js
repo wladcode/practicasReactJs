@@ -15,6 +15,8 @@ const storeApp = firebase.initializeApp(firebaseConfig, "secondary");
 
 export const firestoreStoreApp = storeApp.firestore();
 
+console.log("firestoreStoreApp: ", firestoreStoreApp)
+
 export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd

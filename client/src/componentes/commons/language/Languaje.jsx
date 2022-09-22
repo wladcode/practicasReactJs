@@ -5,37 +5,42 @@ import {
   Radio,
   RadioGroup,
 } from "@material-ui/core";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import i18next from "i18next";
 import { withTranslation } from "react-i18next";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Dropdown from "react-bootstrap/Dropdown";
 
 class LanguageComponent extends Component {
   state = {
     value: "",
   };
 
-  handleChange = (event) => {
-    this.setState({ value: event.target.value });
-    i18next.changeLanguage(event.target.value);
+  handleChange = (value) => {
+    console.log(value);
+    this.setState({ value: value });
+    i18next.changeLanguage(value);
   };
 
   render() {
     return (
-      <div>
-        <FormControl component="fieldset">
-          <FormLabel component="legend">Idioma</FormLabel>
-          <RadioGroup
-            aria-label="gender"
-            name="gender1"
-            value={this.state.value}
-            onChange={this.handleChange}
-          >
-            <FormControlLabel value="es" control={<Radio />} label="Espaniol" />
-            <FormControlLabel value="en" control={<Radio />} label="English" />
-          </RadioGroup>
-        </FormControl>
-      </div>
+      <Fragment>
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Idioma
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item as="button" onClick={(e) => this.handleChange("es")}>
+              Espa;ol
+            </Dropdown.Item>
+            <Dropdown.Item as="button" onClick={(e) => this.handleChange("en")}>
+              Ingles
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </Fragment>
     );
   }
 }

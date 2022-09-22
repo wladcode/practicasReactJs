@@ -13,6 +13,18 @@ import {
   USER_SIGNUP_SUCCESS,
 } from "./user.actions";
 
+
+const userSagas = [
+  takeLatest(CHECK_USER_SESSION, isUserAuthenticated),
+  takeLatest(USER_LOGOUT_START, signOut),
+  takeLatest(USER_SIGNUP_START, sagaSignUpStart),
+  takeLatest(USER_SIGNUP_SUCCESS, sagaSignInAfterSingUp),
+];
+
+export default userSagas;
+
+
+
 function* isUserAuthenticated() {
   try {
     const userAuth = yield getCurrentUser();
@@ -54,11 +66,3 @@ function* sagaSignInAfterSingUp(data) {
   }
 }
 
-const userSagas = [
-  takeLatest(CHECK_USER_SESSION, isUserAuthenticated),
-  takeLatest(USER_LOGOUT_START, signOut),
-  takeLatest(USER_SIGNUP_START, sagaSignUpStart),
-  takeLatest(USER_SIGNUP_SUCCESS, sagaSignInAfterSingUp),
-];
-
-export default userSagas;

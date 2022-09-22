@@ -1,16 +1,16 @@
 import React, { Component, useEffect } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
 import {
   fetchCollectionsStartAsync,
   fetchCollectionsStart,
 } from "../../../../redux/shop/shop-actions";
 
-//import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";
-import { default as CollectionOverViewContainer } from "./../../components/collections-overview/collection-overview-graphql.container";
+import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";
+//import { default as CollectionOverViewContainer } from "./../../components/collections-overview/collection-overview-graphql.container";
 
-//import CollectionContainer from "./../collection/collection-page.container";
-import { default as CollectionContainer } from "./../collection/collection-page-graphql.container";
+import CollectionContainer from "./../collection/collection-page.container";
+//import { default as CollectionContainer } from "./../collection/collection-page-graphql.container";
 
 /*
 Se reemplaza por el contenedor CollectionOverViewContainer
@@ -23,10 +23,13 @@ Se reemplza por el contenedor CollectionContainer
 const CollectionPageWithSpinner = DSSnipper(CollectionPage);
 */
 
-function ShopPage({ fetchCollectionsStart, match }) {
+function ShopPage({ match }) {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchCollectionsStart();
-  }, [fetchCollectionsStart]);
+    console.log("en use effect de shoppage");
+    dispatch(fetchCollectionsStart());
+  }, [dispatch]);
 
   // componentDidMount() {
   /* CON THUNKS
@@ -103,8 +106,11 @@ const mapDispatchToProps = (dispatch) => ({
 /*
 CON SAGA
 */
+/*
 const mapDispatchToProps = (dispatch) => ({
   fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
 });
+*/
 
-export default connect(null, mapDispatchToProps)(ShopPage);
+//export default connect(null, mapDispatchToProps)(ShopPage);
+export default ShopPage;

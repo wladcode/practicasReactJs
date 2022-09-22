@@ -8,6 +8,8 @@ import { createStructuredSelector } from 'reselect';
 
 const CollectionOverViewComponent = ({collections}) => {
 
+  console.log("CONTAINE R ", collections);
+
   return (
     <div className="collections-overview">
       {collections.map(({ id, ...otherCollectionProps }) => (
