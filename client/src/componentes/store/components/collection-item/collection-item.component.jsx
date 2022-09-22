@@ -4,7 +4,7 @@ import DSButtonComponent from "./../ds/ds-button/ds-button.component";
 import { addItemToCart } from "../../../../redux/char/cart-action";
 import { connect } from "react-redux";
 
-const CollectionItemComponent = ({ item, addItemToCart }) => {
+const CollectionItemComponent = ({ item, dispatch }) => {
   const { imageUrl, name, price } = item;
 
   return (
@@ -20,17 +20,24 @@ const CollectionItemComponent = ({ item, addItemToCart }) => {
         <span className="price">{price}</span>
       </div>
 
-      <DSButtonComponent className="custom-button" inverted onClick={() => addItemToCart(item)}>
+      <DSButtonComponent
+        className="custom-button"
+        inverted
+        onClick={() => dispatch(addItemToCart(item))}
+      >
         Agregar al carrito
       </DSButtonComponent>
     </div>
   );
 };
 
+/*
+SI NO SE SETEA, se pasa la funcion dispatch como propiedad en el componente
 const mapDispatchToProps = (dispatch) => {
   return {
     addItemToCart: (itemToAdd) => dispatch(addItemToCart(itemToAdd)),
   };
 };
+*/
 
-export default connect(null, mapDispatchToProps)(CollectionItemComponent);
+export default connect()(CollectionItemComponent);

@@ -1,9 +1,8 @@
-import React, { Component, useEffect } from "react";
-import { connect, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
 import {
-  fetchCollectionsStartAsync,
-  fetchCollectionsStart,
+  fetchCollectionsStart
 } from "../../../../redux/shop/shop-actions";
 
 import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";

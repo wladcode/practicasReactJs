@@ -7,12 +7,7 @@ import {
   addItemToCart,
 } from "../../../../../redux/char/cart-action";
 
-const CheckOutItem = ({
-  cartItem,
-  removeItemFromCart,
-  addItemToCart,
-  removeItemQuantity,
-}) => {
+const CheckOutItem = ({ cartItem, dispatch }) => {
   const { imageUrl, name, quantity, price } = cartItem;
   return (
     <div className="checkout-item">
@@ -21,18 +16,24 @@ const CheckOutItem = ({
       </div>
       <span className="name">{name}</span>
       <div className="quantity">
-        <div className="arrow" onClick={() => removeItemQuantity(cartItem)}>
+        <div
+          className="arrow"
+          onClick={() => dispatch(removeItemQuantity(cartItem))}
+        >
           &#10094;
         </div>
         <span className="value">{quantity}</span>
-        <div className="arrow" onClick={() => addItemToCart(cartItem)}>
+        <div
+          className="arrow"
+          onClick={() => dispatch(addItemToCart(cartItem))}
+        >
           &#10095;
         </div>
       </div>
       <span className="price">{price}</span>
       <div
         className="remove-button"
-        onClick={() => removeItemFromCart(cartItem)}
+        onClick={() => dispatch(removeItemFromCart(cartItem))}
       >
         &#10060;
       </div>
@@ -40,6 +41,8 @@ const CheckOutItem = ({
   );
 };
 
+/*
+SI NO SE SETEA, se pasa la funcion dispatch como propiedad en el componente
 const mapDispatchToProps = (dispacth) => {
   return {
     removeItemFromCart: (item) => dispacth(removeItemFromCart(item)),
@@ -49,3 +52,6 @@ const mapDispatchToProps = (dispacth) => {
 };
 
 export default connect(null, mapDispatchToProps)(CheckOutItem);
+*/
+
+export default connect()(CheckOutItem);
