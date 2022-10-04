@@ -2,7 +2,12 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'Spectral', serif !important;
   }
   
+  .directory-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
