@@ -13,7 +13,7 @@ import { SingInContainer } from "./scss/sign-in.styled";
 
 class FormWithFormikAndYupHOC extends Component {
   render() {
-    const { isSubmitting, handleChange, isValid, dirty } = this.props;
+    const {  handleChange, isValid, dirty } = this.props;
 
     return (
       <SingInContainer>
@@ -57,7 +57,7 @@ class FormWithFormikAndYupHOC extends Component {
           <div className="buttons-sn">
             <DSButtonComponent
               type="submit"
-              socialSignIn
+              isSocial
               className={!(dirty && isValid) ? "disabled-btn" : ""}
               disabled={!(dirty && isValid)}
             >
@@ -70,7 +70,7 @@ class FormWithFormikAndYupHOC extends Component {
 
             <DSButtonComponent
               type="submit"
-              socialSignIn
+              isSocial
               className={!(dirty && isValid) ? "disabled-btn" : ""}
               disabled={!(dirty && isValid)}
             >
@@ -83,7 +83,7 @@ class FormWithFormikAndYupHOC extends Component {
 
             <DSButtonComponent
               type="submit"
-              socialSignIn
+              isSocial
               className={!(dirty && isValid) ? "disabled-btn" : ""}
               disabled={!(dirty && isValid)}
             >

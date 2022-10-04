@@ -5,8 +5,7 @@ import { selectCollection } from "../../../../redux/shop/shop-selector";
 import CollectionItemComponent from "./../../components/collection-item/collection-item.component";
 import "./collection-page.scss";
 
-function CollectionPage({}) {
-
+function CollectionPage() {
   const params = useParams();
   const collection = useSelector(selectCollection(params.collectionId));
 

@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./collections-preview.scss";
-import { selectCollections, selectCollectionsForPreview } from "./../../../../redux/shop/shop-selector";
 import { connect } from "react-redux";
-import PreviewCollectionComponent from "./../preview/preview.component";
 import { createStructuredSelector } from 'reselect';
+import { selectCollectionsForPreview } from "./../../../../redux/shop/shop-selector";
+import PreviewCollectionComponent from "./../preview/preview.component";
+import "./collections-preview.scss";
 
 const CollectionOverViewComponent = ({collections}) => {
 

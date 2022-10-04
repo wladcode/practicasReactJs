@@ -111,7 +111,7 @@ function FormWithFormik() {
               <div className="buttons-sn">
                 <DSButtonComponent
                   type="submit"
-                  socialSignIn
+                  isSocial
                   className={!(dirty && isValid) ? "disabled-btn" : ""}
                   disabled={!(dirty && isValid)}
                 >
@@ -124,7 +124,7 @@ function FormWithFormik() {
 
                 <DSButtonComponent
                   type="submit"
-                  socialSignIn
+                  isSocial
                   className={!(dirty && isValid) ? "disabled-btn" : ""}
                   disabled={!(dirty && isValid)}
                 >
@@ -137,7 +137,7 @@ function FormWithFormik() {
 
                 <DSButtonComponent
                   type="submit"
-                  socialSignIn
+                  isSocial
                   className={!(dirty && isValid) ? "disabled-btn" : ""}
                   disabled={!(dirty && isValid)}
                 >

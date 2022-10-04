@@ -1,12 +1,12 @@
 import { Grid } from "@material-ui/core";
-import React, { Component, useState } from "react";
-import { auth, signInWithGoogle } from "./../firebase.utils";
+import React, { useState } from "react";
 import facebookIcon from "./../../../../../../assets/icons/facebook_icon.svg";
 import googleIcon from "./../../../../../../assets/icons/google_icon.svg";
 import twitterIcon from "./../../../../../../assets/icons/twitter_icon.svg";
-import "./sign-in.scss";
-import DSFormInputComponent from "./../../ds-input/ds-input.component";
 import DSButtonComponent from "./../../ds-button/ds-button.component";
+import DSFormInputComponent from "./../../ds-input/ds-input.component";
+import { auth, signInWithGoogle } from "./../firebase.utils";
+import "./sign-in.scss";
 
 import { SingInContainer } from "./sign-in.styled";
 
@@ -77,7 +77,7 @@ function SignInComponent() {
           <DSButtonComponent
             type="button"
             onClick={signInWithGoogle}
-            socialSignIn
+            isSocial
           >
             <img
               src={googleIcon}
@@ -89,7 +89,7 @@ function SignInComponent() {
           <DSButtonComponent
             type="button"
             onClick={signInWithGoogle}
-            socialSignIn
+            isSocial
           >
             <img
               src={facebookIcon}
@@ -101,7 +101,7 @@ function SignInComponent() {
           <DSButtonComponent
             type="button"
             onClick={signInWithGoogle}
-            socialSignIn
+            isSocial
           >
             <img
               src={twitterIcon}

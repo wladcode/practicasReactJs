@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./header.scss";
 
 import { connect } from "react-redux";
@@ -13,7 +13,7 @@ import {
   HeaderContainer,
   LogoContainer,
   OptionLink,
-  OptionsContainer,
+  OptionsContainer
 } from "./header.styled";
 
 const HeaderComponent = ({ currentUser, cartHidden, dispatch }) => {

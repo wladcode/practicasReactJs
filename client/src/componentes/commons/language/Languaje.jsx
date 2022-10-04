@@ -1,15 +1,6 @@
-import {
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Radio,
-  RadioGroup,
-} from "@material-ui/core";
 import React, { Component, Fragment } from "react";
 
 import i18next from "i18next";
-import { withTranslation } from "react-i18next";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Dropdown from "react-bootstrap/Dropdown";
 
 class LanguageComponent extends Component {
@@ -33,7 +24,7 @@ class LanguageComponent extends Component {
 
           <Dropdown.Menu>
             <Dropdown.Item as="button" onClick={(e) => this.handleChange("es")}>
-              Espa;ol
+              Español
             </Dropdown.Item>
             <Dropdown.Item as="button" onClick={(e) => this.handleChange("en")}>
               Ingles

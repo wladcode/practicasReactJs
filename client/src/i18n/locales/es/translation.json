@@ -4,5 +4,6 @@
     "main.menu.shop" : "Ejemplo de shop",
     "main.menu.react" : "Validaciiones con React",
     "main.menu.formik" : "Validaciones con Formik",
-    "main.menu.formikYup":"Validaciones con Formik y YUP"
+    "main.menu.formikYup":"Validaciones con Formik y YUP",
+    "main.menu.formikYupHCO" : "Validations con Formik y YUP - HCO"
 }

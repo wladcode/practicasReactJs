@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import React, { useContext } from 'react';
 import ThemeContext from '../../utils/context/context';
 

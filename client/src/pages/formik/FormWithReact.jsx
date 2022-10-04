@@ -15,10 +15,6 @@ function FormWithReact() {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const signInWithGoogle = () => {
-    console.log(`signInWith google ...${JSON.stringify(formValues)}`);
-  };
-
   const handleChange = (event) => {
     const { value, name } = event.target;
 
@@ -58,10 +54,14 @@ function FormWithReact() {
   const { email, password } = formValues;
 
   useEffect(() => {
+    const signInWithGoogle = () => {
+      console.log(`signInWith google ...${JSON.stringify(formValues)}`);
+    };
+
     if (Object.keys(formErrors).length === 0 && isSubmitting) {
       signInWithGoogle();
     }
-  }, [formErrors]);
+  }, [formErrors, isSubmitting, formValues]);
 
   return (
     <SingInContainer>
@@ -109,7 +109,7 @@ function FormWithReact() {
         <div className="text-divider">o</div>
 
         <div className="buttons-sn">
-          <DSButtonComponent type="submit" socialSignIn>
+          <DSButtonComponent type="submit" isSocial>
             <img
               src={googleIcon}
               style={{ width: 32 }}
@@ -117,7 +117,7 @@ function FormWithReact() {
             />
           </DSButtonComponent>
 
-          <DSButtonComponent type="submit" socialSignIn>
+          <DSButtonComponent type="submit" isSocial>
             <img
               src={facebookIcon}
               style={{ width: 32 }}
@@ -125,7 +125,7 @@ function FormWithReact() {
             />
           </DSButtonComponent>
 
-          <DSButtonComponent type="submit" socialSignIn>
+          <DSButtonComponent type="submit" isSocial>
             <img
               src={twitterIcon}
               style={{ width: 32 }}

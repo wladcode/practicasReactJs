@@ -1,3 +1,37 @@
-.imagen-container{
+
+.card-container {
+   /*
+    
+    background-color: #95dada !important;
+    
+    
+    
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out !important;
+    */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey !important;
+    border-bottom: 3px solid grey !important;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+  
+  .card-container:hover {
+      transform: scale(1.05);
+  }
+  
+  .text-title{
+    font-family: 'Metal Mania', cursive;
+    font-size: 72px;
+  }
+  
+  
+
+.card-imagen{
     width: 150px;
 }

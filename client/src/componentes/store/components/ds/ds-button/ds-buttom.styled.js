@@ -44,7 +44,8 @@ const disableButtonStyles = css`
 `;
 
 const getButtonStyles = (props) => {
-  if (props.socialSignIn) {
+  console.log("props in styled ", props)
+  if (props.isSocial) {
     return SocialSignInStyles;
   }
 

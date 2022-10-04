@@ -11,7 +11,7 @@ import ReactDOM from "react-dom";
 //import Badges from "./pages/Badges";
 import App from "./App";
 
-import "./custome.scss";
+import "./styles/main.scss";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 //ELEMENTOS
@@ -52,33 +52,30 @@ avatarUrl = 'https://s.gravatar.com/avatar/1f895306b4331da3cc6913120f2ed123?s=80
 //ReactDOM.render(<Badges />, container) ;
 
 //Redux
+//import { ApolloProvider } from "@apollo/react-common";
 import { Provider } from "react-redux";
-import { store, persistor } from "./redux/store";
-import { PersistGate } from "redux-persist/integration/react";
 import { BrowserRouter } from "react-router-dom";
-import apolloClientConfig from "./componentes/apollo-client/apollo-client-config";
-import { ApolloProvider } from "@apollo/react-common";
-import './i18n/i18nConfig'
+import { PersistGate } from "redux-persist/integration/react";
+//import apolloClientConfig from "./componentes/apollo-client/apollo-client-config";
+import "./i18n/i18nConfig";
+import { persistor, store } from "./redux/store";
 //PWA
-import * as serviceWorker from './serviceWorkerRegistration';
-
+import * as serviceWorker from "./serviceWorkerRegistration";
 
 //CONTENEDOR
 const container = document.getElementById("app");
-{/*<ApolloProvider client={apolloClientConfig}>*/}
-  {/*</ApolloProvider>*/}
+{
+  /*<ApolloProvider client={apolloClientConfig}></ApolloProvider>*/
+}
 ReactDOM.render(
-  
-    <Provider store={store}>
-      <BrowserRouter>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
-      </BrowserRouter>
-    </Provider>
-  ,
+  <Provider store={store}>
+    <BrowserRouter>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </BrowserRouter>
+  </Provider>,
   container
 );
-
 
 serviceWorker.register();

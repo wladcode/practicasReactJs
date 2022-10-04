@@ -1,5 +1,5 @@
 import { Grid } from "@material-ui/core";
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { userSignUpStart } from "../../../../../../redux/user/user.actions";
 import DSButtonComponent from "../../ds-button/ds-button.component";

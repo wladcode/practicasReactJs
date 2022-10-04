@@ -44,7 +44,7 @@ function FormWithFormikAndYup() {
         onSubmit={handleSubmit}
       >
         {(formik) => {
-          const { values, handleChange, errors, touched, isValid, dirty } =
+          const { handleChange, errors, isValid, dirty } =
             formik;
 
           console.log("ERRORES: " + JSON.stringify(errors));
@@ -86,7 +86,7 @@ function FormWithFormikAndYup() {
               <div className="buttons-sn">
                 <DSButtonComponent
                   type="submit"
-                  socialSignIn
+                  isSocial
                   className={!(dirty && isValid) ? "disabled-btn" : ""}
                   disabled={!(dirty && isValid)}
                 >
@@ -99,7 +99,7 @@ function FormWithFormikAndYup() {
 
                 <DSButtonComponent
                   type="submit"
-                  socialSignIn
+                  isSocial
                   className={!(dirty && isValid) ? "disabled-btn" : ""}
                   disabled={!(dirty && isValid)}
                 >
@@ -112,7 +112,7 @@ function FormWithFormikAndYup() {
 
                 <DSButtonComponent
                   type="submit"
-                  socialSignIn
+                  isSocial
                   className={!(dirty && isValid) ? "disabled-btn" : ""}
                   disabled={!(dirty && isValid)}
                 >

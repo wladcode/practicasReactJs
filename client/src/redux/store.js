@@ -40,4 +40,3 @@ sagaMiddleware.run(rootSaga)
 //Para uso de localstorage
 export const persistor = persistStore(store);
 
-export default { store, persistor };

@@ -1,7 +1,6 @@
 import React from "react";
 import "./ds-alert.scss";
 
-import {ReactComponent as AlertWarning} from '../../../../../assets/alerts/alert-warning.svg'
 
 const DSAlert = ({ type, message }) => {
   return (

@@ -4,5 +4,6 @@
     "main.menu.shop" : "SHOP APP",
     "main.menu.react" : "Validations with React",
     "main.menu.formik" : "Validations with Formik",
-    "main.menu.formikYup":"Validations with Formik and YUP"
+    "main.menu.formikYup":"Validations with Formik and YUP",
+    "main.menu.formikYupHCO" : "Validations with Formik and YUP - HCO"
 }

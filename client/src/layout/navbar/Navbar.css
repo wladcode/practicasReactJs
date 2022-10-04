@@ -2,6 +2,7 @@
   width: 100%;
   padding: 0.5rem 0;
   background-color: #1C3643;
+  background-color: #e3f2fd;
 }
 
 .Navbar_brand {
@@ -13,7 +14,6 @@
 
 .Navbar_brand:hover {
   color: #ffffff;
-  text-decoration: none;
 }
 
 .Navbar_brand-logo {

@@ -18,9 +18,8 @@ import CheckoutPage from "./check-out-page/check-out-page.component";
 import HomePageStore from "./homepage/home-page.component";
 import ShopPage from "./shop/shop-page.component";
 
-import Footer from "../components/footer/footer.styled";
-import ThemeContext, { themes } from "../utils/context/context";
 import ErrorBoundary from "../components/error-boundary/error-boundary.component";
+import { themes } from "../utils/context/context";
 
 function StorePageInit({ collectionsArray, history, match }) {
   const currentUser = useSelector(selectCurrentUser);

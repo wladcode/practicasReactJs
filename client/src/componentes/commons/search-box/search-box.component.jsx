@@ -1,11 +1,11 @@
 import { InputAdornment, TextField } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
-import React from "react";
+import React, { Fragment } from "react";
 import "./search-box.styles.css";
 
 export default function SearchBox({ placeholder, handleChange }) {
   return (
-    <div>
+    <Fragment>
       <TextField
         onChange={handleChange}
         id="standard-basic"
@@ -21,6 +21,6 @@ export default function SearchBox({ placeholder, handleChange }) {
         }}
       />
 
-    </div>
+    </Fragment>
   );
 }

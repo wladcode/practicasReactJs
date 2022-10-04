@@ -1,38 +1,34 @@
 import {
   Card,
   CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  Typography,
+  CardMedia, Typography
 } from "@material-ui/core";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import api from "../api/api";
 import "./styles/RickAndMortyAPI.css";
 
-import Pagination from "@material-ui/lab/Pagination";
+import { Col, Container, Row } from "react-bootstrap";
 import PageError from "../componentes/pageerror/PageError";
 import PageLoading from "../componentes/pageloading/PageLoading";
 
+import Pagination from '@mui/material/Pagination';
+
+
 class RickAndMortyAPI extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state =  {
-      loading: true,
-      error: null,
-      data: {
-        results: [],
-      },
-      pagination: {
-        current: 1,
-        last: 100,
-      },
-    };
-  }
-  
+  state = {
+    loading: true,
+    error: null,
+    data: {
+      results: [],
+    },
+    pagination: {
+      current: 1,
+      last: 100,
+    },
+  };
 
   componentDidMount() {
+    console.log("this.state ", this.state);
     this.fetchCharacters();
   }
 
@@ -54,6 +50,7 @@ class RickAndMortyAPI extends Component {
 
       console.log("data", data);
       this.setState({
+        ...this.state,
         loading: false,
         error: null,
         data: {
@@ -61,8 +58,10 @@ class RickAndMortyAPI extends Component {
           results: data.results,
           //results: [].concat(this.state.data.results, data.results),
         },
+        ...this.state.pagination,
         pagination: {
           last: data.info.pages,
+          current: this.state.pagination.current,
         },
       });
 
@@ -77,68 +76,79 @@ class RickAndMortyAPI extends Component {
     }
   };
 
-  changePagination = (event, value) => {
+  changePagination = async (event, value) => {
     console.log("CLIC: ", value);
-
     /*
     this.setState({
-      pagination: {
-        current: value,
-      },
-    });
-    */
-    this.state.pagination.current = value;
+      ...this.state.pagination,
+      current: value,
+    });*/
 
-    this.setState((state) => ({ ...state, pagination: { current: value } }));
+    //this.state.pagination.current = value;
+
+    await this.setState({
+      ...this.state.pagination,
+      pagination: { current: value },
+    });
 
     console.log("this.state", this.state);
-    this.fetchCharacters();
+    await this.fetchCharacters();
   };
 
   render() {
     return (
-      <Container>
-        <Pagination
-          color="primary"
-          size="large"
-          count={this.state.pagination.last}
-          showFirstButton
-          showLastButton
-          onChange={this.changePagination}
-          disabled={this.state.loading}
-        />
+      <Fragment>
+        <Row>
+          <Col>
+            <Pagination
+              color="primary"
+              size="large"
+              count={this.state.pagination.last}
+              showFirstButton
+              showLastButton
+              onChange={this.changePagination}
+              disabled={this.state.loading}
+            />
+          </Col>
+        </Row>
 
-        <PageLoading show={this.state.loading} />
-        {this.state.error && <PageError error={this.state.error} />}
+        <Col>
+          <Row>
+            <PageLoading show={this.state.loading} />
+            {this.state.error && <PageError error={this.state.error} />}
 
-        <Grid container spacing={2}>
-          {this.state.data.results.map((item) => {
-            return (
-              <Grid key={item.id} item xs={12} sm={4} md={3} lg={3}>
-                <Card className="card-container">
-                  <CardContent>
-                    <Typography
-                      noWrap
-                      gutterBottom
-                      variant="h5"
-                      color="primary"
-                    >
-                      {item.name}
-                    </Typography>
-                    <CardMedia title="character">
-                      <img
-                        className="imagen-container"
-                        alt="character"
-                        src={item.image}
-                      />
-                    </CardMedia>
-                  </CardContent>
-                </Card>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
+            <Container container spacing={2}>
+              <Row>
+                {this.state.data.results.map((item) => {
+                  return (
+                    <Col key={item.id} item xs={12} sm={6} md={4} lg={3}>
+                      <Card className="card-container">
+                        <CardContent>
+                          <Typography
+                            noWrap
+                            gutterBottom
+                            variant="h5"
+                            color="primary"
+                          >
+                            {item.name}
+                          </Typography>
+                          <CardMedia title="character">
+                            <img
+                              className="card-imagen"
+                              alt="character"
+                              src={item.image}
+                            />
+                          </CardMedia>
+                        </CardContent>
+                      </Card>
+                    </Col>
+                  );
+                })}
+              </Row>
+            </Container>
+          </Row>
+        </Col>
+      </Fragment>
     );
   }
 }

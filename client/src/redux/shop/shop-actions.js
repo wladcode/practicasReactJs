@@ -1,6 +1,6 @@
-
 import {
-  convertCollectionSnapshotToMap, firestoreStoreApp
+  convertCollectionSnapshotToMap,
+  firestoreStoreApp
 } from "./../../componentes/store/components/shop/firebaseShop.utils";
 
 export const SHOP_DATA_START = "SHOP_DATA_START";
@@ -21,10 +21,9 @@ export const fetchCollectionError = (errorMessage) => ({
   payload: errorMessage,
 });
 
-/*
 export const fetchCollectionsStartAsync = () => {
   return (dispath) => {
-    console.log("DISPATCHING ..")
+    console.log("DISPATCHING ..");
     const collectionRef = firestoreStoreApp.collection("shopData");
     dispath(fetchCollectionsStart());
 
@@ -40,4 +39,3 @@ export const fetchCollectionsStartAsync = () => {
       });
   };
 };
-*/

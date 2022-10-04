@@ -15,7 +15,7 @@ const storeApp = firebase.initializeApp(firebaseConfig, "secondary");
 
 export const firestoreStoreApp = storeApp.firestore();
 
-console.log("firestoreStoreApp: ", firestoreStoreApp)
+console.log("firestoreStoreApp: ", firestoreStoreApp);
 
 export const addCollectionAndDocuments = async (
   collectionKey,
@@ -45,13 +45,10 @@ export const convertCollectionSnapshotToMap = (shopData) => {
     };
   });
 
-
   console.log("transformedCollection: ", transformedCollection);
 
- return transformedCollection.reduce((accumulator, collection) => {
-    accumulator[collection.title.toLowerCase()] = collection
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;
-  }, {})
+  }, {});
 };
-
-export default "";

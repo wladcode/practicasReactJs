@@ -10,8 +10,11 @@ const cache = new InMemoryCache();
 const apolloClientConfig = new ApolloClient({
   link: httpLink,
   cache,
+  fetchOptions: {
+    mode: 'no-cors',
+  },
+  
 });
-
 /*
 apolloClientConfig.query({
   query: gql`
