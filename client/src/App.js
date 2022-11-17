@@ -15,6 +15,8 @@ import FormWithFormikAndYup from "./pages/formik/FormWithFormikAndYup";
 import FormWithFormikAndYupHOC from "./pages/formik/FormWithFormikAndYupHOC";
 import Layout from "./layout/Layout";
 
+import Geolocation from "./pages/geo/Geolocation";
+
 const HomePage = lazy(() => import("./pages/Home"));
 
 const Badges = lazy(() => import("./pages/Badges"));
@@ -24,9 +26,7 @@ const BagdeDetailsContainer = lazy(() =>
 );
 const BagdeEdit = lazy(() => import("./pages/BadgeEdit"));
 const RickAndMortyAPI = lazy(() => import("./pages/RickAndMortyApi"));
-const MonstersSecond = lazy(() =>
-  import("./pages/MonstersSecond")
-);
+const MonstersSecond = lazy(() => import("./pages/MonstersSecond"));
 const storePageInit = lazy(() =>
   import("./componentes/store/pages/storePageInit")
 );
@@ -49,6 +49,7 @@ function App() {
             <Route path="/formReact" component={FormWithReact} />
             <Route path="/formFormik" component={FormWithFormik} />
             <Route path="/formFormikYUP" component={FormWithFormikAndYup} />
+            <Route path="/geolocation" component={Geolocation} />
             <Route
               path="/formFormikYUPHCO"
               component={FormWithFormikAndYupHOC}

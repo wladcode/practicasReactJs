@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="26" viewBox="0 0 9 13">
+        <title>location indicator</title>
+        <defs>
+            <style>
+                .google-maps-location-indicator-background-1{
+                    fill: #44377b;
+                    opacity: 1;
+                }
+                .google-maps-location-indicator-background-2{
+                    fill: #9e9e9e;
+                }
+                .google-maps-location-indicator-dot{
+                    fill: white;
+                    opacity: 1;
+                }
+            </style>
+        </defs>
+        <g>
+            <path
+                class="google-maps-location-indicator-background-2"
+                d="M4.5,0A4.58,4.58,0,0,0,0,4.66c0,2.24,3.78,6.12,4.3,8.23,0,.09.11.12.2.11s.18,0,.2-.11
+                C5.22,10.78,9,6.9,9,4.66A4.58,4.58,0,0,0,4.5,0Z"
+            />
+        </g>
+        <g>
+            <path
+                class="google-maps-location-indicator-background-1"
+                d="M4.5,0A4.58,4.58,0,0,0,0,4.66c0,2.24,3.78,6.12,4.3,8.23,0,.09.11.12.2.11s.18,0,.2-.11
+                C5.22,10.78,9,6.9,9,4.66A4.58,4.58,0,0,0,4.5,0Z"
+            />
+        </g>
+        <g>
+            <circle class="google-maps-location-indicator-dot" cx="4.5" cy="4.45" r="1.31" />
+        </g>
+    </svg>

@@ -26,6 +26,7 @@
     "firebase": "^8.8.1",
     "formik": "^2.2.9",
     "gh-pages": "^4.0.0",
+    "google-maps-react": "^2.0.6",
     "graphql": "^14.3.1",
     "i18next": "^21.9.1",
     "i18next-browser-languagedetector": "^6.1.5",

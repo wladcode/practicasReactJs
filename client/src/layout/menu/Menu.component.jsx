@@ -43,6 +43,11 @@ const MenuComponent = (props) => {
       class: "primary",
     },
     {
+      text: "main.menu.geolocation",
+      link: "/geolocation",
+      class: "primary",
+    },
+    {
       text: "main.menu.shop",
       link: "/shop",
       class: "success",
