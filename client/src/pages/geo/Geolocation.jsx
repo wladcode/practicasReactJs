@@ -28,6 +28,7 @@ class Geolocation extends Component {
               <li>Pais: {geoData.country}</li>
               <li>Latitud: {location.lat}</li>
               <li>Longitud: {location.lng}</li>
+              <li>Mapa: </li>
             </ul>
 
             <Col sm={12} md={12} lg={12} xl={12} className="col">

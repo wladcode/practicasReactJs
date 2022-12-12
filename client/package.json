@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "PRACTICAS REACT",
   "private": true,
-  "homepage": ".",
+  "homepage": "/",
   "dependencies": {
     "@date-io/date-fns": "^2.11.0",
     "@emotion/react": "^11.10.4",
@@ -27,6 +27,7 @@
     "firebase": "^8.8.1",
     "formik": "^2.2.9",
     "gh-pages": "^4.0.0",
+    "global": "^4.4.0",
     "google-maps-react": "^2.0.6",
     "graphql": "^14.3.1",
     "i18next": "^21.9.1",
@@ -36,7 +37,7 @@
     "md5": "^2.2.1",
     "momment": "0.0.1",
     "node-fetch": "^2.6.1",
-    "node-sass": "6.0.1",
+    "npm": "9.2.0",
     "primeflex": "^3.0.1",
     "primeicons": "^4.1.0",
     "primereact": "6.0.0",
@@ -85,7 +86,8 @@
     "json-server": "^0.16.3",
     "npm-run-all": "^4.1.5",
     "react-test-renderer": "16.14.0",
-    "redux-mock-store": "^1.5.4"
+    "redux-mock-store": "^1.5.4",
+    "sass": "^1.56.2"
   },
   "scripts": {
     "start": "react-scripts start",
