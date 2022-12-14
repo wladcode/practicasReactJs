@@ -9,7 +9,8 @@ const INITIAL_STATE = {
   geoData: {},
   isUnknow: true,
   fetching: false,
-  dummy:"is a dummgy"
+  dummy:"is a dummgy",
+  anothher_dummy:"is a dummgy"
 };
 
 const geolocationReducer = (state = INITIAL_STATE, action) => {
