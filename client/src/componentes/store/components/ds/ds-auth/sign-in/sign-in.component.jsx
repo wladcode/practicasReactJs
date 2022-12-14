@@ -16,12 +16,10 @@ function SignInComponent() {
     password: "",
   });
 
-
   const { email, password } = userCredentials;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
 
     try {
       await auth.signInWithEmailAndPassword(email, password);
@@ -74,11 +72,7 @@ function SignInComponent() {
         <div className="text-divider">o</div>
 
         <div className="buttons-sn">
-          <DSButtonComponent
-            type="button"
-            onClick={signInWithGoogle}
-            isSocial
-          >
+          <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
             <img
               src={googleIcon}
               style={{ width: 32 }}
@@ -86,11 +80,7 @@ function SignInComponent() {
             />
           </DSButtonComponent>
 
-          <DSButtonComponent
-            type="button"
-            onClick={signInWithGoogle}
-            isSocial
-          >
+          <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
             <img
               src={facebookIcon}
               style={{ width: 32 }}
@@ -98,11 +88,7 @@ function SignInComponent() {
             />
           </DSButtonComponent>
 
-          <DSButtonComponent
-            type="button"
-            onClick={signInWithGoogle}
-            isSocial
-          >
+          <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
             <img
               src={twitterIcon}
               style={{ width: 32 }}

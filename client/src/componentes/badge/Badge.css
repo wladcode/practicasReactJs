@@ -1,6 +1,6 @@
 .Badge {
-  background: #FFFFFF;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+  background: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8px 8px 8px 8px;
   overflow: hidden;
   height: 380px;
@@ -9,7 +9,7 @@
 .Badge_header {
   padding: 0.5rem 0;
   height: 80px;
-  background: #1B1B25;
+  background: #1b1b25;
   display: flex;
   justify-content: center;
 }
@@ -27,9 +27,8 @@
   justify-content: center;
   align-items: center;
   padding: 0.5rem 0;
-  background: #F4F4F7;
+  background: #f4f4f7;
 }
-
 
 .Badge_avatar {
   border-radius: 50%;
@@ -43,7 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #98CA3F;
+  color: #98ca3f;
   font-weight: bold;
   font-style: italic;
 }

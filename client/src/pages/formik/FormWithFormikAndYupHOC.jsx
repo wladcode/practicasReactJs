@@ -13,7 +13,7 @@ import { SingInContainer } from "./scss/sign-in.styled";
 
 class FormWithFormikAndYupHOC extends Component {
   render() {
-    const {  handleChange, isValid, dirty } = this.props;
+    const { handleChange, isValid, dirty } = this.props;
 
     return (
       <SingInContainer>

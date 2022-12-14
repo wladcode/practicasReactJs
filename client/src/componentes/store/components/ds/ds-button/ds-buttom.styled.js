@@ -1,7 +1,6 @@
 import { Button } from "@material-ui/core";
 import styled, { css } from "styled-components";
 
-
 const HoverButtonsStyles = css`
   background-color: white;
   color: black;
@@ -44,7 +43,7 @@ const disableButtonStyles = css`
 `;
 
 const getButtonStyles = (props) => {
-  console.log("props in styled ", props)
+  console.log("props in styled ", props);
   if (props.isSocial) {
     return SocialSignInStyles;
   }

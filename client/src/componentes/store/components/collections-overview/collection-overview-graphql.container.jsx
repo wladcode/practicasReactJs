@@ -23,9 +23,9 @@ const CollectionsOverViewGraphQlContainer = () => {
   return (
     <Query query={GET_COLLECTIONS_QUERY}>
       {({ loading, error, data }) => {
-          console.log("GRAPQL - loading: ", loading)
-          console.log("GRAPQL - error: ", error)
-          console.log("GRAPQL - : data", data)
+        console.log("GRAPQL - loading: ", loading);
+        console.log("GRAPQL - error: ", error);
+        console.log("GRAPQL - : data", data);
         if (loading) return <DSSnipper />;
 
         return <CollectionOverViewComponent collections={data.collections} />;

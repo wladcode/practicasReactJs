@@ -4,8 +4,7 @@ export const USER_LOGOUT_START = "USER_LOGOUT_START";
 export const USER_LOGOUT_SUCCESS = "USER_LOGOUT_SUCCESS";
 export const USER_LOGOUT_FAIL = "USER_LOGOUT_FAIL";
 export const USER_SIGNUP_START = "USER_SIGNUP_START";
-export const USER_SIGNUP_SUCCESS = "USER_SIGNUP_SUCCESS;"
-
+export const USER_SIGNUP_SUCCESS = "USER_SIGNUP_SUCCESS;";
 
 export const setCurrentUser = (user) => {
   return {
@@ -16,34 +15,32 @@ export const setCurrentUser = (user) => {
 
 export const checkUserSession = () => {
   return {
-    type: CHECK_USER_SESSION
-  }
-}
-
+    type: CHECK_USER_SESSION,
+  };
+};
 
 export const userLogOutStart = () => {
   return {
-    type: USER_LOGOUT_START
-  }
-}
+    type: USER_LOGOUT_START,
+  };
+};
 
 export const userLogOutSuccess = () => {
   return {
-    type: USER_LOGOUT_SUCCESS
-  }
-}
-
+    type: USER_LOGOUT_SUCCESS,
+  };
+};
 
 export const userSignUpStart = (userCredentials) => {
   return {
     type: USER_SIGNUP_START,
-    payload: userCredentials
-  }
-}
+    payload: userCredentials,
+  };
+};
 
-export const userSignUpSuccess = ({user, additionalData}) => {
+export const userSignUpSuccess = ({ user, additionalData }) => {
   return {
     type: USER_SIGNUP_SUCCESS,
-    payload: {user, additionalData}
-  }
-}
+    payload: { user, additionalData },
+  };
+};

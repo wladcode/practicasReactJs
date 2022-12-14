@@ -5,13 +5,8 @@ import shopSagas from "./shop/shop.sagas";
 import userSagas from "./user/user-sagas";
 
 export default function* rootSaga() {
-  yield all(    [
-    ...shopSagas, 
-    ...userSagas, 
-    ...chartSaga, 
-    ...geoLocationSagas
-  ]);
-/*
+  yield all([...shopSagas, ...userSagas, ...chartSaga, ...geoLocationSagas]);
+  /*
   const sagas = [shopSagas, userSagas, chartSaga];
 
   yield all(

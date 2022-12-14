@@ -1,10 +1,9 @@
 import { Tab, Tabs } from "@material-ui/core";
 import React, { Component } from "react";
 import SignInComponent from "../sign-in/sign-in.component";
-import logoImage from './diamondSoft.png';
+import logoImage from "./diamondSoft.png";
 import "./singin-singup.scss";
-import SignUpComponent from './../sign-up/sign.up.component';
-
+import SignUpComponent from "./../sign-up/sign.up.component";
 
 class SingUnSingUpPage extends Component {
   constructor(props) {

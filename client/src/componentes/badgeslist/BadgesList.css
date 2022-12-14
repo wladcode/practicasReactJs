@@ -21,13 +21,12 @@
   font-weight: bold;
 }
 
-.BadgesListJob{
+.BadgesListJob {
   font-size: smaller;
   font-weight: bold;
 }
 .Twitter_name {
   color: #1da1f2;
-  
 }
 .Twitter_logo {
   display: inline-block;
@@ -36,5 +35,4 @@
   background: url("../../assets/Twitter_Social_Icon_Circle_Color.svg"), #ffffff;
   margin-right: 0.3rem;
   vertical-align: middle;
-
 }

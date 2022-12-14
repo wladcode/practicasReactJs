@@ -1,8 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardMedia, Typography
-} from "@material-ui/core";
+import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
 import React, { Component, Fragment } from "react";
 import api from "../api/api";
 import "./styles/RickAndMortyAPI.css";
@@ -11,8 +7,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import PageError from "../componentes/pageerror/PageError";
 import PageLoading from "../componentes/pageloading/PageLoading";
 
-import Pagination from '@mui/material/Pagination';
-
+import Pagination from "@mui/material/Pagination";
 
 class RickAndMortyAPI extends Component {
   state = {

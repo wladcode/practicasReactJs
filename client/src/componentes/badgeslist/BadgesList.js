@@ -44,12 +44,12 @@ function BadgesList(props) {
     );
   }
   return (
-    <div className='BadgesList'>
-      <div className='form-group'>
-        <label htmlFor=''>Filter Badges</label>
+    <div className="BadgesList">
+      <div className="form-group">
+        <label htmlFor="">Filter Badges</label>
         <input
-          type='text'
-          className='form-control'
+          type="text"
+          className="form-control"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -57,28 +57,28 @@ function BadgesList(props) {
         />
       </div>
 
-      <ul className='list-unstyled'>
+      <ul className="list-unstyled">
         {filteredBadges.map((badge) => {
           return (
-            <li key={badge.id} className='BadgesListItem'>
+            <li key={badge.id} className="BadgesListItem">
               <Link
                 to={`/badges/${badge.id}`}
-                className='text-reset text-decoraton-none'
+                className="text-reset text-decoraton-none"
               >
                 <Gravatar
-                  className='BadgesListItem_avatar'
+                  className="BadgesListItem_avatar"
                   email={badge.email}
                 />
 
                 <div>
-                  <div className='BadgesListNames'>
+                  <div className="BadgesListNames">
                     {badge.firstName} {badge.lastName}
                   </div>
-                  <div className='Twitter_name'>
-                    <span className='Twitter_logo'></span>@{badge.twitter}
+                  <div className="Twitter_name">
+                    <span className="Twitter_logo"></span>@{badge.twitter}
                   </div>
-                  <div className='BadgesListJob'>{badge.jobTitle}</div>
-                  <div className='BadgesListJob'>{badge.email}</div>
+                  <div className="BadgesListJob">{badge.jobTitle}</div>
+                  <div className="BadgesListJob">{badge.email}</div>
                 </div>
               </Link>
             </li>

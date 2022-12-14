@@ -21,7 +21,7 @@ function Layout(props) {
         <Container fluid>{props.children}</Container>
       </main>
 
-      <footer>Diamoncode  - 2022 -</footer>
+      <footer>Diamoncode - 2022 -</footer>
     </article>
   );
 }

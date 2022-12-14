@@ -73,7 +73,7 @@ export function channel() {
 export const geolocationReverse = (longitud, latitud) => {
   const { geoData, isUnknow } = store.getState().geolocation;
 
-  console.log(geoData, isUnknow)
+  console.log(geoData, isUnknow);
 
   if (isUnknow) {
     return googleAxios({

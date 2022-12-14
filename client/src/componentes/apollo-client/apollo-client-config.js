@@ -11,9 +11,8 @@ const apolloClientConfig = new ApolloClient({
   link: httpLink,
   cache,
   fetchOptions: {
-    mode: 'no-cors',
+    mode: "no-cors",
   },
-  
 });
 /*
 apolloClientConfig.query({

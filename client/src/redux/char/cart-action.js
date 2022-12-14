@@ -31,7 +31,6 @@ export const removeItemQuantity = (item) => {
   };
 };
 
-
 export const clearChart = () => {
   return {
     type: CLEAR_CHART,

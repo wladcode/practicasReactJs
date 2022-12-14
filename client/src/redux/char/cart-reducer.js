@@ -35,18 +35,18 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         ),
       };
 
-      case REMOVE_ITEM_QUANTITY:
-        return {
-          ...state,
-          //cartItems:  [...state.cartItems, action.payload],
-          cartItems: removeItemQuantityUtil([...state.cartItems], action.payload),
-        };
+    case REMOVE_ITEM_QUANTITY:
+      return {
+        ...state,
+        //cartItems:  [...state.cartItems, action.payload],
+        cartItems: removeItemQuantityUtil([...state.cartItems], action.payload),
+      };
 
-        case CLEAR_CHART:
-          return {
-            ...state,
-            cartItems: []
-          }
+    case CLEAR_CHART:
+      return {
+        ...state,
+        cartItems: [],
+      };
 
     default:
       return state;

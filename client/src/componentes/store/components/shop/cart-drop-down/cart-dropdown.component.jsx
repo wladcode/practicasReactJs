@@ -9,9 +9,7 @@ import CartItem from "./../item/cart-item.component";
 import "./cart-dropdown.scss";
 
 function CartDropDownComponent({ cartItems, dispatch }) {
-
   const history = useHistory();
-
 
   return (
     <div className="cart-dropdown">

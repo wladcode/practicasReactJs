@@ -17,5 +17,4 @@ const googleSearch = (searchInput, db) => {
 
 //console.log(googleSearch("dog", googleDatabase));
 
-
 module.exports = googleSearch;

@@ -10,7 +10,7 @@ class BagdeDetailsContainer extends React.Component {
     loading: true,
     error: null,
     data: undefined,
-    modalIsOpen: false
+    modalIsOpen: false,
   };
 
   componentDidMount() {
@@ -30,32 +30,32 @@ class BagdeDetailsContainer extends React.Component {
     }
   };
 
-  handleOpenModal = e => {
+  handleOpenModal = (e) => {
     this.setState({ modalIsOpen: true });
   };
 
-  handleCloseModal = e => {
+  handleCloseModal = (e) => {
     this.setState({ modalIsOpen: false });
   };
 
-  onDeleteBadge = async e => {
+  onDeleteBadge = async (e) => {
     this.setState({
       loading: true,
-      error: null
+      error: null,
     });
 
     try {
       await api.badges.remove(this.props.match.params.badgeId);
 
       this.setState({
-        loading: false
+        loading: false,
       });
 
       this.props.history.push("/badges");
     } catch (error) {
       this.setState({
         loading: false,
-        error: error
+        error: error,
       });
     }
   };

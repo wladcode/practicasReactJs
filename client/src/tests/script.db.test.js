@@ -1,34 +1,24 @@
-const googleSearch = require('./script.db')
+const googleSearch = require("./script.db");
 
-it('Testing null values', () => {
+it("Testing null values", () => {
+  const n = null;
+  expect(n).toBeNull();
+  expect(n).toBeDefined();
+  expect(n).not.toBeUndefined();
+  expect(n).not.toBeTruthy();
+  expect(n).toBeFalsy();
+});
 
-    const n = null;
-    expect(n).toBeNull();
-    expect(n).toBeDefined();
-    expect(n).not.toBeUndefined();
-    expect(n).not.toBeTruthy();
-    expect(n).toBeFalsy();
-  });
+const dbMock = ["dog.com", "cheesepuff.com", "dogpciture.com"];
 
-  const dbMock = [
-      'dog.com',
-      'cheesepuff.com',
-      'dogpciture.com'
-  ];
+test("Testing google dog", () => {
+  const result = googleSearch("dog", dbMock);
 
-  test('Testing google dog', ()=> {
+  expect(result).toContain("dog.com");
+});
 
-    const result = googleSearch('dog', dbMock);
+test("Testing google empty", () => {
+  const result = googleSearch("testest", dbMock);
 
-    expect(result).toContain('dog.com');
-
-  })
-
-  
-  test('Testing google empty', ()=> {
-
-    const result = googleSearch('testest', dbMock);
-
-    expect(result).toEqual([]);
-
-  })
+  expect(result).toEqual([]);
+});

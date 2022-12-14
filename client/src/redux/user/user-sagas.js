@@ -13,7 +13,6 @@ import {
   USER_SIGNUP_SUCCESS,
 } from "./user.actions";
 
-
 const userSagas = [
   takeLatest(CHECK_USER_SESSION, isUserAuthenticated),
   takeLatest(USER_LOGOUT_START, signOut),
@@ -22,8 +21,6 @@ const userSagas = [
 ];
 
 export default userSagas;
-
-
 
 function* isUserAuthenticated() {
   try {
@@ -65,4 +62,3 @@ function* sagaSignInAfterSingUp(data) {
     yield console.log("ERROR EN SIGNUP: ", error.message);
   }
 }
-

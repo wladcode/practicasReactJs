@@ -44,8 +44,7 @@ function FormWithFormikAndYup() {
         onSubmit={handleSubmit}
       >
         {(formik) => {
-          const { handleChange, errors, isValid, dirty } =
-            formik;
+          const { handleChange, errors, isValid, dirty } = formik;
 
           console.log("ERRORES: " + JSON.stringify(errors));
 

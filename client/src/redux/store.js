@@ -30,13 +30,12 @@ console.log("middlewares ", middlewares);
 export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 //Inicialización del middleware de saga
-console.log("root sagas ", rootSaga)
-sagaMiddleware.run(rootSaga)
+console.log("root sagas ", rootSaga);
+sagaMiddleware.run(rootSaga);
 /*.done.catch((e) => {
   console.error("Error running saga", e);
 })
-*/;
+*/
 
 //Para uso de localstorage
 export const persistor = persistStore(store);
-

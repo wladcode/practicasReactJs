@@ -1,12 +1,12 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import {
   convertCollectionSnapshotToMap,
-  firestoreStoreApp
+  firestoreStoreApp,
 } from "./../../componentes/store/components/shop/firebaseShop.utils";
 import {
   fetchCollectionError,
   fetchCollectionSuccess,
-  SHOP_DATA_START
+  SHOP_DATA_START,
 } from "./shop-actions";
 
 const shopSagas = [takeLatest(SHOP_DATA_START, fetchCollection)];

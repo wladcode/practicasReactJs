@@ -1,9 +1,7 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { createStructuredSelector } from "reselect";
-import {
-    selectIsCollectionFetching
-} from "../../../../redux/shop/shop-selector";
+import { selectIsCollectionFetching } from "../../../../redux/shop/shop-selector";
 import CollectionOverViewComponent from "./../collections-preview/collections-preview.component";
 import DSSnipper from "./../ds/ds-spinner/ds-spinner.component";
 

@@ -13,7 +13,7 @@ class Badges extends React.Component {
   state = {
     loading: true,
     error: null,
-    data: undefined
+    data: undefined,
   };
 
   constructor(props) {
@@ -42,23 +42,23 @@ class Badges extends React.Component {
 
     return (
       <React.Fragment>
-        <div className='Badges'>
-          <div className='Badges_hero'>
-            <div className='Badges_container'>
-              <img className='Badges_conf-logo' src={confLogo} alt='Logo' />
+        <div className="Badges">
+          <div className="Badges_hero">
+            <div className="Badges_container">
+              <img className="Badges_conf-logo" src={confLogo} alt="Logo" />
             </div>
           </div>
         </div>
 
-        <div className='Badges_container'>
-          <div className='Badges_buttons'>
-            <Link to='/badges/new' className='btn btn-primary'>
+        <div className="Badges_container">
+          <div className="Badges_buttons">
+            <Link to="/badges/new" className="btn btn-primary">
               New Badge
             </Link>
           </div>
 
-          <div className='Badges_list'>
-            <div className='Badges_container'>
+          <div className="Badges_list">
+            <div className="Badges_container">
               <BadgesList badges={this.state.data} />
             </div>
           </div>
@@ -76,14 +76,14 @@ class Badges extends React.Component {
   fetchData = async () => {
     this.setState({
       loading: true,
-      error: null
+      error: null,
     });
 
     try {
       const data = await api.badges.list();
       this.setState({
         loading: false,
-        data: data
+        data: data,
       });
     } catch (error) {
       this.setState({ loading: false, error: error });
@@ -134,12 +134,12 @@ class Badges extends React.Component {
     console.log("5. componentDidUpdate");
     console.log({
       prevProps: prevProps,
-      prevState: prevState
+      prevState: prevState,
     });
 
     console.log({
       props: this.props,
-      state: this.state
+      state: this.state,
     });
   }
 

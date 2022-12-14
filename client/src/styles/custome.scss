@@ -1,22 +1,22 @@
 .text-divider {
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
-    --text-divider-gap: 1rem; // set a customizable gap between label and lines
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  --text-divider-gap: 1rem; // set a customizable gap between label and lines
 
-    &::before,
-    &::after {
-      content: "";
-      height: 1px;
-      background-color: silver;
-      flex-grow: 1; // both lines will expand to occupy the available space
-    }
-
-    &::before {
-      margin-right: var(--text-divider-gap);
-    }
-
-    &::after {
-      margin-left: var(--text-divider-gap);
-    }
+  &::before,
+  &::after {
+    content: "";
+    height: 1px;
+    background-color: silver;
+    flex-grow: 1; // both lines will expand to occupy the available space
   }
+
+  &::before {
+    margin-right: var(--text-divider-gap);
+  }
+
+  &::after {
+    margin-left: var(--text-divider-gap);
+  }
+}

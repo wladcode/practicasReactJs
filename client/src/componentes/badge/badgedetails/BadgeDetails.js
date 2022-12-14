@@ -25,13 +25,13 @@ function BadgeDetails(props) {
 
   return (
     <div>
-      <div className='BadgeDetails_hero'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-6'>
-              <img src={confLogo} alt='Logo de la conferencia' />
+      <div className="BadgeDetails_hero">
+        <div className="container">
+          <div className="row">
+            <div className="col-6">
+              <img src={confLogo} alt="Logo de la conferencia" />
             </div>
-            <div className='col-6 BadgeDetails_hero-attendant-name'>
+            <div className="col-6 BadgeDetails_hero-attendant-name">
               <h1>
                 {badge.firstName} {badge.lastName}
               </h1>
@@ -40,9 +40,9 @@ function BadgeDetails(props) {
         </div>
       </div>
 
-      <div className='container'>
-        <div className='row'>
-          <div className='col'>
+      <div className="container">
+        <div className="row">
+          <div className="col">
             <Badge
               firstName={badge.firstName || "FIRST_NAME"}
               lastName={badge.lastName || "LAST_NAME"}
@@ -50,7 +50,7 @@ function BadgeDetails(props) {
               email={badge.email || "EMAIL"}
             />
           </div>
-          <div className='col'>
+          <div className="col">
             <h2>Actions</h2>
             <div>
               <div>
@@ -58,14 +58,14 @@ function BadgeDetails(props) {
                   onClick={() => {
                     setCount(count + 1);
                   }}
-                  className='btn btn-primary mr-4'
+                  className="btn btn-primary mr-4"
                 >
                   {" "}
                   Increse Count {count}
                 </button>
 
                 <Link
-                  className='btn btn-primary mb-4'
+                  className="btn btn-primary mb-4"
                   to={`/badges/${badge.id}/edit`}
                 >
                   Editar
@@ -73,7 +73,7 @@ function BadgeDetails(props) {
               </div>
 
               <div>
-                <button onClick={props.onOpenModal} className='btn btn-danger'>
+                <button onClick={props.onOpenModal} className="btn btn-danger">
                   Eliminar
                 </button>
                 <DeleteBadgeModal

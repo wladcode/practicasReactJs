@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Container, Row } from "react-bootstrap";
-import SearchBox from '../componentes/commons/search-box/search-box.component';
+import SearchBox from "../componentes/commons/search-box/search-box.component";
 import { CardCustome } from "../componentes/card/card.component";
 
 class MonstersSecond extends Component {

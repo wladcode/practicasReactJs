@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
-import {
-  fetchCollectionsStart
-} from "../../../../redux/shop/shop-actions";
+import { fetchCollectionsStart } from "../../../../redux/shop/shop-actions";
 
 import CollectionOverViewContainer from "./../../components/collections-overview/collections-overview.container";
 //import { default as CollectionOverViewContainer } from "./../../components/collections-overview/collection-overview-graphql.container";

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ErrorImageOverlay = styled.div`
   height: 60vh;

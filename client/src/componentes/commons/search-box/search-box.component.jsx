@@ -20,7 +20,6 @@ export default function SearchBox({ placeholder, handleChange }) {
           ),
         }}
       />
-
     </Fragment>
   );
 }

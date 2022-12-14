@@ -37,7 +37,7 @@ export const OptionsContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     //some css
-   width:80%
+    width: 80%;
   }
 `;
 

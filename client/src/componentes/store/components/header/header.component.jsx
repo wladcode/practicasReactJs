@@ -13,7 +13,7 @@ import {
   HeaderContainer,
   LogoContainer,
   OptionLink,
-  OptionsContainer
+  OptionsContainer,
 } from "./header.styled";
 
 const HeaderComponent = ({ currentUser, cartHidden, dispatch }) => {

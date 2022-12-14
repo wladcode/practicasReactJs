@@ -1,47 +1,45 @@
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Department from './department/Department';
-import House from './house/House';
-import { useState, useEffect, Component } from 'react';
-import DepartmentServices from '../api/homepay/DepartmentServices';
-import { getUserInfo } from '../api/util';
-import { withStyles } from '@material-ui/styles';
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Department from "./department/Department";
+import House from "./house/House";
+import { useState, useEffect, Component } from "react";
+import DepartmentServices from "../api/homepay/DepartmentServices";
+import { getUserInfo } from "../api/util";
+import { withStyles } from "@material-ui/styles";
 
 const styles = (theme) => ({
-    root: {
-        //display: 'flex',
-        width: '100%',
-    },
+  root: {
+    //display: 'flex',
+    width: "100%",
+  },
 
-    paper: {
-        //padding: theme.spacing(2),
-        display: 'flex',
-        overflow: 'auto',
-        flexDirection: 'column',
-    },
-    fixedHeight: {
-        //height: 240,
-    },
+  paper: {
+    //padding: theme.spacing(2),
+    display: "flex",
+    overflow: "auto",
+    flexDirection: "column",
+  },
+  fixedHeight: {
+    //height: 240,
+  },
 });
 
 const initialData = {
-    selectedHouse: {},
-    deparmentList: [],
-    userData: {}
+  selectedHouse: {},
+  deparmentList: [],
+  userData: {},
 };
 
-
 class ContainerTest extends Component {
-    state = {
-        selectedHouse: {},
-        deparmentList: [],
-        userData: {}
-    }
+  state = {
+    selectedHouse: {},
+    deparmentList: [],
+    userData: {},
+  };
 
-
-    /*
+  /*
     useEffect(() => {
         console.log("selectedHouse changed! ", selectedHouse);
         DepartmentServices.getDeparmentsByHouse(selectedHouse.id).then(response => {
@@ -54,78 +52,68 @@ class ContainerTest extends Component {
     }, [selectedHouse]);
     */
 
+  selecteHouse = (houseSelected) => {
+    console.log("SELECTE HOUISE: ", houseSelected);
 
+    this.setState({
+      selectedHouse: houseSelected,
+    });
 
-    selecteHouse = (houseSelected) => {
+    this.updateDeparmentData(houseSelected);
+  };
 
-        console.log("SELECTE HOUISE: ", houseSelected)
+  updateDeparmentData = (houseSelected) => {
+    DepartmentServices.getDeparmentsByHouse(houseSelected.id)
+      .then((response) => {
+        console.log("response DEPARMENTS: ", response.data);
 
         this.setState({
-            selectedHouse:houseSelected,
-        })
-
-        this.updateDeparmentData(houseSelected);
-        
-    };
-
-    updateDeparmentData = (houseSelected) =>{
-
-        DepartmentServices.getDeparmentsByHouse(houseSelected.id).then(response => {
-            console.log("response DEPARMENTS: ", response.data);
-
-            this.setState({
-                deparmentList: response.data.data
-            })
-
-
-            console.log("DATA: ", this.state);
-
-        }).catch(error => {
-
+          deparmentList: response.data.data,
         });
 
-    }
+        console.log("DATA: ", this.state);
+      })
+      .catch((error) => {});
+  };
 
+  render() {
+    const { classes } = this.props;
+    console.log("PROPS: ", this.props);
+    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
+    return (
+      <div className={classes.root}>
+        <h1>Casas y departamentos</h1>
 
-
-
-
-
-
-    render() {
-        const { classes } = this.props;
-        console.log("PROPS: ", this.props)
-        const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
-        return (
-            <div className={classes.root}>
-
-                <h1>Casas y departamentos</h1>
-
-                <Grid container spacing={2}>
-                    {/* House */}
-                    <Grid item xs={12} md={6} lg={6}>
-                        <Paper className={fixedHeightPaper}>
-                            {<House
-                                userData={this.props.user}
-                                onSelectHouse={this.selecteHouse} />}
-                        </Paper>
-                    </Grid>
-                    {/*Depart */}
-                    <Grid item xs={12} md={6} lg={6}>
-                        <Paper className={fixedHeightPaper}>
-                            {<Department
-                                userData={this.props.user}
-                                houseData={this.state.selectedHouse}
-                                listData={this.state.deparmentList}
-                                onUpdateData={this.updateDeparmentData} />}
-                        </Paper>
-                    </Grid>
-                </Grid>
-            </div>
-        );
-    }
+        <Grid container spacing={2}>
+          {/* House */}
+          <Grid item xs={12} md={6} lg={6}>
+            <Paper className={fixedHeightPaper}>
+              {
+                <House
+                  userData={this.props.user}
+                  onSelectHouse={this.selecteHouse}
+                />
+              }
+            </Paper>
+          </Grid>
+          {/*Depart */}
+          <Grid item xs={12} md={6} lg={6}>
+            <Paper className={fixedHeightPaper}>
+              {
+                <Department
+                  userData={this.props.user}
+                  houseData={this.state.selectedHouse}
+                  listData={this.state.deparmentList}
+                  onUpdateData={this.updateDeparmentData}
+                />
+              }
+            </Paper>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
 }
 
 /*
@@ -147,4 +135,4 @@ loadData = async ()=> {
 
 //}
 
-export default withStyles(styles)(HouseContainer)
+export default withStyles(styles)(HouseContainer);
