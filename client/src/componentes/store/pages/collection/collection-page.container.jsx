@@ -6,7 +6,7 @@ import DSSnipper from "./../../components/ds/ds-spinner/ds-spinner.component";
 import CollectionPage from "./collection-page.componente";
 
 const mapStateToProps = createStructuredSelector({
-  isLoading: (state) => !selectIsCollectionLoaded(state),
+    isLoading: (state) => !selectIsCollectionLoaded(state),
 });
 
 /*
@@ -15,9 +15,6 @@ const mapStateToProps = createStructuredSelector({
   */
 
 /* Con compose */
-const CollectionContainer = compose(
-  connect(mapStateToProps),
-  DSSnipper
-)(CollectionPage);
+const CollectionContainer = compose(connect(mapStateToProps), DSSnipper)(CollectionPage);
 
 export default CollectionContainer;

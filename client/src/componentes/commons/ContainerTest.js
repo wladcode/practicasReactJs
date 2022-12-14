@@ -10,36 +10,36 @@ import { getUserInfo } from "../api/util";
 import { withStyles } from "@material-ui/styles";
 
 const styles = (theme) => ({
-  root: {
-    //display: 'flex',
-    width: "100%",
-  },
+    root: {
+        //display: 'flex',
+        width: "100%",
+    },
 
-  paper: {
-    //padding: theme.spacing(2),
-    display: "flex",
-    overflow: "auto",
-    flexDirection: "column",
-  },
-  fixedHeight: {
-    //height: 240,
-  },
+    paper: {
+        //padding: theme.spacing(2),
+        display: "flex",
+        overflow: "auto",
+        flexDirection: "column",
+    },
+    fixedHeight: {
+        //height: 240,
+    },
 });
 
 const initialData = {
-  selectedHouse: {},
-  deparmentList: [],
-  userData: {},
-};
-
-class ContainerTest extends Component {
-  state = {
     selectedHouse: {},
     deparmentList: [],
     userData: {},
-  };
+};
 
-  /*
+class ContainerTest extends Component {
+    state = {
+        selectedHouse: {},
+        deparmentList: [],
+        userData: {},
+    };
+
+    /*
     useEffect(() => {
         console.log("selectedHouse changed! ", selectedHouse);
         DepartmentServices.getDeparmentsByHouse(selectedHouse.id).then(response => {
@@ -52,68 +52,63 @@ class ContainerTest extends Component {
     }, [selectedHouse]);
     */
 
-  selecteHouse = (houseSelected) => {
-    console.log("SELECTE HOUISE: ", houseSelected);
-
-    this.setState({
-      selectedHouse: houseSelected,
-    });
-
-    this.updateDeparmentData(houseSelected);
-  };
-
-  updateDeparmentData = (houseSelected) => {
-    DepartmentServices.getDeparmentsByHouse(houseSelected.id)
-      .then((response) => {
-        console.log("response DEPARMENTS: ", response.data);
+    selecteHouse = (houseSelected) => {
+        console.log("SELECTE HOUISE: ", houseSelected);
 
         this.setState({
-          deparmentList: response.data.data,
+            selectedHouse: houseSelected,
         });
 
-        console.log("DATA: ", this.state);
-      })
-      .catch((error) => {});
-  };
+        this.updateDeparmentData(houseSelected);
+    };
 
-  render() {
-    const { classes } = this.props;
-    console.log("PROPS: ", this.props);
-    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+    updateDeparmentData = (houseSelected) => {
+        DepartmentServices.getDeparmentsByHouse(houseSelected.id)
+            .then((response) => {
+                console.log("response DEPARMENTS: ", response.data);
 
-    return (
-      <div className={classes.root}>
-        <h1>Casas y departamentos</h1>
+                this.setState({
+                    deparmentList: response.data.data,
+                });
 
-        <Grid container spacing={2}>
-          {/* House */}
-          <Grid item xs={12} md={6} lg={6}>
-            <Paper className={fixedHeightPaper}>
-              {
-                <House
-                  userData={this.props.user}
-                  onSelectHouse={this.selecteHouse}
-                />
-              }
-            </Paper>
-          </Grid>
-          {/*Depart */}
-          <Grid item xs={12} md={6} lg={6}>
-            <Paper className={fixedHeightPaper}>
-              {
-                <Department
-                  userData={this.props.user}
-                  houseData={this.state.selectedHouse}
-                  listData={this.state.deparmentList}
-                  onUpdateData={this.updateDeparmentData}
-                />
-              }
-            </Paper>
-          </Grid>
-        </Grid>
-      </div>
-    );
-  }
+                console.log("DATA: ", this.state);
+            })
+            .catch((error) => {});
+    };
+
+    render() {
+        const { classes } = this.props;
+        console.log("PROPS: ", this.props);
+        const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+
+        return (
+            <div className={classes.root}>
+                <h1>Casas y departamentos</h1>
+
+                <Grid container spacing={2}>
+                    {/* House */}
+                    <Grid item xs={12} md={6} lg={6}>
+                        <Paper className={fixedHeightPaper}>
+                            {<House userData={this.props.user} onSelectHouse={this.selecteHouse} />}
+                        </Paper>
+                    </Grid>
+                    {/*Depart */}
+                    <Grid item xs={12} md={6} lg={6}>
+                        <Paper className={fixedHeightPaper}>
+                            {
+                                <Department
+                                    userData={this.props.user}
+                                    houseData={this.state.selectedHouse}
+                                    listData={this.state.deparmentList}
+                                    onUpdateData={this.updateDeparmentData}
+                                />
+                            }
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </div>
+        );
+    }
 }
 
 /*

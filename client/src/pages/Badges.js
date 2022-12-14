@@ -10,86 +10,86 @@ import PageLoading from "../componentes/pageloading/PageLoading";
 import PageError from "../componentes/pageerror/PageError";
 
 class Badges extends React.Component {
-  state = {
-    loading: true,
-    error: null,
-    data: undefined,
-  };
+    state = {
+        loading: true,
+        error: null,
+        data: undefined,
+    };
 
-  constructor(props) {
-    super(props);
-    console.log("1. CONSTRUCTOR: ", props);
+    constructor(props) {
+        super(props);
+        console.log("1. CONSTRUCTOR: ", props);
 
-    /*
+        /*
     this.state = {
       data: []
     };
     */
-  }
-
-  render() {
-    console.log("2/4. RENDER");
-
-    if (this.state.loading === true) {
-      return <PageLoading />;
-      // return "page loadin"
     }
 
-    if (this.state.error) {
-      return <PageError error={this.state.error} />;
-      //return `Error: ${this.state.error.message}`;
+    render() {
+        console.log("2/4. RENDER");
+
+        if (this.state.loading === true) {
+            return <PageLoading />;
+            // return "page loadin"
+        }
+
+        if (this.state.error) {
+            return <PageError error={this.state.error} />;
+            //return `Error: ${this.state.error.message}`;
+        }
+
+        return (
+            <React.Fragment>
+                <div className="Badges">
+                    <div className="Badges_hero">
+                        <div className="Badges_container">
+                            <img className="Badges_conf-logo" src={confLogo} alt="Logo" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="Badges_container">
+                    <div className="Badges_buttons">
+                        <Link to="/badges/new" className="btn btn-primary">
+                            New Badge
+                        </Link>
+                    </div>
+
+                    <div className="Badges_list">
+                        <div className="Badges_container">
+                            <BadgesList badges={this.state.data} />
+                        </div>
+                    </div>
+                </div>
+            </React.Fragment>
+        );
     }
 
-    return (
-      <React.Fragment>
-        <div className="Badges">
-          <div className="Badges_hero">
-            <div className="Badges_container">
-              <img className="Badges_conf-logo" src={confLogo} alt="Logo" />
-            </div>
-          </div>
-        </div>
+    componentDidMount() {
+        console.log("3. componentDidMount");
 
-        <div className="Badges_container">
-          <div className="Badges_buttons">
-            <Link to="/badges/new" className="btn btn-primary">
-              New Badge
-            </Link>
-          </div>
-
-          <div className="Badges_list">
-            <div className="Badges_container">
-              <BadgesList badges={this.state.data} />
-            </div>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  }
-
-  componentDidMount() {
-    console.log("3. componentDidMount");
-
-    this.fetchData();
-  }
-
-  fetchData = async () => {
-    this.setState({
-      loading: true,
-      error: null,
-    });
-
-    try {
-      const data = await api.badges.list();
-      this.setState({
-        loading: false,
-        data: data,
-      });
-    } catch (error) {
-      this.setState({ loading: false, error: error });
+        this.fetchData();
     }
 
-    /*
+    fetchData = async () => {
+        this.setState({
+            loading: true,
+            error: null,
+        });
+
+        try {
+            const data = await api.badges.list();
+            this.setState({
+                loading: false,
+                data: data,
+            });
+        } catch (error) {
+            this.setState({ loading: false, error: error });
+        }
+
+        /*
     this.timeOutId = setTimeout(() => {
       this.setState({
         data: [
@@ -128,26 +128,26 @@ class Badges extends React.Component {
     }, 3000);
 
     */
-  };
+    };
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log("5. componentDidUpdate");
-    console.log({
-      prevProps: prevProps,
-      prevState: prevState,
-    });
+    componentDidUpdate(prevProps, prevState) {
+        console.log("5. componentDidUpdate");
+        console.log({
+            prevProps: prevProps,
+            prevState: prevState,
+        });
 
-    console.log({
-      props: this.props,
-      state: this.state,
-    });
-  }
+        console.log({
+            props: this.props,
+            state: this.state,
+        });
+    }
 
-  componentWillUnmount() {
-    console.log("6. componentWillUnmount");
+    componentWillUnmount() {
+        console.log("6. componentWillUnmount");
 
-    clearTimeout(this.timeOutId);
-  }
+        clearTimeout(this.timeOutId);
+    }
 }
 
 export default Badges;

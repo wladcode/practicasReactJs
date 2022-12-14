@@ -11,94 +11,82 @@ import "./sign-in.scss";
 import { SingInContainer } from "./sign-in.styled";
 
 function SignInComponent() {
-  const [userCredentials, setUserCredentials] = useState({
-    email: "",
-    password: "",
-  });
-
-  const { email, password } = userCredentials;
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-
-      setUserCredentials({
+    const [userCredentials, setUserCredentials] = useState({
         email: "",
         password: "",
-      });
-    } catch (error) {
-      console.log("ERROR: ", error);
-    }
-  };
+    });
 
-  const handleChange = (event) => {
-    const { value, name } = event.target;
+    const { email, password } = userCredentials;
 
-    setUserCredentials({ ...userCredentials, [name]: value });
-  };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-  return (
-    <SingInContainer>
-      <div className="title">
-        <h2>Tengo una cuenta</h2>
-        <span>Ingresa con tu email y clave</span>
-      </div>
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
 
-      <form className="content" onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          <DSFormInputComponent
-            name="email"
-            value={email}
-            required
-            handleChange={handleChange}
-            label="Email"
-          />
+            setUserCredentials({
+                email: "",
+                password: "",
+            });
+        } catch (error) {
+            console.log("ERROR: ", error);
+        }
+    };
 
-          <DSFormInputComponent
-            name="password"
-            value={password}
-            required
-            handleChange={handleChange}
-            label="Password"
-          />
-        </Grid>
+    const handleChange = (event) => {
+        const { value, name } = event.target;
 
-        <div className="buttons">
-          <DSButtonComponent type="submit">Ingresar</DSButtonComponent>
-        </div>
+        setUserCredentials({ ...userCredentials, [name]: value });
+    };
 
-        <div className="text-divider">o</div>
+    return (
+        <SingInContainer>
+            <div className="title">
+                <h2>Tengo una cuenta</h2>
+                <span>Ingresa con tu email y clave</span>
+            </div>
 
-        <div className="buttons-sn">
-          <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
-            <img
-              src={googleIcon}
-              style={{ width: 32 }}
-              alt="Login con Google"
-            />
-          </DSButtonComponent>
+            <form className="content" onSubmit={handleSubmit}>
+                <Grid container spacing={2}>
+                    <DSFormInputComponent
+                        name="email"
+                        value={email}
+                        required
+                        handleChange={handleChange}
+                        label="Email"
+                    />
 
-          <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
-            <img
-              src={facebookIcon}
-              style={{ width: 32 }}
-              alt="Login con Facebook"
-            />
-          </DSButtonComponent>
+                    <DSFormInputComponent
+                        name="password"
+                        value={password}
+                        required
+                        handleChange={handleChange}
+                        label="Password"
+                    />
+                </Grid>
 
-          <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
-            <img
-              src={twitterIcon}
-              style={{ width: 32 }}
-              alt="Login con Twitter"
-            />
-          </DSButtonComponent>
-        </div>
-      </form>
-    </SingInContainer>
-  );
+                <div className="buttons">
+                    <DSButtonComponent type="submit">Ingresar</DSButtonComponent>
+                </div>
+
+                <div className="text-divider">o</div>
+
+                <div className="buttons-sn">
+                    <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
+                        <img src={googleIcon} style={{ width: 32 }} alt="Login con Google" />
+                    </DSButtonComponent>
+
+                    <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
+                        <img src={facebookIcon} style={{ width: 32 }} alt="Login con Facebook" />
+                    </DSButtonComponent>
+
+                    <DSButtonComponent type="button" onClick={signInWithGoogle} isSocial>
+                        <img src={twitterIcon} style={{ width: 32 }} alt="Login con Twitter" />
+                    </DSButtonComponent>
+                </div>
+            </form>
+        </SingInContainer>
+    );
 }
 
 export default SignInComponent;

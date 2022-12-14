@@ -5,34 +5,34 @@ export const REMOVE_ITEM_QUANTITY = "REMOVE_ITEM_QUANTITY";
 export const CLEAR_CHART = "CLEAR_CHART";
 
 export const toogleCartPanel = () => {
-  return {
-    type: TOGGLE_CART_PANEL,
-  };
+    return {
+        type: TOGGLE_CART_PANEL,
+    };
 };
 
 export const addItemToCart = (item) => {
-  return {
-    type: ADD_ITEM_CART,
-    payload: item,
-  };
+    return {
+        type: ADD_ITEM_CART,
+        payload: item,
+    };
 };
 
 export const removeItemFromCart = (item) => {
-  return {
-    type: REMOVE_ITEM_CART,
-    payload: item,
-  };
+    return {
+        type: REMOVE_ITEM_CART,
+        payload: item,
+    };
 };
 
 export const removeItemQuantity = (item) => {
-  return {
-    type: REMOVE_ITEM_QUANTITY,
-    payload: item,
-  };
+    return {
+        type: REMOVE_ITEM_QUANTITY,
+        payload: item,
+    };
 };
 
 export const clearChart = () => {
-  return {
-    type: CLEAR_CHART,
-  };
+    return {
+        type: CLEAR_CHART,
+    };
 };

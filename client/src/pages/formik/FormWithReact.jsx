@@ -10,132 +10,120 @@ import "./scss/sign-in.scss";
 import { SingInContainer } from "./scss/sign-in.styled";
 
 function FormWithReact() {
-  const intialValues = { email: "", password: "" };
-  const [formValues, setFormValues] = useState(intialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    const intialValues = { email: "", password: "" };
+    const [formValues, setFormValues] = useState(intialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (event) => {
-    const { value, name } = event.target;
+    const handleChange = (event) => {
+        const { value, name } = event.target;
 
-    setFormValues({ ...formValues, [name]: value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    console.log(`in submit ...${JSON.stringify(formValues)}`);
-    setFormErrors(validate(formValues));
-    setIsSubmitting(true);
-  };
-
-  //form validation handler
-  const validate = (values) => {
-    let errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-    if (!values.email) {
-      errors.email = "Cannot be blank";
-    } else if (!regex.test(values.email)) {
-      errors.email = "Invalid email format";
-    }
-
-    if (!values.password) {
-      errors.password = "Cannot be blank";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be more than 4 characters";
-    }
-
-    console.log("ERRORES: ", errors);
-
-    return errors;
-  };
-
-  const { email, password } = formValues;
-
-  useEffect(() => {
-    const signInWithGoogle = () => {
-      console.log(`signInWith google ...${JSON.stringify(formValues)}`);
+        setFormValues({ ...formValues, [name]: value });
     };
 
-    if (Object.keys(formErrors).length === 0 && isSubmitting) {
-      signInWithGoogle();
-    }
-  }, [formErrors, isSubmitting, formValues]);
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-  return (
-    <SingInContainer>
-      <div className="title">
-        <h2>Validaciones con React</h2>
-        <div>
-          <p>
-            <span>Ingresa con tu email y clave</span>
-          </p>
-        </div>
-      </div>
+        console.log(`in submit ...${JSON.stringify(formValues)}`);
+        setFormErrors(validate(formValues));
+        setIsSubmitting(true);
+    };
 
-      <form className="sign-in" onSubmit={handleSubmit} noValidate>
-        {Object.keys(formErrors).length === 0 && isSubmitting && (
-          <p>
-            <span className="success-msg">Form submitted successfully</span>
-          </p>
-        )}
-        <Grid container spacing={2}>
-          <DSFormInputComponent
-            name="email"
-            value={email}
-            required
-            handleChange={handleChange}
-            label="Email"
-            error={formErrors.email === undefined ? false : true}
-            helperText={formErrors.email === "" ? "" : formErrors.email}
-          />
+    //form validation handler
+    const validate = (values) => {
+        let errors = {};
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
-          <DSFormInputComponent
-            name="password"
-            value={password}
-            required
-            handleChange={handleChange}
-            label="Password"
-            error={formErrors.password === undefined ? false : true}
-            helperText={formErrors.password === "" ? "" : formErrors.password}
-          />
-        </Grid>
+        if (!values.email) {
+            errors.email = "Cannot be blank";
+        } else if (!regex.test(values.email)) {
+            errors.email = "Invalid email format";
+        }
 
-        <div className="buttons">
-          <DSButtonComponent type="submit">Ingresar</DSButtonComponent>
-        </div>
+        if (!values.password) {
+            errors.password = "Cannot be blank";
+        } else if (values.password.length < 4) {
+            errors.password = "Password must be more than 4 characters";
+        }
 
-        <div className="text-divider">o</div>
+        console.log("ERRORES: ", errors);
 
-        <div className="buttons-sn">
-          <DSButtonComponent type="submit" isSocial>
-            <img
-              src={googleIcon}
-              style={{ width: 32 }}
-              alt="Login con Google"
-            />
-          </DSButtonComponent>
+        return errors;
+    };
 
-          <DSButtonComponent type="submit" isSocial>
-            <img
-              src={facebookIcon}
-              style={{ width: 32 }}
-              alt="Login con Facebook"
-            />
-          </DSButtonComponent>
+    const { email, password } = formValues;
 
-          <DSButtonComponent type="submit" isSocial>
-            <img
-              src={twitterIcon}
-              style={{ width: 32 }}
-              alt="Login con Twitter"
-            />
-          </DSButtonComponent>
-        </div>
-      </form>
-    </SingInContainer>
-  );
+    useEffect(() => {
+        const signInWithGoogle = () => {
+            console.log(`signInWith google ...${JSON.stringify(formValues)}`);
+        };
+
+        if (Object.keys(formErrors).length === 0 && isSubmitting) {
+            signInWithGoogle();
+        }
+    }, [formErrors, isSubmitting, formValues]);
+
+    return (
+        <SingInContainer>
+            <div className="title">
+                <h2>Validaciones con React</h2>
+                <div>
+                    <p>
+                        <span>Ingresa con tu email y clave</span>
+                    </p>
+                </div>
+            </div>
+
+            <form className="sign-in" onSubmit={handleSubmit} noValidate>
+                {Object.keys(formErrors).length === 0 && isSubmitting && (
+                    <p>
+                        <span className="success-msg">Form submitted successfully</span>
+                    </p>
+                )}
+                <Grid container spacing={2}>
+                    <DSFormInputComponent
+                        name="email"
+                        value={email}
+                        required
+                        handleChange={handleChange}
+                        label="Email"
+                        error={formErrors.email === undefined ? false : true}
+                        helperText={formErrors.email === "" ? "" : formErrors.email}
+                    />
+
+                    <DSFormInputComponent
+                        name="password"
+                        value={password}
+                        required
+                        handleChange={handleChange}
+                        label="Password"
+                        error={formErrors.password === undefined ? false : true}
+                        helperText={formErrors.password === "" ? "" : formErrors.password}
+                    />
+                </Grid>
+
+                <div className="buttons">
+                    <DSButtonComponent type="submit">Ingresar</DSButtonComponent>
+                </div>
+
+                <div className="text-divider">o</div>
+
+                <div className="buttons-sn">
+                    <DSButtonComponent type="submit" isSocial>
+                        <img src={googleIcon} style={{ width: 32 }} alt="Login con Google" />
+                    </DSButtonComponent>
+
+                    <DSButtonComponent type="submit" isSocial>
+                        <img src={facebookIcon} style={{ width: 32 }} alt="Login con Facebook" />
+                    </DSButtonComponent>
+
+                    <DSButtonComponent type="submit" isSocial>
+                        <img src={twitterIcon} style={{ width: 32 }} alt="Login con Twitter" />
+                    </DSButtonComponent>
+                </div>
+            </form>
+        </SingInContainer>
+    );
 }
 
 export default FormWithReact;

@@ -4,26 +4,26 @@ import { render } from "@testing-library/react";
 import { CardList } from "./card-list/card-list.component";
 
 class Monsters extends Component {
-  constructor() {
-    super();
+    constructor() {
+        super();
 
-    this.state = {
-      monsters: [],
-    };
-  }
+        this.state = {
+            monsters: [],
+        };
+    }
 
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((users) => this.setState({ monsters: users }));
-  }
+    componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response) => response.json())
+            .then((users) => this.setState({ monsters: users }));
+    }
 
-  render() {
-    return (
-      <div>
-        <CardList monsters={this.state.monsters}></CardList>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <CardList monsters={this.state.monsters}></CardList>
+            </div>
+        );
+    }
 }
 export default Monsters;

@@ -21,26 +21,26 @@ const CollectionPageWithSpinner = DSSnipper(CollectionPage);
 */
 
 function ShopPage({ match }) {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("en use effect de shoppage");
-    dispatch(fetchCollectionsStart());
-  }, [dispatch]);
+    useEffect(() => {
+        console.log("en use effect de shoppage");
+        dispatch(fetchCollectionsStart());
+    }, [dispatch]);
 
-  // componentDidMount() {
-  /* CON THUNKS
+    // componentDidMount() {
+    /* CON THUNKS
     const { fetchCollectionsStartAsync } = this.props;
     fetchCollectionsStartAsync();
 
      */
 
-  /* CON SAGA
-   */
+    /* CON SAGA
+     */
 
-  // fetchCollectionsStart();
+    // fetchCollectionsStart();
 
-  /*
+    /*
     Uso de APIS REST
      
     axios.get(
@@ -49,7 +49,7 @@ function ShopPage({ match }) {
       .then((response) => console.log("REST COLLECTIONS: ",response))
       .catch((error) => console.log("error", error));
 */
-  /*
+    /*
     Uso de PROMESAS
 
       const collectionRef = firestoreStoreApp.collection("shopData");
@@ -63,7 +63,7 @@ function ShopPage({ match }) {
       });
     });
 */
-  /*
+    /*
     Uso de OBSERVABLE
     collectionRef.onSnapshot(async (snapshot) => {
       const collectionsToMap = convertCollectionSnapshotToMap(snapshot);
@@ -75,22 +75,15 @@ function ShopPage({ match }) {
       })
     });
     */
-  //}
+    //}
 
-  return (
-    <div className="shop-page">
-      <Route
-        exact
-        path={`${match.path}`}
-        component={CollectionOverViewContainer}
-      />
+    return (
+        <div className="shop-page">
+            <Route exact path={`${match.path}`} component={CollectionOverViewContainer} />
 
-      <Route
-        path={`${match.path}/:collectionId`}
-        component={CollectionContainer}
-      />
-    </div>
-  );
+            <Route path={`${match.path}/:collectionId`} component={CollectionContainer} />
+        </div>
+    );
 }
 
 /*

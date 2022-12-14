@@ -7,19 +7,19 @@ import PreviewCollectionComponent from "./../preview/preview.component";
 import "./collections-preview.scss";
 
 const CollectionOverViewComponent = ({ collections }) => {
-  console.log("CONTAINE R ", collections);
+    console.log("CONTAINE R ", collections);
 
-  return (
-    <div className="collections-overview">
-      {collections.map(({ id, ...otherCollectionProps }) => (
-        <PreviewCollectionComponent key={id} {...otherCollectionProps} />
-      ))}
-    </div>
-  );
+    return (
+        <div className="collections-overview">
+            {collections.map(({ id, ...otherCollectionProps }) => (
+                <PreviewCollectionComponent key={id} {...otherCollectionProps} />
+            ))}
+        </div>
+    );
 };
 
 const mapStateToProps = createStructuredSelector({
-  collections: selectCollectionsForPreview,
+    collections: selectCollectionsForPreview,
 });
 
 export default connect(mapStateToProps)(CollectionOverViewComponent);

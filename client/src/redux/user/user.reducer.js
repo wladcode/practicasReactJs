@@ -1,26 +1,26 @@
 import { SET_CURRENT_USER, USER_LOGOUT_SUCCESS } from "./user.actions";
 
 const INITIAL_STATE = {
-  currentUser: null,
+    currentUser: null,
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case SET_CURRENT_USER:
-      return {
-        ...state,
-        currentUser: action.payload,
-      };
+    switch (action.type) {
+        case SET_CURRENT_USER:
+            return {
+                ...state,
+                currentUser: action.payload,
+            };
 
-    case USER_LOGOUT_SUCCESS:
-      return {
-        ...state,
-        currentUser: null,
-      };
+        case USER_LOGOUT_SUCCESS:
+            return {
+                ...state,
+                currentUser: null,
+            };
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 };
 
 export default userReducer;

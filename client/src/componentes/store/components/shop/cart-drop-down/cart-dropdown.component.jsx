@@ -9,33 +9,33 @@ import CartItem from "./../item/cart-item.component";
 import "./cart-dropdown.scss";
 
 function CartDropDownComponent({ cartItems, dispatch }) {
-  const history = useHistory();
+    const history = useHistory();
 
-  return (
-    <div className="cart-dropdown">
-      <div className="cart-items">
-        {cartItems.length ? (
-          cartItems.map((item) => <CartItem key={item.id} item={item} />)
-        ) : (
-          <DSAlert type="warning" message="No existen Registros" />
-        )}
-      </div>
-      <DSButtonComponent
-        onClick={() => {
-          history.push("/shop/checkout");
-          dispatch(toogleCartPanel());
-        }}
-      >
-        PAGAR
-      </DSButtonComponent>
-    </div>
-  );
+    return (
+        <div className="cart-dropdown">
+            <div className="cart-items">
+                {cartItems.length ? (
+                    cartItems.map((item) => <CartItem key={item.id} item={item} />)
+                ) : (
+                    <DSAlert type="warning" message="No existen Registros" />
+                )}
+            </div>
+            <DSButtonComponent
+                onClick={() => {
+                    history.push("/shop/checkout");
+                    dispatch(toogleCartPanel());
+                }}
+            >
+                PAGAR
+            </DSButtonComponent>
+        </div>
+    );
 }
 
 const mapStateToProps = (state) => {
-  return {
-    cartItems: selectCartItems(state),
-  };
+    return {
+        cartItems: selectCartItems(state),
+    };
 };
 
 export default connect(mapStateToProps)(CartDropDownComponent);

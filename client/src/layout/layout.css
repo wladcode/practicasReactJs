@@ -1,24 +1,24 @@
 article {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-  min-height: 6vh;
+    min-height: 6vh;
 }
 
 main {
-  display: flex;
-  flex-grow: 1;
+    display: flex;
+    flex-grow: 1;
 }
 
 footer {
-  min-height: 5vh;
-  text-align: center;
-  border-top: 1px solid gray;
-  background-color: #1c3643;
-  color: white;
-  font-size: larger;
-  font-weight: bold;
+    min-height: 5vh;
+    text-align: center;
+    border-top: 1px solid gray;
+    background-color: #1c3643;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
 }

@@ -1,57 +1,57 @@
 .card-monster-container {
-  width: 200px;
-  height: 275px;
-  background-color: #95dada !important;
-  border: 1px solid grey !important;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  transition: transform 0.25s ease-out !important;
-  text-align: center;
-  min-height: 100px !important;
+    width: 200px;
+    height: 275px;
+    background-color: #95dada !important;
+    border: 1px solid grey !important;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out !important;
+    text-align: center;
+    min-height: 100px !important;
 }
 
 .card-monster-content {
-  display: flex;
-  flex-direction: column;
-  padding: 0 !important;
-  text-align: justify;
-  flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    text-align: justify;
+    flex-grow: 1;
 }
 
 .card-monster-media-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  overflow-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 .card-monster-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .card-monster-container:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .text-title {
-  font-family: "Metal Mania", cursive;
-  font-size: 72px;
+    font-family: "Metal Mania", cursive;
+    font-size: 72px;
 }
 
 .card-monster-image {
-  width: 85px !important;
+    width: 85px !important;
 }
 
 .card-monster-actions {
-  padding: 0 !important;
-  justify-content: space-evenly;
+    padding: 0 !important;
+    justify-content: space-evenly;
 }

@@ -7,5 +7,5 @@ const chartSaga = [takeLatest(USER_LOGOUT_SUCCESS, sagaClearChart)];
 export default chartSaga;
 
 export function* sagaClearChart() {
-  yield put(clearChart());
+    yield put(clearChart());
 }

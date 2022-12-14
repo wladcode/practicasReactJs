@@ -8,16 +8,16 @@ import { ReactComponent as ShoppingIcon } from "../../../../../assets/icons/shop
 import { selectCartItemsCount } from "../../../../../redux/char/cart-selectors";
 
 const CartIconComponent = ({ countItems, dispatch }) => (
-  <div className="cart-icon" onClick={() => dispatch(toogleCartPanel())}>
-    <ShoppingIcon className="shopping-icon" />
-    <span className="item-count">{countItems}</span>
-  </div>
+    <div className="cart-icon" onClick={() => dispatch(toogleCartPanel())}>
+        <ShoppingIcon className="shopping-icon" />
+        <span className="item-count">{countItems}</span>
+    </div>
 );
 
 const mapStateToProps = (state) => {
-  return {
-    countItems: selectCartItemsCount(state),
-  };
+    return {
+        countItems: selectCartItemsCount(state),
+    };
 };
 
 /*

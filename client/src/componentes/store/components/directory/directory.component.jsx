@@ -7,36 +7,34 @@ import { createStructuredSelector } from "reselect";
 import { selectDirectorySection } from "./../../../../redux/directory/directory-selectors";
 
 const DirectoryComponent = ({ sections }) => {
-  const renderSections = () => {
-    console.log("SECTIONS ", sections);
+    const renderSections = () => {
+        console.log("SECTIONS ", sections);
 
-    let smallSections = sections.filter(
-      (item) => item.size === "small" || item.size === undefined
-    );
+        let smallSections = sections.filter((item) => item.size === "small" || item.size === undefined);
 
-    let largeSections = sections.filter((item) => item.size === "large");
+        let largeSections = sections.filter((item) => item.size === "large");
 
-    return (
-      <div className="directory-menu">
-        <div className="directory-row">
-          {smallSections.map(({ id, ...otherSectionProps }) => (
-            <MenuItemComponent key={id} {...otherSectionProps} />
-          ))}
-        </div>
-        <div className="directory-row">
-          {largeSections.map(({ id, ...otherSectionProps }) => (
-            <MenuItemComponent key={id} {...otherSectionProps} />
-          ))}
-        </div>
-      </div>
-    );
-  };
+        return (
+            <div className="directory-menu">
+                <div className="directory-row">
+                    {smallSections.map(({ id, ...otherSectionProps }) => (
+                        <MenuItemComponent key={id} {...otherSectionProps} />
+                    ))}
+                </div>
+                <div className="directory-row">
+                    {largeSections.map(({ id, ...otherSectionProps }) => (
+                        <MenuItemComponent key={id} {...otherSectionProps} />
+                    ))}
+                </div>
+            </div>
+        );
+    };
 
-  return <Fragment>{renderSections()}</Fragment>;
+    return <Fragment>{renderSections()}</Fragment>;
 };
 
 const mapStateToProps = createStructuredSelector({
-  sections: selectDirectorySection,
+    sections: selectDirectorySection,
 });
 
 export default connect(mapStateToProps)(DirectoryComponent);

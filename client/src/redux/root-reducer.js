@@ -8,18 +8,18 @@ import shopReducer from "./shop/shop-reducer";
 import geolocationReducer from "./geolocation/geolocation-reducer";
 
 const persistConfig = {
-  key: "root-key",
-  storage,
-  whitelist: ["cart"],
+    key: "root-key",
+    storage,
+    whitelist: ["cart"],
 };
 // user es persistido por firebase
 
 const rootReducer = combineReducers({
-  user: userReducer,
-  cart: cartReducer,
-  directory: directoryReducer,
-  shop: shopReducer,
-  geolocation: geolocationReducer,
+    user: userReducer,
+    cart: cartReducer,
+    directory: directoryReducer,
+    shop: shopReducer,
+    geolocation: geolocationReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

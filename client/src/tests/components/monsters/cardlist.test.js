@@ -3,13 +3,13 @@ import { CardList } from "../../../componentes/monsters/card-list/card-list.comp
 import { shallow, mount, render } from "enzyme";
 
 test("CardList componente test", () => {
-  const mockRobots = [
-    {
-      id: 1,
-      name: "Wladimir",
-      username: "chamow",
-      email: "teste@dss.com",
-    },
-  ];
-  expect(shallow(<CardList monsters={mockRobots} />)).toMatchSnapshot();
+    const mockRobots = [
+        {
+            id: 1,
+            name: "Wladimir",
+            username: "chamow",
+            email: "teste@dss.com",
+        },
+    ];
+    expect(shallow(<CardList monsters={mockRobots} />)).toMatchSnapshot();
 });

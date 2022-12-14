@@ -7,92 +7,92 @@ import DSFormInputComponent from "../../ds-input/ds-input.component";
 import "./sign-up.scss";
 
 function SignUpComponent({ signUp }) {
-  const [userData, setUserData] = useState({
-    fullname: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-
-  const { fullname, email, password, confirmPassword } = userData;
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    if (password !== confirmPassword) {
-      alert("El password no coincide");
-      return;
-    }
-
-    signUp({ fullname, email, password });
-
-    setUserData({
-      fullname: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
+    const [userData, setUserData] = useState({
+        fullname: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
     });
-  };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { fullname, email, password, confirmPassword } = userData;
 
-    setUserData({ ...userData, [name]: value });
-  };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-  return (
-    <div className="sign-up">
-      <div className="title">
-        <h2>No tengo una cuenta</h2>
-        <span>Registrate con tu email y clave</span>
-      </div>
+        if (password !== confirmPassword) {
+            alert("El password no coincide");
+            return;
+        }
 
-      <form className="content" onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          <DSFormInputComponent
-            name="fullname"
-            value={fullname}
-            required
-            handleChange={handleChange}
-            label="Nombre"
-          />
-          <DSFormInputComponent
-            name="email"
-            value={email}
-            required
-            handleChange={handleChange}
-            label="Email"
-          />
+        signUp({ fullname, email, password });
 
-          <DSFormInputComponent
-            name="password"
-            value={password}
-            required
-            handleChange={handleChange}
-            label="Password"
-          />
+        setUserData({
+            fullname: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+        });
+    };
 
-          <DSFormInputComponent
-            name="confirmPassword"
-            value={confirmPassword}
-            required
-            handleChange={handleChange}
-            label="Confirme la password"
-          />
-        </Grid>
+    const handleChange = (event) => {
+        const { name, value } = event.target;
 
-        <div className="buttons">
-          <DSButtonComponent type="submit">Registrarse</DSButtonComponent>
+        setUserData({ ...userData, [name]: value });
+    };
+
+    return (
+        <div className="sign-up">
+            <div className="title">
+                <h2>No tengo una cuenta</h2>
+                <span>Registrate con tu email y clave</span>
+            </div>
+
+            <form className="content" onSubmit={handleSubmit}>
+                <Grid container spacing={2}>
+                    <DSFormInputComponent
+                        name="fullname"
+                        value={fullname}
+                        required
+                        handleChange={handleChange}
+                        label="Nombre"
+                    />
+                    <DSFormInputComponent
+                        name="email"
+                        value={email}
+                        required
+                        handleChange={handleChange}
+                        label="Email"
+                    />
+
+                    <DSFormInputComponent
+                        name="password"
+                        value={password}
+                        required
+                        handleChange={handleChange}
+                        label="Password"
+                    />
+
+                    <DSFormInputComponent
+                        name="confirmPassword"
+                        value={confirmPassword}
+                        required
+                        handleChange={handleChange}
+                        label="Confirme la password"
+                    />
+                </Grid>
+
+                <div className="buttons">
+                    <DSButtonComponent type="submit">Registrarse</DSButtonComponent>
+                </div>
+            </form>
         </div>
-      </form>
-    </div>
-  );
+    );
 }
 
 const mapDispathToProps = (dispath) => {
-  return {
-    signUp: (credentials) => dispath(userSignUpStart(credentials)),
-  };
+    return {
+        signUp: (credentials) => dispath(userSignUpStart(credentials)),
+    };
 };
 
 export default connect(null, mapDispathToProps)(SignUpComponent);

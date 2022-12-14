@@ -7,40 +7,40 @@ export const USER_SIGNUP_START = "USER_SIGNUP_START";
 export const USER_SIGNUP_SUCCESS = "USER_SIGNUP_SUCCESS;";
 
 export const setCurrentUser = (user) => {
-  return {
-    type: SET_CURRENT_USER,
-    payload: user,
-  };
+    return {
+        type: SET_CURRENT_USER,
+        payload: user,
+    };
 };
 
 export const checkUserSession = () => {
-  return {
-    type: CHECK_USER_SESSION,
-  };
+    return {
+        type: CHECK_USER_SESSION,
+    };
 };
 
 export const userLogOutStart = () => {
-  return {
-    type: USER_LOGOUT_START,
-  };
+    return {
+        type: USER_LOGOUT_START,
+    };
 };
 
 export const userLogOutSuccess = () => {
-  return {
-    type: USER_LOGOUT_SUCCESS,
-  };
+    return {
+        type: USER_LOGOUT_SUCCESS,
+    };
 };
 
 export const userSignUpStart = (userCredentials) => {
-  return {
-    type: USER_SIGNUP_START,
-    payload: userCredentials,
-  };
+    return {
+        type: USER_SIGNUP_START,
+        payload: userCredentials,
+    };
 };
 
 export const userSignUpSuccess = ({ user, additionalData }) => {
-  return {
-    type: USER_SIGNUP_SUCCESS,
-    payload: { user, additionalData },
-  };
+    return {
+        type: USER_SIGNUP_SUCCESS,
+        payload: { user, additionalData },
+    };
 };

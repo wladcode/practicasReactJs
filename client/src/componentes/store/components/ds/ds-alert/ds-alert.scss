@@ -1,44 +1,44 @@
 @mixin alert {
-  padding: 15px 5px;
-  width: 200px;
-  display: flex;
+    padding: 15px 5px;
+    width: 200px;
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 }
 @mixin alertIcon {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
 }
 
 @mixin alertMessage {
-  word-wrap: break-word;
-  width: 140px;
-  height: 40px;
+    word-wrap: break-word;
+    width: 140px;
+    height: 40px;
 }
 
 .alert-warning {
-  @include alert();
-  border: 1px solid salmon;
-  background-color: #f7e594;
+    @include alert();
+    border: 1px solid salmon;
+    background-color: #f7e594;
 
-  .alert-icon-warning {
-    @include alertIcon();
-    background-image: url("../../../../../assets/alerts/alert-warning.svg");
-  }
+    .alert-icon-warning {
+        @include alertIcon();
+        background-image: url("../../../../../assets/alerts/alert-warning.svg");
+    }
 }
 
 .alert-info {
-  @include alert();
-  border: 1px solid #4b61f2;
-  background-color: #6174ed;
+    @include alert();
+    border: 1px solid #4b61f2;
+    background-color: #6174ed;
 
-  .alert-icon-info {
-    @include alertIcon();
-    background-image: url("../../../../../assets/alerts/alert-info.svg");
-  }
+    .alert-icon-info {
+        @include alertIcon();
+        background-image: url("../../../../../assets/alerts/alert-info.svg");
+    }
 }
 
 .alert-message {
-  @include alertMessage();
+    @include alertMessage();
 }

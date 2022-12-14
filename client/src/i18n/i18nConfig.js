@@ -9,29 +9,28 @@ const defaultLanguage = ["es"];
 const availableLanguages = ["es", "en"];
 
 const resources = {
-  en: {
-    translation: translationEN,
-  },
-  es: {
-    translation: translationES,
-  },
+    en: {
+        translation: translationEN,
+    },
+    es: {
+        translation: translationES,
+    },
 };
 
-i18n
-  .use(Backend)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: defaultLanguage,
-    detection: {
-      checkWhitelist: true,
-    },
-    debug: false,
-    whitelist: availableLanguages,
-    interpolation: {
-      escapeValue: false, // no need for react. it escapes by default
-    },
-  });
+i18n.use(Backend)
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        resources,
+        fallbackLng: defaultLanguage,
+        detection: {
+            checkWhitelist: true,
+        },
+        debug: false,
+        whitelist: availableLanguages,
+        interpolation: {
+            escapeValue: false, // no need for react. it escapes by default
+        },
+    });
 
 export default i18n;

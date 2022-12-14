@@ -65,17 +65,17 @@ import * as serviceWorker from "./serviceWorkerRegistration";
 //CONTENEDOR
 const container = document.getElementById("app");
 {
-  /*<ApolloProvider client={apolloClientConfig}></ApolloProvider>*/
+    /*<ApolloProvider client={apolloClientConfig}></ApolloProvider>*/
 }
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <PersistGate loading={null} persistor={persistor}>
-        <App />
-      </PersistGate>
-    </BrowserRouter>
-  </Provider>,
-  container
+    <Provider store={store}>
+        <BrowserRouter>
+            <PersistGate loading={null} persistor={persistor}>
+                <App />
+            </PersistGate>
+        </BrowserRouter>
+    </Provider>,
+    container,
 );
 
 serviceWorker.register();

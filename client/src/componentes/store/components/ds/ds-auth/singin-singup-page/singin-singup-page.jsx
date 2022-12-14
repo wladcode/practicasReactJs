@@ -6,62 +6,62 @@ import "./singin-singup.scss";
 import SignUpComponent from "./../sign-up/sign.up.component";
 
 class SingUnSingUpPage extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      value: 0,
+        this.state = {
+            value: 0,
+        };
+    }
+
+    handleChange = (event, newValue) => {
+        this.setState({
+            value: newValue,
+        });
     };
-  }
 
-  handleChange = (event, newValue) => {
-    this.setState({
-      value: newValue,
-    });
-  };
-
-  handleChangeIndex = (index) => {
-    this.setState({
-      value: index,
-    });
-  };
-
-  a11yProps = (index) => {
-    return {
-      id: `full-width-tab-${index}`,
-      "aria-controls": `full-width-tabpanel-${index}`,
+    handleChangeIndex = (index) => {
+        this.setState({
+            value: index,
+        });
     };
-  };
 
-  render() {
-    const { value } = this.state;
+    a11yProps = (index) => {
+        return {
+            id: `full-width-tab-${index}`,
+            "aria-controls": `full-width-tabpanel-${index}`,
+        };
+    };
 
-    return (
-      <div className="sign-in-and-sign-up">
-        <div className="login-logup">
-          <div className="content">
-            <Tabs
-              value={value}
-              onChange={this.handleChange}
-              variant="fullWidth"
-              indicatorColor="secondary"
-              textColor="secondary"
-              aria-label="icon label tabs example"
-            >
-              <Tab label="Login" />
-              <Tab label="Registro" />
-            </Tabs>
+    render() {
+        const { value } = this.state;
 
-            {value === 0 ? <SignInComponent /> : <SignUpComponent />}
-          </div>
-        </div>
+        return (
+            <div className="sign-in-and-sign-up">
+                <div className="login-logup">
+                    <div className="content">
+                        <Tabs
+                            value={value}
+                            onChange={this.handleChange}
+                            variant="fullWidth"
+                            indicatorColor="secondary"
+                            textColor="secondary"
+                            aria-label="icon label tabs example"
+                        >
+                            <Tab label="Login" />
+                            <Tab label="Registro" />
+                        </Tabs>
 
-        <div className="login-banner">
-          <img src={logoImage} alt="Logo imagen" />
-        </div>
-      </div>
-    );
-  }
+                        {value === 0 ? <SignInComponent /> : <SignUpComponent />}
+                    </div>
+                </div>
+
+                <div className="login-banner">
+                    <img src={logoImage} alt="Logo imagen" />
+                </div>
+            </div>
+        );
+    }
 }
 
 export default SingUnSingUpPage;

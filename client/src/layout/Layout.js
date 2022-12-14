@@ -5,25 +5,25 @@ import MenuComponent from "./menu/Menu.component";
 import NavbarCustome from "./navbar/Navbar";
 
 function Layout(props) {
-  //const children = props.children;
+    //const children = props.children;
 
-  return (
-    <article>
-      <header>
-        <NavbarCustome />
-      </header>
+    return (
+        <article>
+            <header>
+                <NavbarCustome />
+            </header>
 
-      <main>
-        <section className="d-none d-md-block">
-          <MenuComponent />
-        </section>
+            <main>
+                <section className="d-none d-md-block">
+                    <MenuComponent />
+                </section>
 
-        <Container fluid>{props.children}</Container>
-      </main>
+                <Container fluid>{props.children}</Container>
+            </main>
 
-      <footer>Diamoncode - 2022 -</footer>
-    </article>
-  );
+            <footer>Diamoncode - 2022 -</footer>
+        </article>
+    );
 }
 
 export default Layout;

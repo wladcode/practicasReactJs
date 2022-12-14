@@ -7,41 +7,41 @@ $color-green: #8fffab;
 $border-radius: 4px;
 
 .sign-in {
-  //width: 440px;
-  display: flex;
-  flex-direction: column;
-
-  .title {
-    margin: 0;
-  }
-
-  .content {
-    padding-top: 30px;
-  }
-
-  .buttons {
-    padding-top: 10px;
+    //width: 440px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-  }
 
-  .buttons-sn {
-    padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
+    .title {
+        margin: 0;
+    }
 
-  .success-msg {
-    color: $primary-color;
-    background: $color-green;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem;
-    border-radius: $border-radius;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
+    .content {
+        padding-top: 30px;
+    }
+
+    .buttons {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .buttons-sn {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .success-msg {
+        color: $primary-color;
+        background: $color-green;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
+        border-radius: $border-radius;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
 }

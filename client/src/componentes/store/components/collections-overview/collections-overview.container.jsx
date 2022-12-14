@@ -6,7 +6,7 @@ import CollectionOverViewComponent from "./../collections-preview/collections-pr
 import DSSnipper from "./../ds/ds-spinner/ds-spinner.component";
 
 const mapStateToProps = createStructuredSelector({
-  isLoading: selectIsCollectionFetching,
+    isLoading: selectIsCollectionFetching,
 });
 
 /*
@@ -15,9 +15,6 @@ const mapStateToProps = createStructuredSelector({
   */
 
 /* Con compose */
-const CollectionOverViewContainer = compose(
-  connect(mapStateToProps),
-  DSSnipper
-)(CollectionOverViewComponent);
+const CollectionOverViewContainer = compose(connect(mapStateToProps), DSSnipper)(CollectionOverViewComponent);
 
 export default CollectionOverViewContainer;
