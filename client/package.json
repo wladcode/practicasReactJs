@@ -109,7 +109,8 @@
         "deploy": "gh-pages -d build",
         "predeploy": "npm run build",
         "webpakBuild": "webpack --mode production",
-        "deploy_pages": "gh-pages -d build"
+        "deploy_pages": "gh-pages -d build",
+        "precommit": "lint-staged"
     },
     "eslintConfig": {
         "extends": "react-app"
