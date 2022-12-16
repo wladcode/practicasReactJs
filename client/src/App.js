@@ -34,7 +34,7 @@ function App() {
             <Layout>
                 <Suspense fallback={<div>..Loading</div>}>
                     <Switch>
-                        <Route exact path='/' component={HomePage} />
+                        <Route exact path="/" component={HomePage} />
                         <Route path="/badges" component={Badges} />
                         <Route path="/badges/new" component={BadgeNew} />
                         <Route path="/badges/:badgeId" component={BagdeDetailsContainer} />
