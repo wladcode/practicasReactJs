@@ -10,9 +10,6 @@ class Monsters extends Component {
         this.state = {
             monsters: [],
         };
-
-
-
     }
 
     componentDidMount() {
@@ -24,8 +21,7 @@ class Monsters extends Component {
     render() {
         return (
             <div>
-        <CardList monsters={this.state.monsters}></CardList>
-
+                <CardList monsters={this.state.monsters}></CardList>
             </div>
         );
     }
