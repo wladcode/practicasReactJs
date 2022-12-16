@@ -5,11 +5,13 @@ import { CardList } from "./card-list/card-list.component";
 
 class Monsters extends Component {
     constructor() {
-        super();
+        
+        
+    super();
 
-        this.state = {
-            monsters: [],
-        };
+this.state = {
+                monsters: [],
+       };
     }
 
     componentDidMount() {
@@ -21,7 +23,7 @@ class Monsters extends Component {
     render() {
         return (
             <div>
-                <CardList monsters={this.state.monsters}></CardList>
+    <CardList monsters={this.state.monsters}></CardList>
             </div>
         );
     }
