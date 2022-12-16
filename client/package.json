@@ -82,13 +82,13 @@
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.6",
         "faker": "^5.5.3",
+        "husky": "4",
         "json-server": "^0.16.3",
+        "lint-staged": "^13.1.0",
         "npm-run-all": "^4.1.5",
         "react-test-renderer": "16.14.0",
         "redux-mock-store": "^1.5.4",
-        "sass": "^1.56.2",
-        "husky": "^1.2.0",
-        "lint-staged": "^13.1.0"
+        "sass": "^1.56.2"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -116,7 +116,6 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
