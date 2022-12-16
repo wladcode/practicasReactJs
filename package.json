@@ -38,8 +38,7 @@
     },
     "lint-staged": {
         "**/*.{js,jsx}": [
-            "prettier  --list-different",
-            "eslint"
+            "eslint --fix"
         ]
     }
 }

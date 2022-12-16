@@ -13,4 +13,8 @@ module.exports = {
         },
     },
     extends: ["prettier"],
+
+    rules:{
+        indent: "error"
+    }
 };
