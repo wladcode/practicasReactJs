@@ -13,8 +13,8 @@ module.exports = {
         },
     },
     extends: ["prettier"],
-
-    rules:{
-        indent: "error"
-    }
+    plugins: ["prettier"],
+    rules: {
+        "prettier/prettier": ["error"],
+    },
 };
