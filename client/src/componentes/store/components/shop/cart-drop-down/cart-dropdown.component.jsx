@@ -24,8 +24,7 @@ function CartDropDownComponent({ cartItems, dispatch }) {
                 onClick={() => {
                     history.push("/shop/checkout");
                     dispatch(toogleCartPanel());
-                }}
-            >
+                }}>
                 PAGAR
             </DSButtonComponent>
         </div>

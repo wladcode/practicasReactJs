@@ -58,8 +58,7 @@ function BadgeDetails(props) {
                                     onClick={() => {
                                         setCount(count + 1);
                                     }}
-                                    className="btn btn-primary mr-4"
-                                >
+                                    className="btn btn-primary mr-4">
                                     {" "}
                                     Increse Count {count}
                                 </button>
@@ -76,8 +75,7 @@ function BadgeDetails(props) {
                                 <DeleteBadgeModal
                                     isOpen={props.modalIsOpen}
                                     onClose={props.onCloseModal}
-                                    onDeleteBadge={props.onDeleteBadge}
-                                >
+                                    onDeleteBadge={props.onDeleteBadge}>
                                     Lorem Upsum
                                 </DeleteBadgeModal>
                             </div>

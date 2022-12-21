@@ -10,7 +10,8 @@
         "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
         "start": "node server.js",
         "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-        "postinstall": "husky install"
+        "postinstall": "husky install",
+        "lint-staged": "lint-staged"
     },
     "dependencies": {
         "body-parser": "^1.18.3",
@@ -25,7 +26,7 @@
         "@babel/eslint-parser": "^7.19.1",
         "@babel/preset-react": "^7.18.6",
         "concurrently": "^6.2.1",
-        "eslint": "^8.29.0",
+        "eslint": "^7.11.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.31.11",

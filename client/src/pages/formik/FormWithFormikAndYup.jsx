@@ -70,8 +70,7 @@ function FormWithFormikAndYup() {
                                 <DSButtonComponent
                                     type="submit"
                                     className={!(dirty && isValid) ? "disabled-btn" : ""}
-                                    disabled={!(dirty && isValid)}
-                                >
+                                    disabled={!(dirty && isValid)}>
                                     Ingresar
                                 </DSButtonComponent>
                             </div>
@@ -83,8 +82,7 @@ function FormWithFormikAndYup() {
                                     type="submit"
                                     isSocial
                                     className={!(dirty && isValid) ? "disabled-btn" : ""}
-                                    disabled={!(dirty && isValid)}
-                                >
+                                    disabled={!(dirty && isValid)}>
                                     <img src={googleIcon} style={{ width: 32 }} alt="Login con Google" />
                                 </DSButtonComponent>
 
@@ -92,8 +90,7 @@ function FormWithFormikAndYup() {
                                     type="submit"
                                     isSocial
                                     className={!(dirty && isValid) ? "disabled-btn" : ""}
-                                    disabled={!(dirty && isValid)}
-                                >
+                                    disabled={!(dirty && isValid)}>
                                     <img src={facebookIcon} style={{ width: 32 }} alt="Login con Facebook" />
                                 </DSButtonComponent>
 
@@ -101,8 +98,7 @@ function FormWithFormikAndYup() {
                                     type="submit"
                                     isSocial
                                     className={!(dirty && isValid) ? "disabled-btn" : ""}
-                                    disabled={!(dirty && isValid)}
-                                >
+                                    disabled={!(dirty && isValid)}>
                                     <img src={twitterIcon} style={{ width: 32 }} alt="Login con Twitter" />
                                 </DSButtonComponent>
                             </div>

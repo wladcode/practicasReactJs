@@ -43,7 +43,7 @@ class BagdeNew extends React.Component {
         });
 
         try {
-            console.log("state: ", this.state);
+            console.log("state: {}", this.state);
             await api.badges.create(this.state.form);
 
             this.setState({

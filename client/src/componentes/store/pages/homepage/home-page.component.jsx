@@ -15,8 +15,7 @@ const HomePageStore = () => {
                         phase,
                         actualDuration,
                     });
-                }}
-            >
+                }}>
                 <DirectoryComponent />
             </Profiler>
         </HomePageContainer>

@@ -46,8 +46,7 @@ class SingUnSingUpPage extends Component {
                             variant="fullWidth"
                             indicatorColor="secondary"
                             textColor="secondary"
-                            aria-label="icon label tabs example"
-                        >
+                            aria-label="icon label tabs example">
                             <Tab label="Login" />
                             <Tab label="Registro" />
                         </Tabs>

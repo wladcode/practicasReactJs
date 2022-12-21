@@ -40,8 +40,7 @@ export class GoogleMapContainer extends Component {
                 fullscreenControl={false}
                 zoom={15}
                 centerAroundCurrentLocation
-                className="googleMap"
-            >
+                className="googleMap">
                 <Marker onClick={this.onMarkerClick} name={"Current location"} />
             </Map>
         );

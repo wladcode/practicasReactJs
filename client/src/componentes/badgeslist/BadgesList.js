@@ -12,8 +12,6 @@ function useSearchBudges(badges) {
             return `${badge.firstName} ${badge.lastName}`.toLowerCase().includes(query.toLowerCase());
         });
 
-            
-
         setFilteredBadges(results);
     }, [badges, query]);
 

@@ -59,8 +59,7 @@ class FormWithFormikAndYupHOC extends Component {
                             type="submit"
                             isSocial
                             className={!(dirty && isValid) ? "disabled-btn" : ""}
-                            disabled={!(dirty && isValid)}
-                        >
+                            disabled={!(dirty && isValid)}>
                             <img src={googleIcon} style={{ width: 32 }} alt="Login con Google" />
                         </DSButtonComponent>
 
@@ -68,8 +67,7 @@ class FormWithFormikAndYupHOC extends Component {
                             type="submit"
                             isSocial
                             className={!(dirty && isValid) ? "disabled-btn" : ""}
-                            disabled={!(dirty && isValid)}
-                        >
+                            disabled={!(dirty && isValid)}>
                             <img src={facebookIcon} style={{ width: 32 }} alt="Login con Facebook" />
                         </DSButtonComponent>
 
@@ -77,8 +75,7 @@ class FormWithFormikAndYupHOC extends Component {
                             type="submit"
                             isSocial
                             className={!(dirty && isValid) ? "disabled-btn" : ""}
-                            disabled={!(dirty && isValid)}
-                        >
+                            disabled={!(dirty && isValid)}>
                             <img src={twitterIcon} style={{ width: 32 }} alt="Login con Twitter" />
                         </DSButtonComponent>
                     </div>
