@@ -56,10 +56,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userShot.exists) {
         console.log("CREANDO USUARIO: ", userAuth);
         const createdAt = new Date();
-        const { name, email, phoneNumber, photoURL } = userAuth;
+        const { name, displayName, email, phoneNumber, photoURL } = userAuth;
 
         const dataToSafe = {
-            name,
+            name: name || displayName,
             email,
             phoneNumber,
             photoURL,

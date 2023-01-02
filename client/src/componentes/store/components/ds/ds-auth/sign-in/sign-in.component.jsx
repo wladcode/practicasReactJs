@@ -7,10 +7,14 @@ import DSButtonComponent from "./../../ds-button/ds-button.component";
 import DSFormInputComponent from "./../../ds-input/ds-input.component";
 import { auth, signInWithGoogle } from "./../firebase.utils";
 import "./sign-in.scss";
+import { actions as loginActions } from "../../../../../../redux/login";
 
 import { SingInContainer } from "./sign-in.styled";
+import { useDispatch } from "react-redux";
 
 function SignInComponent() {
+    const dispatch = useDispatch();
+
     const [userCredentials, setUserCredentials] = useState({
         email: "",
         password: "",
@@ -18,19 +22,15 @@ function SignInComponent() {
 
     const { email, password } = userCredentials;
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
-        try {
-            await auth.signInWithEmailAndPassword(email, password);
+        dispatch(loginActions.loginRequest(userCredentials));
 
-            setUserCredentials({
-                email: "",
-                password: "",
-            });
-        } catch (error) {
-            console.log("ERROR: ", error);
-        }
+        setUserCredentials({
+            email: "",
+            password: "",
+        });
     };
 
     const handleChange = (event) => {

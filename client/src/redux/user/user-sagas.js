@@ -38,11 +38,11 @@ function* signOut() {
     }
 }
 
-function* sagaSignUpStart(userCredenciales) {
-    console.log("USER CREDENCIALS: ", userCredenciales);
+function* sagaSignUpStart({ payload }) {
+    console.log("USER CREDENCIALS: ", payload);
 
     try {
-        const { email, password, fullname } = userCredenciales.payload;
+        const { email, password, fullname } = payload;
 
         const { user } = yield auth.createUserWithEmailAndPassword(email, password);
 
@@ -57,7 +57,7 @@ function* sagaSignInAfterSingUp(data) {
     try {
         const { user, additionalData } = data.payload;
 
-        yield createUserProfileDocument(user, { additionalData });
+        yield createUserProfileDocument(user, additionalData);
     } catch (error) {
         yield console.log("ERROR EN SIGNUP: ", error.message);
     }
