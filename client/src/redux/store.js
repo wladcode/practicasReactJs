@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "production") {
 
 console.log("middlewares ", middlewares);
 
-export const store = createStore(rootReducer, applyMiddleware(...middlewares));
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 //Inicialización del middleware de saga
 console.log("root sagas ", rootSaga);
@@ -38,4 +38,8 @@ sagaMiddleware.run(rootSaga);
 */
 
 //Para uso de localstorage
-export const persistor = persistStore(store);
+const persistor = persistStore(store);
+
+console.log("store ", store);
+console.log("history ", history);
+export { store, persistor };

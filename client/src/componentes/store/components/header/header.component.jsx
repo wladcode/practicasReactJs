@@ -14,7 +14,7 @@ import { HeaderContainer, LogoContainer, OptionLink, OptionsContainer } from "./
 const HeaderComponent = ({ currentUser, cartHidden, dispatch }) => {
     return (
         <HeaderContainer>
-            <LogoContainer to="/shop">
+            <LogoContainer to="/">
                 <Logo className="logo" />
             </LogoContainer>
             <OptionsContainer>

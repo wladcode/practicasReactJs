@@ -30,6 +30,7 @@
         "global": "^4.4.0",
         "google-maps-react": "^2.0.6",
         "graphql": "^14.3.1",
+        "history": "^5.3.0",
         "i18next": "^21.9.1",
         "i18next-browser-languagedetector": "^6.1.5",
         "i18next-xhr-backend": "^3.2.2",
@@ -49,6 +50,7 @@
         "react-jwt": "^1.1.2",
         "react-redux": "^7.2.4",
         "react-router-dom": "^5.2.0",
+        "react-router-redux": "^4.0.8",
         "react-scripts": "4.0.3",
         "react-stripe-checkout": "^2.6.3",
         "react-transition-group": "^4.4.2",
@@ -111,5 +113,4 @@
         "not ie <= 11",
         "not op_mini all"
     ]
-   
 }
