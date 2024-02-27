@@ -7,7 +7,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import PageError from "../componentes/pageerror/PageError";
 import PageLoading from "../componentes/pageloading/PageLoading";
 
-import Pagination from "@mui/material/Pagination";
+//import Pagination from "@mui/material/Pagination";
 
 class RickAndMortyAPI extends Component {
     state = {
@@ -93,7 +93,7 @@ class RickAndMortyAPI extends Component {
             <Fragment>
                 <Row>
                     <Col>
-                        <Pagination
+                        {/* <Pagination
                             color="primary"
                             size="large"
                             count={this.state.pagination.last}
@@ -101,7 +101,7 @@ class RickAndMortyAPI extends Component {
                             showLastButton
                             onChange={this.changePagination}
                             disabled={this.state.loading}
-                        />
+                        />*/}
                     </Col>
                 </Row>
 

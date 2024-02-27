@@ -1,4 +1,4 @@
-import { IconButton, Typography } from "@mui/material";
+import { IconButton, Typography } from "@material-ui/core";
 import React from "react";
 import "./card.css";
 
