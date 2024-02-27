@@ -71,11 +71,11 @@ stages:
         deploy:
           steps:            
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: Matt-Test-NodeJS-Deploy'
+            displayName: 'Azure Web App Deploy: Practicas React Wladecode'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              runtimeStack: 'NODE|16.14'
+              runtimeStack: 'NODE|16.20.2'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
  
