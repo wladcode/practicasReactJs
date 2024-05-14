@@ -1,12 +1,6 @@
-
-
-function getYear(){
-
+function getYear() {
     const date = new Date();
-
-    console.log("DATE ", date)
-
-    return date
+    return date;
 }
 
 export default getYear;
