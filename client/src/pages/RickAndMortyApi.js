@@ -71,11 +71,6 @@ class RickAndMortyAPI extends Component {
 
     changePagination = async (event, value) => {
         console.log("CLIC: ", value);
-        /*
-    this.setState({
-      ...this.state.pagination,
-      current: value,
-    });*/
 
         //this.state.pagination.current = value;
 
@@ -92,17 +87,7 @@ class RickAndMortyAPI extends Component {
         return (
             <Fragment>
                 <Row>
-                    <Col>
-                        {/* <Pagination
-                            color="primary"
-                            size="large"
-                            count={this.state.pagination.last}
-                            showFirstButton
-                            showLastButton
-                            onChange={this.changePagination}
-                            disabled={this.state.loading}
-                        />*/}
-                    </Col>
+                    <Col>aqui va la paginacion</Col>
                 </Row>
 
                 <Col>

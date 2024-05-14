@@ -11,7 +11,7 @@ class Home extends Component {
             <Container fluid className="Home">
                 <div className="row">
                     <div className="Home__col col-12 col-md-4">
-                        <h1>Practicas React Wladimir López (chamow)</h1>
+                        <h1>Practicas React Wladimir</h1>
                     </div>
 
                     <div className="Home__col  col-md-8">

@@ -3,10 +3,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./layout.css";
 import MenuComponent from "./menu/Menu.component";
 import NavbarCustome from "./navbar/Navbar";
+import getYear from "../utils/dateUtils";
 
 function Layout(props) {
     //const children = props.children;
 
+    
     return (
         <article>
             <header>
@@ -21,7 +23,7 @@ function Layout(props) {
                 <Container fluid>{props.children}</Container>
             </main>
 
-            <footer>Diamoncode - 2022 -</footer>
+            <footer>WladeCode - {getYear()} -</footer>
         </article>
     );
 }
