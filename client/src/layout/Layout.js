@@ -22,7 +22,7 @@ function Layout(props) {
                 <Container fluid>{props.children}</Container>
             </main>
 
-            <footer>WladeCode - {getYear()} -</footer>
+            <footer>WladeCode - {getYear()}</footer>
         </article>
     );
 }
